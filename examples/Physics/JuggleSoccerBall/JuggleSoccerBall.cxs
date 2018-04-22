@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			JuggleSoccerBall.monkey
+	Script:			JuggleSoccerBall.cxs
 	Description:	Sample fantomCX script that shows how to setup a little game
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

@@ -1503,14 +1503,18 @@ The layerIndex tells fantomCX to load the tileLayer at that index. Index starts 
 			newTileSet.spacing = spacing
 			newTileSet.tileheight = tlH
 			newTileSet.tilewidth = tlW
-
+			
+			If obj.objImg.Length() = 0
+			  obj.objImg = obj.objImg.Resize(1)
+			Endif
+		
         	If tileSheetIndex > 0 Then
         		Local currSize:Int = obj.objImg.Length()
 				obj.objImg = obj.objImg.Resize(currSize + 1)
 				currSize = obj.tileMap.tileSets.Length()
 			    obj.tileMap.tileSets = obj.tileMap.tileSets.Resize(currSize + 1)
 			Endif
-        	
+
 			obj.tileMap.tileSets[tileSheetIndex] = newTileSet
 
         	If Image.Load(dataTileSet.GetItem("image"),0.5,0.5,Image.Filter)<> Null Then
@@ -2546,6 +2550,17 @@ The current default file formats are:
 #End
 'seeAlso:OnObjectRender,RenderFlush,ftObject.ActivateRenderEvent
 	Method Render:Void()
+		Local sc:Int[4]
+		Local _scissor:Bool = False
+		Local sx :Int
+		Local sy :Int
+		Local sw :Int
+		Local sh :Int
+		sc = Self.currentCanvas.Scissor()
+		sx = sc[0]
+		sy = sc[1]
+		sw = sc[2]
+		sh = sc[3]
 '#If TARGET="html5"
 		Self.red = 255
 		Self.green = 255
@@ -2562,6 +2577,7 @@ The current default file formats are:
 		For Local layer := Eachin layerList
 			If layer.isVisible And layer.isActive Then layer.Render()
 		Next
+Self.currentCanvas.SetScissor( sx, sy ,sw , sh )
 		Self.currentCanvas.PopMatrix()
 	End
 	'------------------------------------------

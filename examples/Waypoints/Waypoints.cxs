@@ -2,10 +2,10 @@
 Strict
 
 #rem
-	Script:			Waypoints.monkey
+	Script:			Waypoints.cxs
 	Description:	Example script on how to use waypoints 
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

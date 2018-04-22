@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			ScrollingLayers.monkey
+	Script:			ScrollingLayers.cxs
 	Description:	This fantomCX sample script shows how to use multiple scrolling layers
 	Author: 		Douglas Williams
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

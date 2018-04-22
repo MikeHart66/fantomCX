@@ -1,10 +1,10 @@
 Strict
 
 #Rem
-	Script:			ObjectMovement.monkey
+	Script:			ObjectMovement.cxs
 	Description:	Sample script that shows how to control your objects at runtime 
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

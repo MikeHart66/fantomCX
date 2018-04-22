@@ -1,8 +1,8 @@
 Strict
 
 #rem
-	Script:			BaseScript.cxs
-	Description:	Basic fantomCX script
+	Script:			Test.cxs
+	Description:	Basic fantomCX script for testing purpose
 	Author: 		Michael Hartlef
 	Version:      	3.0
 #End
@@ -12,9 +12,10 @@ Strict
 
 'Set to false to disable webaudio support for mojo audio, and to use older multimedia audio system instead.
 #HTML5_WEBAUDIO_ENABLED=True
+#MOJO_IMAGE_FILTERING_ENABLED=False
 
-' Tell FantomCX to import physics related classes/fields/methods
-#fantomCX_UsePhysics = True
+' Tell fantomCX to import physics related classes/fields/methods
+#fantomCX_UsePhysics = False
 
 ' Import the fantomCX framework which imports mojo2 itself
 Import fantomCX
@@ -32,6 +33,13 @@ Class cGame Extends App
 	' Create a field for the default scene and layer of the engine
 	Field defLayer:ftLayer
 	Field defScene:ftScene
+	Field camDefault:ftCamera
+	Field cam0:ftCamera
+	Field cam1:ftCamera
+
+	
+	Field cW:Int
+	Field cH:Int
 	'------------------------------------------
 	Method OnClose:Int()
 		fE.ExitApp()
@@ -47,22 +55,31 @@ Class cGame Extends App
 		fE = New cEngine
 		
 		'Set the virtual size of the canvas
-		fE.SetCanvasSize(600,600)
+		fE.SetCanvasSize(640,960)
+
+		cW = fE.GetCanvasWidth()
+		cH = fE.GetCanvasHeight()
+
+		camDefault = fE.GetCamera()
+		cam0 = fE.CreateCamera()
+		cam1 = fE.CreateCamera()
+
+		camDefault.SetDimensions(0, 0, DeviceWidth(), DeviceHeight())
+		cam0.SetDimensions(0, 0, DeviceWidth()/2.0, DeviceHeight())
+		cam1.SetDimensions(DeviceWidth()/2.0, 0, DeviceWidth()/2.0, DeviceHeight())
+
 		
 		' Get the default scene of the engine
 		defScene = fE.GetDefaultScene()
 
 		' Get the default layer of the engine
 		defLayer = fE.GetDefaultLayer()
+
+		For Local x:= 16 To fE.GetCanvasWidth() Step 32
+			Local block := fE.CreateImage("ground.png",x,fE.GetCanvasHeight()-16)
+			block.SetAngle(Int(Rnd(0,4))*90)
+		Next
 		
-		' Create a simple box
-		Local box := fE.CreateBox(120,20,fE.GetCanvasWidth()/2,fE.GetCanvasHeight()/2)
-		
-		' Set color of the box to a nice yellow
-		box.SetColor(255,255,0)
-		
-		' Let the box spin
-		box.SetSpin(5)
 
 		Return 0
 	End
@@ -78,6 +95,13 @@ Class cGame Extends App
 		If fE.GetPaused() = False Then
 			' Update all objects of the engine
 			fE.Update(timeDelta)
+			
+			If KeyDown(KEY_RIGHT) Then cam0.SetPosX( 0.5, True)
+			If KeyDown(KEY_LEFT)  Then cam0.SetPosX(-0.5, True)
+			If KeyHit(KEY_SPACE)
+				Print(fE.autofitX+":"+fE.autofitY+"      "+fE.scaleX+":"+fE.scaleY)
+			Endif
+			cam1.Use()
 		Endif
 		Return 0
 	End
@@ -85,20 +109,44 @@ Class cGame Extends App
 	Method OnRender:Int()
 		' Check if the engine is not paused
 		If fE.GetPaused() = False Then
+			fE.GetCanvas().SetScissor(0,0,10000.0, 10000.0)
+			fE.GetCanvas().SetViewport (0,0,DeviceWidth(), DeviceHeight())
+			fE.GetCanvas().SetProjection2d (0,DeviceWidth()-1,0, DeviceHeight()-1)
+			camDefault.Use()
+			fE.Clear( 255,0,255)
+			
+			If KeyDown(KEY_A)
+				cam0.Use()
+				fE.GetCanvas().SetViewport (0, 0, DeviceWidth()/2.0, DeviceHeight())
+				fE.GetCanvas().SetProjection2d (0, DeviceWidth()/2.0-1.0, 0, DeviceHeight()-1)
+			Endif
 			' Clear the screen 
-			fE.Clear( 255,0,0)
-		
+			fE.Clear( 200,200,0)
 			' Render all visible objects of the engine
 			fE.Render()
-
 			' Now draw the current FPS value to the screen
 			fE.SetColor(255, 255, 255)
-			fE.GetCanvas().DrawText( "FPS= "+fE.GetFPS(),fE.GetLocalX(10), fE.GetLocalY(10))
+			fE.GetCanvas().DrawText( "FPS= "+fE.GetFPS(),fE.GetLocalX(10, False), fE.GetLocalY(10, False))
 			' Last, flip the previously drawn content to the screen, make it visible
+			fE.GetCanvas().DrawText( "X/Y= "+Int(fE.GetTouchX(0, False))+":"+Int(fE.GetTouchY(0, False)),fE.GetLocalX(10, False), fE.GetLocalY(25, False))
+
+			If KeyDown(KEY_A)
+				cam1.Use()
+				' Clear the screen 
+				fE.GetCanvas().SetViewport (DeviceWidth()/2.0, 0, DeviceWidth()/2.0, DeviceHeight()/2.0)
+				fE.GetCanvas().SetProjection2d (0, DeviceWidth()/2.0-1.0, 0, (DeviceHeight()-1.0))
+				fE.Clear( 0,200,200)
+				' Render all visible objects of the engine
+				fE.Render()
+				' Now draw the current FPS value to the screen
+				fE.SetColor(255, 255, 255)
+				fE.GetCanvas().DrawText( "FPS= "+fE.GetFPS(),fE.GetLocalX(10, False), fE.GetLocalY(10, False))
+				' Last, flip the previously drawn content to the screen, make it visible
+				fE.GetCanvas().DrawText( "X/Y= "+Int(fE.GetTouchX(0, False))+":"+Int(fE.GetTouchY(0, False)),fE.GetLocalX(10, False), fE.GetLocalY(25, False))
+			Endif			
+
 			fE.RenderFlush()			
 		Else
-			fE.Clear( 255,0,0)
-			fE.SetColor(255, 255, 255)
 			fE.GetCanvas().DrawText("**** PAUSED ****",fE.GetLocalX(fE.GetCanvasWidth()/2.0),fE.GetLocalY(fE.GetCanvasHeight()/2.0),0.5, 0.5)
 			' Last, flip the previously drawn content to the screen, make it visible
 			fE.RenderFlush()
@@ -173,17 +221,7 @@ Class cEngine Extends ftEngine
 	End	
 	'------------------------------------------
 	Method OnObjectTouch:Int(obj:ftObject, touchId:Int)
-		' This method is called when an object is still touched
-		Return 0
-	End
-	'------------------------------------------
-	Method OnObjectTouchEnter:Int(obj:ftObject, touchId:Int)
-		'This method is called when an object is first touched.
-		Return 0
-	End
-	'------------------------------------------
-	Method OnObjectTouchExit:Int(obj:ftObject, touchId:Int)
-		'This method is called when an object is not touched anymore.
+		' This method is called when an object was touched
 		Return 0
 	End
 	'------------------------------------------

@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			TiledIsometric.monkey
+	Script:			TiledIsometric.cxs
 	Description:	Example script on how to use isometric tilemaps created by the tool Tiled
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #end
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

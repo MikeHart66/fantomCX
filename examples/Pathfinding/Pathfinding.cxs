@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			PathFinding.monkey
+	Script:			PathFinding.cxs
 	Description:	Sample fantomCX script that shows how to do A* pathfinding in the fantomCX
 	Author: 		Michael Hartlef
-	Version:      	2.01
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

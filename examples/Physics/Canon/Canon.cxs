@@ -1,17 +1,10 @@
 Strict
 
 #rem
-	Script:			Canon.monkey
+	Script:			Canon.cxs
 	Description:	A fantomCX sample script that shows how to shoot a box2D object in the direction of a touch event.
 	Author: 		Michael Hartlef
-	Version:      	2.0
-#End
-
-#rem
-	Script:			MouseJoint.monkey
-	'Description:	Sample script on how to integrate Box2D with fantomCX 
-	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

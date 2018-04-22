@@ -347,7 +347,6 @@ Class ftImageManager
 			If newImg.img[0] = Null Then Error ("~n~nError in file cftImageMng.cxs, Method ftImageManager.LoadImage~n~nCould not load image~n~n"+path)
 #End
 			newImg.imageNode = Self.imageList.AddLast(newImg)
-			tmpImg.Discard()
 		Endif
 
 		Return newImg

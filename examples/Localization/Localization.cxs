@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			Localization.monkey
+	Script:			Localization.cxs
 	Description:	Sample script that shows how to use the ftLocalization class
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

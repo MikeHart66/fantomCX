@@ -1,11 +1,11 @@
 Strict
 
 #rem
-	Script:			RunJump.monkey
+	Script:			RunJump.cxs
 	Description:	This fantomCX sample script shows basics of run & jump game 
 					Player stays in place, while clouds and enemy move
 	Author: 		Douglas Williams
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

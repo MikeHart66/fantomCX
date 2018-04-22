@@ -1,11 +1,11 @@
 Strict
 
 #rem
-	Script:			CreatePrimitives.monkey
+	Script:			CreatePrimitives.cxs
 	Description:	This fantomCX sample script shows how to create the following:
 					box, circle, polygon, oval, point, stickman (with visable bound box), line
 	Author: 		Douglas Williams
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

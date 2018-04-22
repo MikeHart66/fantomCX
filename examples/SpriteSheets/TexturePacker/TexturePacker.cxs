@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			TexturePacker.monkey
+	Script:			TexturePacker.cxs
 	Description:	Example script on how To use packed texture images created by the tool TexturePacker 
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #end
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

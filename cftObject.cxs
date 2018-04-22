@@ -1658,7 +1658,7 @@ The returned value is the stored width multiplied by the X scale factor.
 				Local xLast:Int = Self.tileMap.tileCountX
 				Local yFirst:Int = 1
 				Local yLast:Int = Self.tileMap.tileCountY
-				
+
 				If Self.tileMap.tiles[0].tileType = 0
 					'Determine the first x coordinates
 					For ytX = 1 To Self.tileMap.tileCountX
@@ -1713,7 +1713,7 @@ The returned value is the stored width multiplied by the X scale factor.
 						If tileIDx <> - 1 Then
 							tlxPos = xoff+xPos+Self.tileMap.tiles[tilePos].xOff * Self.scaleX + (Self.tileMap.tiles[tilePos].sizeX/2-Self.tileMap.tileSizeX/2)
 							tlyPos = yoff+yPos+Self.tileMap.tiles[tilePos].yOff * Self.scaleY - (Self.tileMap.tiles[tilePos].sizeY/2-Self.tileMap.tileSizeY/2)
-							
+			'Print(	tileSetIndex+":"+tileIDx+":"+tlxPos+":"+tlyPos+":"+tempScaleX+":"+tempScaleY)			
 						    'DrawImageRect( Self.objImg[tileSetIndex].img, tlxPos, tlyPos, tileMap.tileSpacing, tileMap.tileSpacing, Self.tileMap.tileSets[tileSetIndex].tilewidth-tileMap.tileSpacing, Self.tileMap.tileSets[tileSetIndex].tileheight-tileMap.tileSpacing, drawAngle, tempScaleX, tempScaleY, tileIDx)										
 						    Self.engine.currentCanvas.DrawImage( Self.objImg[tileSetIndex].img[tileIDx], tlxPos, tlyPos, drawAngle, tempScaleX, tempScaleY)										
 						Endif

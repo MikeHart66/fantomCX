@@ -1,16 +1,16 @@
 Strict
 
 #rem
-	Script:			Gui_Complete.monkey
+	Script:			Gui_Complete.cxs
 	Description:	fantomCX sample script that shows how to use the gui objects
 	Author: 		Michael Hartlef
-	Version:      	2.01
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called
 #MOJO_AUTO_SUSPEND_ENABLED=True
 #MOJO_IMAGE_FILTERING_ENABLED=True
-#GLFW_WINDOW_TITLE="Gui_Complete.monkey"
+#GLFW_WINDOW_TITLE="Gui_Complete.cxs"
 
 'Set to false to disable webaudio support for mojo audio, and to use older multimedia audio system instead.
 #HTML5_WEBAUDIO_ENABLED=True

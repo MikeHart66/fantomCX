@@ -1,10 +1,10 @@
 Strict
 
 #Rem
-	Script:			CopyObject.monkey
+	Script:			CopyObject.cxs
 	Description:	Sample script that shows how to copy an object with most of its parameters at runtime  
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

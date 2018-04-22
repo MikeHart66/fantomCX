@@ -1,10 +1,10 @@
 Strict
 
 #Rem
-	Script:			ObjectMovement2.monkey
+	Script:			ObjectMovement2.cxs
 	Description:	Sample script that shows how to control your objects at runtime 
 	Author: 		Michael Hartlef
-	Version:      	1.01
+	Version:      	3.0
 #End
 
 ' Import the fantomCX framework which imports mojo itself

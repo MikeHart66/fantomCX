@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			Fontmachine.monkey
+	Script:			Fontmachine.cxs
 	Description:	Sample script that shows how to handle fontmachine bitmap fonts
 	Author: 		Michael Hartlef
-	Version:      	2.01
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

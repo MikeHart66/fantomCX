@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			PoolingObjects.monkey
+	Script:			PoolingObjects.cxs
 	Description:	Sample script that shows how to use pooling with ftObjects
 	Author: 		Michael Hartlef
-	Version:      	1.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

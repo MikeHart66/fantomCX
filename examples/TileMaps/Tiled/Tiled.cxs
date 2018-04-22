@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			Tiled.monkey
+	Script:			Tiled.cxs
 	Description:	Example script on how to use tilemaps created by the tool Tiled
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #end
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called
@@ -106,7 +106,7 @@ Class cGame Extends App
 		
 		txtInfo3 = fE.CreateText(font,"Obj=????",10,fE.GetCanvasHeight()/2.0, fE.taCenterLeft)
 		txtInfo3.SetName("txtInfo3")
-		
+
 		Return 0
 	End
 	'------------------------------------------
@@ -147,17 +147,18 @@ Class cGame Extends App
 			If KeyDown(KEY_DOWN) Then fE.SetCamY(5*timeDelta,True)
 			
 			'Update the info text objects
-			txtInfo1.SetText("FPS:"+fE.GetFPS())
-			txtInfo2.SetText(x+":"+y+"  tileID="+tm.GetTileIDAt(x,y))
+			
+			If txtInfo1 <> Null Then txtInfo1.SetText("FPS:"+fE.GetFPS())
+			If txtInfo2 <> Null Then txtInfo2.SetText(x+":"+y+"  tileID="+tm.GetTileIDAt(x,y))
 			
 			'Check which object on the layers is under the cursor and outout its name
 			If layerGUI.GetObjAt(x,y) <> Null Then
-				txtInfo3.SetText("Obj="+layerGUI.GetObjAt(x,y).GetName())
+				If txtInfo3 <> Null Then txtInfo3.SetText("Obj="+layerGUI.GetObjAt(x,y).GetName())
 			Else
 				If layerMap.GetObjAt(x,y) = objCircle Then
-					txtInfo3.SetText("Obj="+layerMap.GetObjAt(x,y).GetName())
+					If txtInfo3 <> Null Then txtInfo3.SetText("Obj="+layerMap.GetObjAt(x,y).GetName())
 				Else
-					txtInfo3.SetText("Obj=????")
+					If txtInfo3 <> Null Then txtInfo3.SetText("Obj=????")
 				Endif
 			Endif
 			
@@ -173,6 +174,11 @@ Class cGame Extends App
 
 			' Render all objects			
 			fE.Render()
+			'tm.Render()
+			
+			' Now draw the current FPS value to the screen
+			fE.SetColor(255, 255, 0)
+			fE.GetCanvas().DrawText( "FPS= "+fE.GetFPS(),fE.GetLocalX(10), fE.GetLocalY(10))
 			
 			' Last, flip the previously drawn content to the screen, make it visible
 			fE.RenderFlush()			

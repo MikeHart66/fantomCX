@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			FlashObject2.monkey
+	Script:			FlashObject2.cxs
 	Description:	This sample script shows some ways on how to flash an object 
 	Author: 		based on sample from Michael Hartlef, expanded by Douglas Williams 
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

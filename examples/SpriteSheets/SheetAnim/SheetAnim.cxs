@@ -1,10 +1,10 @@
 Strict
 
 #rem
-	Script:			SheetAnim.monkey
+	Script:			SheetAnim.cxs
 	Description:	Sample script that shows how to use spritesheets for animated objects
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called

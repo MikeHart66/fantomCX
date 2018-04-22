@@ -1,10 +1,10 @@
 Strict
 
 #Rem
-	Script:			DataStorage.monkey
+	Script:			DataStorage.cxs
 	Description:	Sample script that shows how to store any data inside an Object and use it at runtime  
 	Author: 		Michael Hartlef
-	Version:      	2.0
+	Version:      	3.0
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called
