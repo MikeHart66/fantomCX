@@ -26,7 +26,7 @@ The module cftCollisions is a collection of several of several collision dectect
 
 # Function ftColl_Line2Circle:Bool(x1:Float, y1:Float, x2:Float, y2:Float, px:Float, py:Float, r:Float)
 
-# Function ftColl_Line2Line:none(x0:Float, y0:Float , x1:Float, y1:Float,x2:Float ,y2:Float, x3:Float, y3:Float)
+# Function ftColl_Line2Line:Bool(x0:Float, y0:Float , x1:Float, y1:Float,x2:Float ,y2:Float, x3:Float, y3:Float)
 
 # Function ftColl_PointInsideBound:Bool(obj:ftObject, px:Float, py:Float)
 
@@ -39,4 +39,12 @@ The module cftCollisions is a collection of several of several collision dectect
 # Function ftColl_PointToPointDist_Square:Float(x1:Float, y1:Float, x2:Float, y2:Float)
 
 # Function ftColl_Vec2DotProduct:Float(v1:ftVec2Dp, v2:ftVec2Dp)
+
+# Class cftCollisions.tLine2D
+
+# Method New:none()
+
+# Field p1:ftVec2Dp
+
+# Field p2:ftVec2Dp
 

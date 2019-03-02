@@ -1,6 +1,6 @@
 import android.os.Build;
 
-class fantomx
+class fantomCX
 {
 	static String DeviceName()
 	{

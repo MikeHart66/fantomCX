@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -39,7 +40,7 @@ Class ftKeyMapping
 #Rem
 'summery:This method sets the mapping of a key code.
 #End
-'seeAlso:GetKey,SafeToString
+'seeAlso:GetKey,SaveToString
 	Method SetKey:Void(keyCode:Int, mapCode:Int)
 		Self.keyMap.Set(keyCode, mapCode)
 	End

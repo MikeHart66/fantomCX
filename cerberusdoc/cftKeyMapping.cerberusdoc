@@ -10,13 +10,9 @@ The class *ftKeyMapping* is an object which helps you supporting different key m
 
 # Method Clear:Void()
 
-*Description*
-
 This method clears all the mapping data.
 
 # Method GetKey:Int(keyCode:Int)
-
-*Description*
 
 This method returns the mapped key code.
 
@@ -27,8 +23,6 @@ If no mapping is found, it will return the given key code.
 Links: [[SetKey]], [[LoadFromString]]
 
 # Method LoadFromString:Void(mapStr:String)
-
-*Description*
 
 This method loads the keymapping class via a string
 
@@ -170,17 +164,13 @@ Links: [[SaveToString]], [[GetKey]]
 
 # Method SaveToString:String()
 
-*Description*
-
 This method saves the key mapping data to a string.
 
 Links: [[LoadFromString]], [[SetKey]]
 
 # Method SetKey:Void(keyCode:Int, mapCode:Int)
 
-*Description*
-
 This method sets the mapping of a key code.
 
-Links: [[GetKey]], [[SafeToString]]
+Links: [[GetKey]], [[SaveToString]]
 

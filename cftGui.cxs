@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -9,7 +10,6 @@
 	
 	License:      MIT
 #End
-Strict
 Import fantomCX
 
 'nav:<blockquote><nav><b>fantomCX documentation</b> | <a href="index.html">Home</a> | <a href="classes.html">Classes</a> | <a href="3rdpartytools.html">3rd party tools</a> | <a href="examples.html">Examples</a> | <a href="changes.html">Changes</a></nav></blockquote>
@@ -283,30 +283,30 @@ Class ftGuiListview Extends ftGuiGadget
 	Field font:ftFont = Null
 	
 	'-----------------------------------------------------------------------------
-'changes:Changed in v2.03
 	Method AddItem:ftGuiListviewItem(txt:String, imgIndex:Int=-1)
+Print("AddItem:ftGuiListviewItem->    "+imgIndex + " : " + txt)
 		Local newItem:= New ftGuiListviewItem
 		newItem.SetText(txt)
 		newItem.SetImage(imgIndex)
 		itemList.AddLast(newItem)
-		Local obj:=Self.engine.CreateImage(Self.objImg[1],Self.GetPosX(), Self.GetPosY()-Self.GetHeight()/2-20+80*(Self.GetChildCount()+1))
-		obj.SetLayer(Self.GetLayer())
-		obj.SetParent(Self)
-		obj.SetWidth(Self.GetWidth()-40, True)
-		obj.SetHeight(80, True)
-		obj.SetImageScale9(24,24,24,24)
-		If imgIndex > 1
-			Local obj2:=Self.engine.CreateImage(Self.objImg[imgIndex],obj.GetPosX()-obj.GetWidth()/2+40, obj.GetPosY())
-			obj2.SetLayer(Self.GetLayer())
-			obj2.SetParent(obj)
-			obj2.SetScale(0.60)
+		If Self.objImg.Length()>= 2
+			Local obj:=Self.engine.CreateImage(Self.objImg[1],Self.GetPosX(), Self.GetPosY()-Self.GetHeight()/2-20+80*(Self.GetChildCount()+1))
+			obj.SetLayer(Self.GetLayer())
+			obj.SetParent(Self)
+			obj.SetWidth(Self.GetWidth()-40, True)
+			obj.SetHeight(80, True)
+			obj.SetImageScale9(24,24,24,24)
+			If imgIndex > 1
+				Local obj2:=Self.engine.CreateImage(Self.objImg[imgIndex],obj.GetPosX()-obj.GetWidth()/2+40, obj.GetPosY())
+				obj2.SetLayer(Self.GetLayer())
+				obj2.SetParent(obj)
+				obj2.SetScale(0.60)
+			Endif
+	
+			Local txt2:=Self.engine.CreateText(Self.guiMng.font1, txt, obj.GetPosX()-obj.GetWidth()/2+100, obj.GetPosY() , ftEngine.taCenterLeft)
+			txt2.SetLayer(Self.GetLayer())
+			txt2.SetParent(obj)
 		Endif
-
-		
-		
-		Local txt2:=Self.engine.CreateText(Self.guiMng.font1, txt, obj.GetPosX()-obj.GetWidth()/2+100, obj.GetPosY() , ftEngine.taCenterLeft)
-		txt2.SetLayer(Self.GetLayer())
-		txt2.SetParent(obj)
 		Return newItem
 	End
 	
@@ -411,26 +411,29 @@ Class ftGuiListview Extends ftGuiGadget
 		Local sy := sc[1]
 		Local sw := sc[2]
 		Local sh := sc[3]
-		Self.engine.currentCanvas.SetScissor(_fE.GetLocalX(Self.xPos), _fE.GetLocalY(Self.yPos-Self.GetHeight()/2), Self.GetWidth()*sfx, Self.GetHeight()*sfy)
+		Self.engine.currentCanvas.SetScissor(_fE.GetLocalX(Self.xPos-Self.GetWidth()/2), _fE.GetLocalY(Self.yPos-Self.GetHeight()/2), Self.GetWidth()*sfx, Self.GetHeight()*sfy)
 
 		Self.engine.currentCanvas.SetColor(255,255,255)
 		Self.engine.currentCanvas.SetAlpha(1.0)
-#rem
+
 		For Local item:= Eachin Self.itemList
-			If Self.objImg[1]<> Null
-				Local image:Image = Self.objImg[1].GetImage()[0]
-				'Self.engine.currentCanvas.DrawImage(image, xoff+Self.xPos-Self.scrollX, yoff+Self.yPos+(i-1)*image.Height-Self.scrollY)
+			If Self.objImg.Length()>0
+				If Self.objImg[1]<> Null
+					Local image:Image = Self.objImg[1].GetImage()[0]
+					'Self.engine.currentCanvas.DrawImage(image, xoff+Self.xPos-Self.scrollX, yoff+Self.yPos+(i-1)*image.Height-Self.scrollY)
+				Endif
+				If item.imgIndex >= 2
+					Local image:Image = Self.objImg[item.imgIndex].GetImage()[0]
+					'Self.engine.currentCanvas.DrawImage(image, xoff+Self.xPos-Self.GetWidth()/2-Self.scrollX, yoff+Self.yPos+(i-1)*image.Height-Self.GetHeight()/2-Self.scrollY)
+					'txtOffX = image.Width
+				Endif
+			Else
+				'Self.vjMng.font1.Draw(item.GetText(), txtOffX + xoff+Self.xPos-Self.GetWidth()/2-Self.scrollX, yoff+Self.yPos+(i-1)*Self.vjMng.font1.Height()-Self.GetHeight()/2-Self.scrollY)
+				Self.guiMng.font1.Draw(item.GetText(), txtOffX + xoff+Self.xPos-Self.GetWidth()/2-Self.scrollX, yoff+Self.yPos+(i-1)*Self.guiMng.font1.Height()-Self.GetHeight()/2-Self.scrollY)
 			Endif
-			If item.imgIndex >= 2
-				Local image:Image = Self.objImg[item.imgIndex].GetImage()[0]
-				'Self.engine.currentCanvas.DrawImage(image, xoff+Self.xPos-Self.GetWidth()/2-Self.scrollX, yoff+Self.yPos+(i-1)*image.Height-Self.GetHeight()/2-Self.scrollY)
-				'txtOffX = image.Width
-			Endif
-			'Self.vjMng.font1.Draw(item.GetText(), txtOffX + xoff+Self.xPos-Self.GetWidth()/2-Self.scrollX, yoff+Self.yPos+(i-1)*Self.vjMng.font1.Height()-Self.GetHeight()/2-Self.scrollY)
-			Self.guiMng.font1.Draw(item.GetText(), txtOffX + xoff+Self.xPos-Self.GetWidth()/2-Self.scrollX, yoff+Self.yPos+(i-1)*Self.guiMng.font1.Height()-Self.GetHeight()/2-Self.scrollY)
 			i += 1
 		Next
-#End
+
 		Self.engine.currentCanvas.SetScissor(sx, sy, sw, sh)
 		'Self.vjMng.engine.RestoreAlpha()
 		'Self.vjMng.engine.RestoreColor()

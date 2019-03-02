@@ -10,8 +10,6 @@ The class *ftEngine* is the heart of the fantomCX. After you have created one in
 
 # Method ActivateMusic:Void(onOff:Bool=True)
 
-*Description*
-
 De-/activates the music playback for the engine.
 
 Example:
@@ -24,8 +22,6 @@ myEngine.ActivateMusic(True)
 Links: [[ActivateSound]]
 
 # Method ActivateSound:Void(onOff:Bool=True)
-
-*Description*
 
 De-/activates the sound playback for the engine.
 
@@ -40,8 +36,6 @@ myEngine.ActivateSound(False)
 Links: [[ActivateMusic]]
 
 # Method ActivateSwipe:Void(onOff:Bool=True)
-
-*Description*
 
 Activates swipe gesture detection.
 
@@ -61,8 +55,6 @@ myEngine.ActivateSwipe(True)
 Links: [[SwipeUpdate]]
 
 # Method CalcDeltaTime:Int()
-
-*Description*
 
 Returns the delta time in milliseconds since the last call.
 
@@ -86,23 +78,15 @@ Links: [[GetDeltaTime]], [[Update]]
 
 # Method CancelTimerAll:Void()
 
-*Description*
-
 Cancels all timers attached of the engine.
 
 Links: [[CreateTimer]], [[OnTimer]]
 
 # Method Clear:Void(red:Float, green:Float, blue:Float)
 
-*Description*
-
 Clears the current active canvas.
 
-Links: [[...]]
-
 # Method CollisionCheck:Void()
-
-*Description*
 
 Does a collision check over all layers and active objects which has a collision group assigned to them.
 
@@ -134,8 +118,6 @@ Links: [[SetColType]], [[SetColWith]], [[SetColGroup]], [[OnObjectCollision]]
 
 # Method CollisionCheck:Void(layer:ftLayer)
 
-*Description*
-
 Does a collision check of the given layer and it's active objects which has a collision group assigned to them.
 
 Example:
@@ -156,8 +138,6 @@ Links: [[SetColType]], [[SetColWith]], [[SetColGroup]], [[OnObjectCollision]]
 
 # Method CollisionCheck:Void(obj:ftObject)
 
-*Description*
-
 Does a collision check of the given active object.
 
 Example:
@@ -177,8 +157,6 @@ End
 Links: [[SetColType]], [[SetColWith]], [[SetColGroup]], [[OnObjectCollision]]
 
 # Method CopyObject:ftObject(srcObj:ftObject)
-
-*Description*
 
 Copies an existing object.
 
@@ -210,8 +188,6 @@ Local obj2 := eng.CopyObject(obj1)
 </pre>
 # Method CreateAnimImage:ftObject(atl:ftImage, frameStartX:Int, frameStartY:Int, frameWidth:Int, frameHeight:Int, frameCount:Int, xpos:Float, ypos:Float, _ucob:Object=Null)
 
-*Description*
-
 Creates an animated image object (sprite) from the given sprite atlas with a center at xPos/yPos.
 
 *Details*
@@ -237,12 +213,10 @@ Method OnCreate:Int()
 End
 
 </pre>
-Links: [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateAnimImage:ftObject(atl:Image, frameStartX:Int, frameStartY:Int, frameWidth:Int, frameHeight:Int, frameCount:Int, xpos:Float, ypos:Float, _ucob:Object=Null)
 
-*Description*
-
 Creates an animated image object (sprite) from the given sprite atlas with a center at xPos/yPos.
 
 *Details*
@@ -268,11 +242,9 @@ Method OnCreate:Int()
 End
 
 </pre>
-Links: [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateBox:ftObject(width:Float, height:Float, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Creates a rectangle with the given width/height and the center at xpos/ypos.
 
@@ -289,19 +261,15 @@ Method OnCreate:Int()
 End
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateCanvas:Canvas(image:Image = Null)
-
-*Description*
 
 Creates a new canvas. If an image is given, this will be a new render target.
 
 Links: [[SetCanvas]], [[GetCanvas]]
 
 # Method CreateCircle:ftObject(radius:Float, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Creates a circle with the given radius and the center at xpos/ypos.
 
@@ -318,19 +286,15 @@ Method OnCreate:Int()
 End
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateGUI:ftGuiMng(xpos:Float=0.0, ypos:Float=0.0)
 
-*Description*
-
 Creates an custom GUI manager object which you can use to GUI child objects to.
 
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateImage]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateImage]]
 
 # Method CreateImage:ftObject(filename:String, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Creates an image object (sprite) from the given filename with a center at xpos/ypos.
 
@@ -362,11 +326,9 @@ Class engine Extends ftEngine
 End
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateImage:ftObject(width:Int, height:Int, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Creates an empty image object (sprite) with the given size. It can be used as a render target.
 
@@ -394,11 +356,9 @@ Class engine Extends ftEngine
 End
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateImage:ftObject(image:Image, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Creates an image object (sprite) from the given image with a center at xpos/ypos.
 
@@ -426,11 +386,9 @@ Class engine Extends ftEngine
 End
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateImage:ftObject(image:ftImage, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Creates an image object (sprite) from the given ftImage with a center at xpos/ypos.
 
@@ -458,11 +416,9 @@ Class engine Extends ftEngine
 End
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateImage:ftObject(atlas:Image, x:Int, y:Int, width:Int, height:Int, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Creates an image object (sprite) from the given sprite atlas with a center at xPos/yPos. The texture will be grabbed from x/y with the given width/height.
 
@@ -490,11 +446,9 @@ Class engine Extends ftEngine
 End
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateImage:ftObject(atlas:Image, dataFileName:String, subImageName:String, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Loads a subimage from a packed texture created by the tool TexturePacker with a center at xpos/ypos.
 
@@ -528,11 +482,9 @@ Class engine Extends ftEngine
 End
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateLayer:ftLayer(_ucla:Object=Null)
-
-*Description*
 
 Creates a new layer.
 
@@ -551,8 +503,6 @@ Links: [[SetDefaultLayer]], [[GetDefaultLayer]], [[RemoveLayer]], [[RemoveAllLay
 
 # Method CreateLine:ftObject(xpos:Float, ypos:Float, x2:Float, y2:Float, _ucob:Object=Null)
 
-*Description*
-
 Creates a line object starting at xpos/ypos and ending at x/y.
 
 *Details*
@@ -567,11 +517,9 @@ Local myEngine = New ftEngine
 Local myLine := myEngine.CreateLine(0,0, myEngine.GetCanvasWidth()-1, myEngine.GetCanvasHeight()-1)
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateObjTimer:ftTimer(obj:ftObject, timerID:Int, duration:Int, repeatCount:Int = 0)
-
-*Description*
 
 Creates a new object timer.
 
@@ -606,11 +554,9 @@ Class cEngine Extends ftEngine
 End
 
 </pre>
-Links: [[OnObjTimer]], [[CreateTimer]]
+Links: [[OnObjectTimer]], [[CreateTimer]]
 
 # Method CreateOval:ftObject(width:Float, height:Float, xpos:Float, ypos:Float, _ucob:Object=Null)
-
-*Description*
 
 Creates an oval object with the given width/height and the center at xpos/ypos.
 
@@ -622,41 +568,31 @@ Local myEngine = New ftEngine
 Local myOval := myEngine.CreateOval(30, 60, myEngine.GetCanvasWidth()/2.0, myEngine.GetCanvasHeight()/2.0)
 
 </pre>
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreatePath:ftPath(xpos:Float, ypos:Float)
-
-*Description*
 
 Creates a path with its center at the given xpos/ypos coordinates.
 
 # Method CreatePivot:ftObject(xpos:Float, ypos:Float, _ucob:Object=Null)
 
-*Description*
-
 Creates an empty object (pivot) which you can use to attach/parent child objects to.
 
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreatePoint:ftObject(xpos:Float, ypos:Float, _ucob:Object=Null)
 
-*Description*
-
 Creates a point object at the given xpos/ypos.
 
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreatePoly:ftObject(verts:Float[], xpos:Float, ypos:Float, _ucob:Object=Null)
 
-*Description*
-
 Creates a polygon object with supplied vertices pairs (Minimum of 3 pairs required).
 
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreateStickman]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreateStickMan]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateScene:ftScene(_ucSc:Object=Null)
-
-*Description*
 
 Creates a new scene.
 
@@ -666,9 +602,7 @@ To create a new scene, use CreateScene. To delete a scene, use RemoveScene. A ne
 
 Links: [[GetDefaultScene]], [[SetDefaultScene]], [[RemoveScene]], [[RemoveAllScenes]]
 
-# Method CreateSpriteAtlas:ftSpriteAtlas(imgfileName:String, dataFileName:string)
-
-*Description*
+# Method CreateSpriteAtlas:ftSpriteAtlas(imgfileName:String, dataFileName:String)
 
 Creates/loads a sprite atlas.
 
@@ -676,39 +610,29 @@ Links: [[CreateImage]], [[CreateAnimImage]]
 
 # Method CreateStickMan:ftObject(xpos:Float, ypos:Float, _ucob:Object=Null)
 
-*Description*
-
 Creates a stickman with top left corner at position xpos/ypos with size of width:8 / height:29
 
 Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateTileMap]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateText:ftObject(font:ftFont, txt:String, xpos:Float, ypos:Float, textmode:Int=ftEngine.taTopLeft, _ucob:Object=Null)
 
-*Description*
-
 Creates a new text object.
 
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateTileMap]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateTileMap]]
 
 # Method CreateTileMap:ftObject(atl:ftImage, tileSizeX:Int, tileSizeY:Int, tileCountX:Int, tileCountY:Int, xpos:Float, ypos:Float)
 
-*Description*
-
 Create a tile map which you can fill yourself.
 
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateTileMap:ftObject(atl:Image, tileSizeX:Int, tileSizeY:Int, tileCountX:Int, tileCountY:Int, xpos:Float, ypos:Float)
 
-*Description*
-
 Create a tile map which you can fill yourself.
 
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateTileMap:ftObject(filename:String, xpos:Float, ypos:Float, layerIndex:Int=1)
-
-*Description*
 
 Create a tile map from a JSON file exported by the tool Tiled.
 
@@ -716,11 +640,9 @@ Create a tile map from a JSON file exported by the tool Tiled.
 
 The layerIndex tells fantomCX to load the tileLayer at that index. Index starts with 1.
 
-Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickman]], [[CreateText]], [[CreateGUI]]
+Links: [[CreateAnimImage]], [[CreateBox]], [[CreateCircle]], [[CreateImage]], [[CreateLine]], [[CreateOval]], [[CreatePoint]], [[CreatePoly]], [[CreateStickMan]], [[CreateText]], [[CreateGUI]]
 
 # Method CreateTimer:ftTimer(timerID:Int, duration:Int, repeatCount:Int = 0)
-
-*Description*
 
 Creates a new timer.
 
@@ -731,8 +653,6 @@ When the timer fires it will call OnTimer. A repeatCount of -1 will let the time
 Links: [[OnTimer]], [[CreateObjTimer]]
 
 # Method CreateZoneBox:ftObject(width:Float, height:Float, xpos:Float, ypos:Float)
-
-*Description*
 
 Creates a new ZoneBox object which can be used for touch and collision checks.
 
@@ -757,8 +677,6 @@ Links: [[CreateZoneCircle]], [[CollisionCheck]], [[TouchCheck]]
 
 # Method CreateZoneCircle:ftObject(radius:Float, xpos:Float, ypos:Float)
 
-*Description*
-
 Creates a new ZoneCircle object which can be used for touch and collision checks.
 
 *Details*
@@ -782,8 +700,6 @@ Links: [[CreateZoneBox]], [[CollisionCheck]], [[TouchCheck]]
 
 # Method ExitApp:Int(retCode:Int=0)
 
-*Description*
-
 Ends the application.
 
 Example:
@@ -793,8 +709,6 @@ engine.ExitApp()
 
 </pre>
 # Method GetAccelX:Float()
-
-*Description*
 
 Return the X-axis value of the accelerator.
 
@@ -825,8 +739,6 @@ Links: [[GetAccelZ]], [[GetAccelXY]], [[GetAccelY]]
 
 # Method GetAccelXY:Float[]()
 
-*Description*
-
 Return the X and Y-axis value of the accelerator.
 
 *Details*
@@ -854,8 +766,6 @@ Links: [[GetAccelX]], [[GetAccelY]], [[GetAccelZ]]
 
 # Method GetAccelY:Float()
 
-*Description*
-
 Return the Y-axis value of the accelerator.
 
 *Details*
@@ -865,8 +775,6 @@ This command returns the current value of the accelerometer for the Y-axxis. To 
 Links: [[GetAccelX]], [[GetAccelXY]], [[GetAccelZ]]
 
 # Method GetAccelZ:Float()
-
-*Description*
 
 Return the Z-axis value of the accelerator.
 
@@ -878,15 +786,11 @@ Links: [[GetAccelX]], [[GetAccelXY]], [[GetAccelY]]
 
 # Method GetCam:Float[]()
 
-*Description*
-
 Returns the cameras X and Y coordinate.
 
 Links: [[GetCamX]], [[GetCamY]], [[SetCam]], [[SetCamX]], [[SetCamY]]
 
 # Method GetCamX:Float()
-
-*Description*
 
 Returns the cameras X coordinate.
 
@@ -894,23 +798,17 @@ Links: [[GetCam]], [[GetCamY]], [[SetCam]], [[SetCamX]], [[SetCamY]]
 
 # Method GetCamY:Float()
 
-*Description*
-
 Returns the cameras Y coordinate.
 
 Links: [[GetCam]], [[GetCamX]], [[SetCam]], [[SetCamX]], [[SetCamY]]
 
 # Method GetCanvas:Canvas()
 
-*Description*
-
 Returns the current canvas.
 
 Links: [[SetCanvas]]
 
 # Method GetCanvasHeight:Int()
-
-*Description*
 
 Returns the height of the canvas.
 
@@ -929,8 +827,6 @@ Links: [[SetCanvasSize]], [[GetCanvasWidth]]
 
 # Method GetCanvasWidth:Int()
 
-*Description*
-
 Returns the width of the canvas.
 
 *Details*
@@ -947,8 +843,6 @@ Local width:Int = myEngine.GetCanvasWidth()
 Links: [[SetCanvasSize]], [[GetCanvasHeight]]
 
 # Method GetDefaultLayer:ftLayer()
-
-*Description*
 
 Returns the current default layer.
 
@@ -967,8 +861,6 @@ Links: [[SetDefaultLayer]], [[CreateLayer]], [[RemoveLayer]]
 
 # Method GetDefaultScene:ftScene()
 
-*Description*
-
 Returns the current default scene.
 
 *Details*
@@ -978,8 +870,6 @@ If you need to get the current scene where new layers are assigned to, then use 
 Links: [[SetDefaultScene]], [[CreateScene]], [[RemoveScene]]
 
 # Method GetDeltaTime:Int()
-
-*Description*
 
 Returns the delta time in milliseconds which was calculated with CalcDeltaTime.
 
@@ -995,8 +885,6 @@ End
 Links: [[CalcDeltaTime]], [[Update]]
 
 # Method GetFPS:Int()
-
-*Description*
 
 Determines the current frames per second.
 
@@ -1014,11 +902,8 @@ Method OnRender:Int()
 	DrawText("FPS: "+currFPS, 10,10)
 End
 	
-
 </pre>
 # Method GetLocalX:Float(wordXPos:Float, withCam:Bool = True)
-
-*Description*
 
 Returns the device X position of a virtual X coordinate. It takes the virtual canvas size and camera position into its calculation.
 
@@ -1026,23 +911,17 @@ Links: [[GetLocalXY]], [[GetLocalY]], [[GetWorldX]], [[GetWorldXY]], [[GetWorldY
 
 # Method GetLocalXY:Float[](wordXPos:Float, wordYPos:Float, withCam:Bool = True)
 
-*Description*
-
 Returns the device X/Y position of a virtual X/Y coordinate. It takes the virtual canvas size and camera position into its calculation.
 
 Links: [[GetLocalX]], [[GetLocalY]], [[GetWorldX]], [[GetWorldXY]], [[GetWorldY]]
 
 # Method GetLocalY:Float(wordYPos:Float, withCam:Bool = True)
 
-*Description*
-
 Returns the device Y position of a virtual Y coordinate. It takes the virtual canvas size and camera position into its calculation.
 
 Links: [[GetLocalX]], [[GetLocalXY]], [[GetWorldX]], [[GetWorldXY]], [[GetWorldY]]
 
 # Method GetObjCount:Int(type:Int = 0)
-
-*Description*
 
 Returns the number of objects.
 
@@ -1056,15 +935,11 @@ Type=2 >>> Only visible objects are counted
 
 # Method GetPaused:Bool()
 
-*Description*
-
 Returns the isPaused flag of the engine.
 
 Links: [[SetPaused]]
 
 # Method GetScaleX:Float()
-
-*Description*
 
 Returns the X scale factor of the engine, which is set through SetCanvasSize.
 
@@ -1089,8 +964,6 @@ Links: [[GetScaleY]], [[SetCanvasSize]]
 
 # Method GetScaleY:Float()
 
-*Description*
-
 Returns the Y scale factor of the engine, which is set through SetCanvasSize.
 
 *Details*
@@ -1101,8 +974,6 @@ Links: [[GetScaleX]], [[SetCanvasSize]]
 
 # Method GetTime:Int()
 
-*Description*
-
 Returns engines own time.
 
 *Details*
@@ -1111,15 +982,11 @@ By default it is based on Millisecs and the timeScale factor. Overwrite this met
 
 # Method GetTimeScale:Float()
 
-*Description*
-
 Returns engines own timeScale.
 
 Links: [[SetTimeScale]], [[Update]]
 
 # Method GetTouchX:Float(index:Int=0, withCam:Bool = True)
-
-*Description*
 
 Returns the X touch coordinate scaled by the engines X scale factor.
 
@@ -1149,8 +1016,6 @@ Links: [[GetTouchY]], [[GetTouchXY]]
 
 # Method GetTouchXY:Float[](index:Int=0, withCam:Bool = True)
 
-*Description*
-
 Returns the X/Y touch coordinate scaled by the engines scale factors.
 
 *Details*
@@ -1160,8 +1025,6 @@ The return the position of the finger with the given touch index. If you use a v
 Links: [[GetTouchX]], [[GetTouchY]]
 
 # Method GetTouchY:Float(index:Int=0, withCam:Bool = True)
-
-*Description*
 
 Returns the Y touch coordinate scaled by the engines Y scale factor.
 
@@ -1173,15 +1036,11 @@ Links: [[GetTouchX]], [[GetTouchXY]]
 
 # Method GetVolumeMUS:Float()
 
-*Description*
-
 Returns the general volume of music. Ranges from 0.0 to 1.0.
 
 Links: [[SetVolumeMUS]], [[GetVolumeSFX]]
 
 # Method GetVolumeSFX:Float()
-
-*Description*
 
 Returns the general volume of sound effects. Ranges from 0.0 to 1.0.
 
@@ -1189,15 +1048,11 @@ Links: [[SetVolumeSFX]], [[GetVolumeMUS]]
 
 # Method GetWorldX:Float(localXPos:Float, withCam:Bool = True)
 
-*Description*
-
 Returns the world X position from a local X coordinate. It takes the virtual canvas size and camera position into its calculation.
 
 Links: [[GetLocalX]], [[GetLocalXY]], [[GetLocalY]], [[GetWorldXY]], [[GetWorldY]]
 
 # Method GetWorldXY:Float[](localXPos:Float, localYPos:Float, withCam:Bool = True)
-
-*Description*
 
 Returns the world X/Y position from a local X/Y coordinate. It takes the virtual canvas size and camera position into its calculation.
 
@@ -1205,39 +1060,27 @@ Links: [[GetLocalX]], [[GetLocalXY]], [[GetLocalY]], [[GetWorldX]], [[GetWorldY]
 
 # Method GetWorldY:Float(localYPos:Float, withCam:Bool = True)
 
-*Description*
-
 Returns the world Y position from a local Y coordinate. It takes the virtual canvas size and camera position into its calculation.
 
 Links: [[GetLocalX]], [[GetLocalXY]], [[GetLocalY]], [[GetWorldX]], [[GetWorldXY]]
 
 # Method LoadFont:ftFont(filename:String)
 
-*Description*
-
 Loads an EZGui compatible font or a packed FontMachine font. The filename has to end with a .txt extension.
 
 # Method LoadImage:Image[](path:String, frameCount:Int=1, flags:Int=Image.Filter)
-
-*Description*
 
 Loads an image like mogo.LoadImage, but also stores it in the fantomCX image manager.
 
 # Method LoadImage:Image[](path:String,  frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=Image.Filter)
 
-*Description*
-
 Loads an image like mogo.LoadImage, but also stores it in the fantomCX image manager.
 
 # Method LoadMusic:ftSound(filename:String, loopFlag:Bool=True)
 
-*Description*
-
 Load a music file with the given filename.
 
 # Method LoadSound:ftSound(filename:String, loopFlag:Bool=False)
-
-*Description*
 
 Load a sound file with the given filename.
 
@@ -1263,19 +1106,13 @@ The current default file formats are:
 
 # Method New:none()
 
-*Description*
-
 Creates an instance of the fantomCX.
 
 # Method OnLayerTransition:Int(transId:Int, layer:ftLayer)
 
-*Description*
-
 This method is called when a layer finishes its update.
 
 # Method OnLayerUpdate:Int(layer:ftLayer)
-
-*Description*
 
 Callback method which is called when a layer is updated.
 
@@ -1283,37 +1120,25 @@ Links: [[Update]]
 
 # Method OnMarkerBounce:Int(marker:ftMarker, obj:ftObject)
 
-*Description*
-
 This method is called, when a path marker reaches the end of the path and is about to bounce backwards.
 
 # Method OnMarkerCircle:Int(marker:ftMarker, obj:ftObject)
-
-*Description*
 
 This method is called, when a path marker reaches the end of the path and is about to do another circle.
 
 # Method OnMarkerStop:Int(marker:ftMarker, obj:ftObject)
 
-*Description*
-
 This method is called, when a path marker reaches the end of the path and stops there.
 
 # Method OnMarkerWP:Int(marker:ftMarker, obj:ftObject)
-
-*Description*
 
 This method is called, when a path marker reaches a waypoint of its path.
 
 # Method OnMarkerWarp:Int(marker:ftMarker, obj:ftObject)
 
-*Description*
-
 This method is called, when a path marker reaches the end of the path and is about to warp to the start to go on.
 
 # Method OnObjectAnim:Int(obj:ftObject)
-
-*Description*
 
 This method is called when an animation of an object (obj) has finished one loop.
 
@@ -1321,15 +1146,11 @@ Links: [[Update]]
 
 # Method OnObjectCollision:Int(obj:ftObject, obj2:ftObject)
 
-*Description*
-
 This method is called when an object (obj) collided with another object (obj2).
 
 Links: [[CollisionCheck]]
 
 # Method OnObjectDelete:Int(obj:ftObject)
-
-*Description*
 
 This method is called when an object is removed.
 
@@ -1340,8 +1161,6 @@ You need to activate this callback via the ftObject.ActivateDeleteEvent method. 
 Links: [[RemoveAllObjects]]
 
 # Method OnObjectRender:Int(obj:ftObject)
-
-*Description*
 
 This method is called when an object was being rendered.
 
@@ -1380,8 +1199,6 @@ Links: [[Render]], [[RestoreAlpha]], [[RestoreBlendmode]], [[RestoreColor]], [[O
 
 # Method OnObjectSort:Int(obj1:ftObject, obj2:ftObject)
 
-*Description*
-
 This method is called when objects are compared during a sort of its layer list.
 
 *Details*
@@ -1415,15 +1232,11 @@ Links: [[SortObjects]]
 
 # Method OnObjectTimer:Int(timerId:Int, obj:ftObject)
 
-*Description*
-
 This method is called when an objects' timer was being fired.
 
 Links: [[CreateObjTimer]]
 
 # Method OnObjectTouch:Int(obj:ftObject, touchId:Int)
-
-*Description*
 
 This method is called when an object is still touched.
 
@@ -1431,15 +1244,11 @@ Links: [[TouchCheck]], [[OnObjectTouchEnter]], [[OnObjectTouchExit]]
 
 # Method OnObjectTouchEnter:Int(obj:ftObject, touchId:Int)
 
-*Description*
-
 This method is called when an object is first touched.
 
 Links: [[TouchCheck]], [[OnObjectTouch]], [[OnObjectTouchExit]]
 
 # Method OnObjectTouchExit:Int(obj:ftObject, touchId:Int)
-
-*Description*
 
 This method is called when an object is not touched anymore.
 
@@ -1447,13 +1256,9 @@ Links: [[TouchCheck]], [[OnObjectTouch]], [[OnObjectTouchEnter]]
 
 # Method OnObjectTransition:Int(transId:Int, obj:ftObject)
 
-*Description*
-
 This method is called when an object finishes its transition.
 
 # Method OnObjectUpdate:Int(obj:ftObject)
-
-*Description*
 
 This method is called when an object finishes its update.
 
@@ -1481,15 +1286,11 @@ Links: [[Update]], [[ftObject.ActivateUpdateEvent]]
 
 # Method OnSwipeDone:Int(touchIndex:Int, sAngle:Float, sDist:Float, sSpeed:Float)
 
-*Description*
-
 This method is called when a swipe gesture was detected.
 
 Links: [[SwipeUpdate]]
 
 # Method OnTimer:Int(timerId:Int)
-
-*Description*
 
 This method is called when an engine timer was being fired.
 
@@ -1497,19 +1298,13 @@ Links: [[CreateTimer]]
 
 # Method ReLoadAllImages:Void()
 
-*Description*
-
 Reloads all images. This is needed when you change the resolution in your game during runtime.
 
 # Method RemoveAllImages:Void(discard:Bool = False)
 
-*Description*
-
 Removes all images from the engine.
 
 # Method RemoveAllLayer:Void()
-
-*Description*
 
 Remove all existing layer from engine.
 
@@ -1517,13 +1312,9 @@ Links: [[CreateLayer]], [[SetDefaultLayer]], [[RemoveLayer]]
 
 # Method RemoveAllObjects:Void()
 
-*Description*
-
 Removes all objects from all layer.
 
 # Method RemoveAllScenes:Void()
-
-*Description*
 
 Remove all existing scenes from engine.
 
@@ -1531,19 +1322,13 @@ Links: [[CreateScene]], [[SetDefaultScene]], [[RemoveScene]]
 
 # Method RemoveImage:Void(image:Image, discard:Bool = False)
 
-*Description*
-
 Removes an image from fantomCX by the given Image handle.
 
 # Method RemoveImage:Void(filepath:String, discard:Bool = False)
 
-*Description*
-
 Removes an image from fantomCX by the given filename.
 
 # Method RemoveLayer:Void(layer:ftLayer)
-
-*Description*
 
 Removes a layer.
 
@@ -1563,8 +1348,6 @@ Links: [[CreateLayer]], [[SetDefaultLayer]], [[RemoveAllLayer]]
 
 # Method RemoveScene:Void(scene:ftScene)
 
-*Description*
-
 Removes a scene.
 
 *Details*
@@ -1574,8 +1357,6 @@ Deletes a previously created scene. To create a scene, use CreateScene.
 Links: [[CreateScene]], [[SetDefaultScene]], [[RemoveAllScenes]]
 
 # Method Render:Void()
-
-*Description*
 
 Renders all active and visible layers with their objects.
 
@@ -1597,8 +1378,6 @@ Links: [[OnObjectRender]], [[RenderFlush]], [[ftObject.ActivateRenderEvent]]
 
 # Method Render:Void(layer:ftLayer)
 
-*Description*
-
 Renders all active and visible objects of a given layer.
 
 Example:
@@ -1614,8 +1393,6 @@ End
 Links: [[OnObjectRender]], [[RenderFlush]], [[ftObject.ActivateRenderEvent]]
 
 # Method Render:Void(scene:ftScene)
-
-*Description*
 
 Renders all active and visible layer/objects of a given active and visible scene.
 
@@ -1633,15 +1410,11 @@ Links: [[OnObjectRender]], [[RenderFlush]], [[ftObject.ActivateRenderEvent]]
 
 # Method RenderFlush:Void()
 
-*Description*
-
 Makes everything rendered before visible.
 
 Links: [[Render]]
 
 # Method RenderLoadingBar:Void()
-
-*Description*
 
 Renders all simple loading screen.
 
@@ -1661,8 +1434,6 @@ End
 </pre>
 # Method RestoreAlpha:Void()
 
-*Description*
-
 Sets the current alpha to the engines stored alpha value.
 
 *Details*
@@ -1672,8 +1443,6 @@ Use this when you have changed the alpha value manually via mojo2.SetAlpha.
 Links: [[RestoreBlendmode]], [[RestoreColor]], [[OnObjectRender]]
 
 # Method RestoreBlendmode:Void()
-
-*Description*
 
 Sets the current blendmode to the engines stored blendmode.
 
@@ -1685,8 +1454,6 @@ Links: [[RestoreAlpha]], [[RestoreColor]], [[OnObjectRender]]
 
 # Method RestoreColor:Void()
 
-*Description*
-
 Sets the current color to the engines stored color values.
 
 *Details*
@@ -1697,15 +1464,11 @@ Links: [[RestoreAlpha]], [[RestoreBlendmode]], [[OnObjectRender]]
 
 # Method SetAlpha:Void(alpha:Float)
 
-*Description*
-
 Sets the alpha value of the current canvas. The alpha parameter rages from 0 - 1.0.
 
 Links: [[RestoreAlpha]], [[SetColor]]
 
 # Method SetCam:Void(x:Float, y:Float, relative:Int = False)
-
-*Description*
 
 Sets the camera to the given canvas positions.
 
@@ -1743,8 +1506,6 @@ Links: [[SetCamX]], [[SetCamY]], [[GetCam]], [[GetCamX]], [[GetCamY]]
 
 # Method SetCamX:Void(x:Float, relative:Int = False)
 
-*Description*
-
 Sets the cameras X coordinate to the given canvas position.
 
 *Details*
@@ -1780,8 +1541,6 @@ End
 Links: [[SetCam]], [[SetCamY]], [[GetCam]], [[GetCamX]], [[GetCamY]]
 
 # Method SetCamY:Void(y:Float, relative:Int = False)
-
-*Description*
 
 Sets the cameras Y coordinate to the given canvas position.
 
@@ -1819,15 +1578,11 @@ Links: [[SetCam]], [[SetCamX]], [[GetCam]], [[GetCamX]], [[GetCamY]]
 
 # Method SetCanvas:Void(canvas:Canvas)
 
-*Description*
-
 Sets the current canvas.
 
 Links: [[GetCanvas]]
 
 # Method SetCanvasAmbientLight:Void(red:Float, green:Float, blue:Float)
-
-*Description*
 
 Sets the ambient light colorof the current canvas. The color values ranges from 0 - 255.
 
@@ -1835,23 +1590,15 @@ Links: [[SetCanvasFogColor]]
 
 # Method SetCanvasColorMask:Void(red:Bool, green:Bool, blue:Bool, alpha:Bool)
 
-*Description*
-
 Sets the color mask of the current canvas.
 
-Links: [[...]]
-
-# Method SetCanvasFogColor:Void(red:Float, green:Float, blue:Float, alpha:float)
-
-*Description*
+# Method SetCanvasFogColor:Void(red:Float, green:Float, blue:Float, alpha:Float)
 
 Sets the fog color of the current canvas. The colors range from 0 - 255, the alha value from 0 - 1.0 .
 
 Links: [[SetCanvasAmbientLight]]
 
 # Method SetCanvasSize:Void(width:Int, height:Int, canvasmode:Int = ftEngine.cmLetterbox)
-
-*Description*
 
 Sets the virtual canvas size to the given width/height.
 
@@ -1894,15 +1641,11 @@ Links: [[GetCanvasWidth]], [[GetCanvasHeight]]
 
 # Method SetColor:Void(red:Float, green:Float, blue:Float)
 
-*Description*
-
 Sets the color of the current canvas. Color values range from 0-255.
 
 Links: [[RestoreColor]], [[SetAlpha]]
 
 # Method SetDefaultActive:Void(active:Bool)
-
-*Description*
 
 Sets the default active flag for newly created objects.
 
@@ -1920,8 +1663,6 @@ myEngine.SetDefaultActive(False)
 Links: [[SetDefaultVisible]]
 
 # Method SetDefaultLayer:Void(layer:ftLayer)
-
-*Description*
 
 Sets the default layer which is assigned to all newly created objects.
 
@@ -1941,8 +1682,6 @@ Links: [[CreateLayer]], [[RemoveLayer]], [[GetDefaultLayer]]
 
 # Method SetDefaultScene:Void(scene:ftScene)
 
-*Description*
-
 Sets the default scene which is assigned to all newly created layers.
 
 *Details*
@@ -1952,8 +1691,6 @@ If you need to set the default scene where new layers are assigned to, then use 
 Links: [[CreateScene]], [[RemoveScene]], [[GetDefaultScene]]
 
 # Method SetDefaultVisible:Void(visible:Bool)
-
-*Description*
 
 Sets the default visible flag for newly created objects.
 
@@ -1972,15 +1709,11 @@ Links: [[SetDefaultActive]]
 
 # Method SetFirstSoundChannel:Void(firstChannel:Int = 0)
 
-*Description*
-
 Sets the index of the first sound channel to be used. Ranges from 0 to 31.
 
 Links: [[SetMaxSoundChannel]]
 
 # Method SetMaxSoundChannel:Void(maxChannel:Int = 31)
-
-*Description*
 
 Sets the maximum number of sound channels to be used. Ranges from 0 to 31.
 
@@ -1992,8 +1725,6 @@ Links: [[SetFirstSoundChannel]]
 
 # Method SetPaused:Void(pauseFlag:Bool)
 
-*Description*
-
 With this method, you can pause the engine or resume it.
 
 *Details*
@@ -2004,23 +1735,17 @@ Links: [[GetPaused]]
 
 # Method SetSwipeDeadDist:Void(deadDist:Float = 20.0)
 
-*Description*
-
 Only swipes that are longer than the dead distance are detected.
 
 Links: [[SetSwipeSnap]]
 
 # Method SetSwipeSnap:Void(degrees:Int=1)
 
-*Description*
-
 You can let the swipe angle snap to a fraction of a given degree.
 
 Links: [[SetSwipeDeadDist]]
 
 # Method SetTimeScale:Void(timescale:Float = 1.0)
-
-*Description*
 
 The time scale influences the update methods of objects, timers and transitions.
 
@@ -2032,15 +1757,11 @@ Links: [[GetTimeScale]], [[Update]]
 
 # Method SetVolumeMUS:Void(volume:Float = 1.0)
 
-*Description*
-
 Sets the general volume of music. Ranges from 0.0 to 1.0.
 
 Links: [[SetVolumeSFX]]
 
 # Method SetVolumeSFX:Void(volume:Float = 1.0)
-
-*Description*
 
 Sets the general volume of sound effects. Ranges from 0.0 to 1.0.
 
@@ -2048,15 +1769,11 @@ Links: [[SetVolumeMUS]]
 
 # Method SetupRender:Void()
 
-*Description*
-
 Sets up the renderer to do your own rendering operations. It resets the color/alpha. Then translates/scales the canvas and sets its scissor.
 
 Links: [[Render]]
 
 # Method SortObjects:Void()
-
-*Description*
 
 Sort the objects of all layer.
 
@@ -2068,8 +1785,6 @@ Links: [[OnObjectSort]]
 
 # Method SortObjects:Void(layer:ftLayer)
 
-*Description*
-
 Sort the objects inside a layer.
 
 *Details*
@@ -2080,8 +1795,6 @@ Links: [[OnObjectSort]]
 
 # Method SwipeUpdate:Void(index:Int = 0)
 
-*Description*
-
 Call SwipeUpdate in every mojo2.OnUpdate event after the regular ftEngine.Update method.
 
 *Details*
@@ -2091,8 +1804,6 @@ If a swipe was detected, it will call the <b>ftEngine.OnSwipeDone</b> method.
 Links: [[OnSwipeDone]]
 
 # Method TouchCheck:Void(touchID:Int=0)
-
-*Description*
 
 Do a touch check over all layers and their active objects which have a touch method assigned to them.
 
@@ -2108,8 +1819,6 @@ Links: [[OnObjectTouch]], [[OnObjectTouchEnter]], [[OnObjectTouchExit]]
 
 # Method TouchCheck:Void(layer:ftLayer, touchID:Int=0)
 
-*Description*
-
 Do a touch check over all active objects of a given layer which have a touch method assigned to them.
 
 *Details*
@@ -2123,8 +1832,6 @@ via a call to <b>ftLayer.ActivateTouchEnterExitEvent</b>.
 Links: [[OnObjectTouch]], [[OnObjectTouchEnter]], [[OnObjectTouchExit]]
 
 # Method Update:Void(speed:Float=1.0)
-
-*Description*
 
 Updates all general timers and active layers with their transitions and objects.
 
@@ -2152,8 +1859,6 @@ Links: [[SetDefaultActive]], [[SetTimeScale]], [[OnLayerUpdate]], [[OnObjectUpda
 
 # Method Update:Void(layer:ftLayer, speed:Float=1.0)
 
-*Description*
-
 Updates all general timer and a given layer with its transitions and active objects.
 
 *Details*
@@ -2179,8 +1884,6 @@ End
 Links: [[SetDefaultActive]], [[SetTimeScale]], [[OnLayerUpdate]], [[OnObjectUpdate]], [[ftObject.ActivateUpdateEvent]]
 
 # Method Update:Void(scene:ftScene, speed:Float=1.0)
-
-*Description*
 
 Updates all general timer and a given layer with its transitions and active objects.
 

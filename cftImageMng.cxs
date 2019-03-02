@@ -1,3 +1,4 @@
+Strict
 '#DOCON#
 #rem
 	Title:        fantomCX
@@ -101,7 +102,7 @@ Class ftImage
 	End
 	'------------------------------------------
 'summery:Sets the path (filename) of a ftImage.
-	Method SetPath:String(filePath:String)
+	Method SetPath:Void(filePath:String)
 		Self.path = filePath
 	End
 End

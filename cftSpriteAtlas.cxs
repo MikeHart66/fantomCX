@@ -1,3 +1,4 @@
+Strict
 '#DOCON#
 #rem
 	Title:        fantomCX
@@ -60,7 +61,7 @@ Class ftSpriteAtlas
 				'** Get rotation flag
 				Local strRot:String = tpAllStrings[count]
 				strRot = strRot.Replace("rotate:","").Trim()
-				If strRot.ToLower = "true" Then 
+				If strRot.ToLower() = "true" Then 
 					si.isRotated = True
 					si.angleOffset = -90.0
 				Endif
@@ -80,7 +81,7 @@ Class ftSpriteAtlas
 				si.tpHeight = Int(strWHsplit[1])
 				
 				'** Grab the sub image
-				If strRot.ToLower = "true" Then
+				If strRot.ToLower() = "true" Then
 					si.img = New Image( Self.atlas,si.tpXPos,si.tpYPos,si.tpHeight,si.tpWidth )
 				Else
 					si.img = New Image( Self.atlas,si.tpXPos,si.tpYPos,si.tpWidth,si.tpHeight )

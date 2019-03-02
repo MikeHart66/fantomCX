@@ -1,3 +1,4 @@
+Strict
 #Rem
 'This is a copy of the Cerberus X sample script in bananas/skn3/tweening/tween.cxs
 #End
@@ -51,7 +52,7 @@ Class Tween
 
     ' --- private methods ---
     Private
-    Method UpdateValue()
+    Method UpdateValue:Void()
         current = equation.Call(timeCurrent,start,change,duration)
     End
     Public
@@ -62,41 +63,41 @@ Class Tween
     End
 
     ' --- setup methods methods ---
-    Method SetEquation(equation:TweenEquationCall)
+    Method SetEquation:Void(equation:TweenEquationCall)
         Self.equation = equation
     End
 
-    Method SetDuration(duration:Int)
+    Method SetDuration:Void(duration:Int)
         Self.duration = duration
     End
 
-    Method SetValue(startValue:Float,endValue:Float)
+    Method SetValue:Void(startValue:Float,endValue:Float)
         start = startValue
         change = endValue - startValue
     End
 
-    Method SetYoYo(flag:Bool)
+    Method SetYoYo:Void(flag:Bool)
         isYoYo = flag
     End
 
-    Method SetLooping(flag:Bool)
+    Method SetLooping:Void(flag:Bool)
         isLooping = flag
     End
 
     ' --- control methods ---
-    Method Start()
+    Method Start:Void()
         ' --- this will re-start the tween ---
         Rewind()
         isActive = True
         loopCount = 0
     End
 
-    Method Stop()
+    Method Stop:Void()
         ' --- stop the tween from updating ---
         isActive = False
     End
 
-    Method Resume()
+    Method Resume:Void()
         ' --- resume the tween from a paused state ---
         isActive = True
 
@@ -104,21 +105,21 @@ Class Tween
 
     End
 
-    Method Rewind()
+    Method Rewind:Void()
         ' --- put the tween at the start of its tween ---
         timeCurrent = 0
         timeStart = Millisecs()
         UpdateValue()
     End
 
-    Method FastForward()
+    Method FastForward:Void()
         ' --- set the tween at the end ---
         timeCurrent = duration
         UpdateValue()
         Stop()
     End
 
-    Method ContinueTo(endValue:Float,duration:Int=0)
+    Method ContinueTo:Void(endValue:Float,duration:Int=0)
         ' --- change the end target for teh value
         start = current
         SetValue(start,endValue)
@@ -146,12 +147,12 @@ Class Tween
         Endif
     End
 
-    Method YoYo()
+    Method YoYo:Void()
         ContinueTo(start)
     End
 
     ' --- class methods ---
-    Method Update()
+    Method Update:Void()
         If isActive
             'update the current time!
             timePrevious = timeCurrent

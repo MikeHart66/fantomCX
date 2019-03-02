@@ -1,0 +1,85 @@
+> Changes in fantomCX
+* [[#v300|Version 3.01]]
+* [[#v300|Version 3.00]]
+* [[#v202|Version 2.02]]
+* [[#v201|Version 2.01]]
+* [[#v200|Version 2.00]]
+
+---
+
+| Version<a name='v301'></a> | Kind | Description | Hint
+| 3.01 | Fix | ftImageMng.LoadImage:ftImage(path:String,  frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=Image.Filter). | As it discarded the loaded image.
+|      | Fix | Tiled Maps | Fixed various data problems regarding the Tiled files.
+|      | Mod | Documentation | Modded the docs to work with the new MakeDocs tool.
+| -<a name='v300'></a> | - | - | -
+| 3.00 | New | ftGuiListview.SetItemImage:Void(index:Int, img:ftImage). |
+|      | New | ftGuiListview.SetItemText:Void(index:Int, txt:String). |
+|      | Fix | Fixed sample ObjectMovement2.cxs |
+|      | Mod | ftGuiListview.AddItem | To assign item images.
+|      | Mod | ftGuiListview.Render  | To render assigned item images.
+|      | Mod | Cleaned up and changed code base. |
+| -<a name='v202'></a> | - | - | -
+| 2.02 | New | ftObject.SetImageScale9:Void (top:Float, bottom:Float, left:Float, bottom:Float) | to support 9-slice image scaling.
+|      | New | ftLayer.ActivateTouchEnterExitEvent (onOff:Bool = True) | to activate the call of the following events.
+|      | New | ftEngine.OnObjectTouchEnter (obj:ftObject, touchId:Int) |
+|      | New | ftEngine.OnObjectTouchExit (obj:ftObject, touchId:Int) |
+|      | Fix | ftLayer.TouchCheck | so it takes a scaling of the layer into its calculation.
+|      | Mod | ftEngine.CopyObject | now supports 9-slice image scaling related fields of an object.
+|      | Mod | ftObject.Render | now supports 9-slice image scaling.
+|      | Mod | ftObject.SetHeight:Void (height:Float, scaleMode:Bool = False) | Added scale mode parameter. If set to true, the scale factor of an object is adjusted too.
+|      | Mod | ftObject.SetWidth:Void (width:Float, scaleMode:Bool = False) | Added scale mode parameter. If set to true, the scale factor of an object is adjusted too.
+|      | New<br>Example | Input/TouchInputEX/TouchInputEX.monkey |
+|      | New<br>Example | Objects/Appearance/9SliceScaling/9SliceScaling.monkey |
+| -<a name='v201'></a> | - | - | -
+| 2.01 | New | ftEngine.CreateImage:ftObject(image:ftImage, xpos:Float, ypos:Float, _ucob:Object=Null) |
+|      | Fix | ftBox2D.CreateObject | to set the angle with its corresponding ftObject.
+|      | Fix | ftLayer.Render | regarding layer scaling
+|      | Fix | ftObject.Render | regarding layer scaling and also object culling
+|      | Mod | ftObject.SetActive | Added children flag, so it affects children too.
+|      | Mod | ftObject.SetVisible | Added children flag, so it affects children too.
+|      | Mod | Default Image flags when loading content are now set to Image.Filter. |
+|      | Mod | #FantomX_UsePhysics = 1 | A ftObject has a corresponding box2d object field only, when #FantomX_UsePhysics = 1 was added before importing fantomX.
+|      | Mod | ftLayer.SetLayerScissor | now works with virtual values, no offsets anymore
+|      | New<br>Example | Canvas/VirtualResolution/VirtualResolution.monkey |
+|      | New<br>Example | Sound/Sound.monkey |
+|      | New<br>Example | TileMaps/Platformer_Physics/Platformer_Physics.monkey |
+|      | New<br>Example | Layer/LayerScaling/LayerScaling.monkey | 
+| -<a name='v200'></a> | - | - | -
+| 2.0  | New | This is the first release of fantomX! |
+|      | New | fantomX now uses mojo2. | 
+|      | New | Box2D is more closely integrated into the engine. As mojo2 is now supported, this was unavoidable. | 
+|      | New | ftEngine.CreateCanvas:Canvas(image:Image = Null) |
+|      | New | ftEngine.GetCanvas:Canvas() |
+|      | New | ftEngine.Render:Void(scene:ftScene) |
+|      | New | ftEngine.RenderFlush:Void() |
+|      | New | ftEngine.SetAlpha:Void(alpha:Float) |
+|      | New | ftEngine.SetCanvas:Void(canvas:Canvas) |
+|      | New | ftEngine.SetCanvasAmbientLight : Void ( red:Float, green:Float, blue:Float ) |
+|      | New | ftEngine.SetCanvasColorMask:Void(red:Bool, green:Bool, blue:Bool, alpha:Bool) |
+|      | New | ftEngine.SetCanvasFogColor:Void(red:Float, green:Float, blue:Float, alpha:float) |
+|      | New | ftEngine.SetColor:Void(red:Float, green:Float, blue:Float) |
+|      | New | ftEngine.SetupRender:Void() |
+|      | New | ftMapTile.GetProperty:String(key:String) |
+|      | New | ftMapTile.GetPropertyCount:Int() |
+|      | New | ftObject.CreateImage:ftObject(width:Int, height:Int, xpos:Float, ypos:Float, _ucob:Object=Null) |
+|      | New | ftScene.Render:Void(setupRender:Bool = False) |
+|      | New | ftScene.Update:Void(speed:Float=1.0, updateEngineTimer:Bool = False) |
+|      | New | ftTileMap.GetTileSet:ftTileSet(index:Int) |
+|      | New | ftTileMap.GetTileSetCount:Int() |
+|      | New | ftTileSet.GetImageHeight:Int() |
+|      | New | ftTileSet.GetImageWidth:Int() |
+|      | New | ftTileSet.GetTileHeight:Int() |
+|      | New | ftTileSet.GetTileWidth:Int() |
+|      | New | ftVec2D.Lerp:ftVec2D(targetVector:ftVec2D, timeFaktor:Float) |
+|      | Mod | ftObject.SetBlendMode | regarding usable mojo2 blend modes.
+|      | Mod | Removed class tPointS and exchanged it with class ftVec2Dp. |
+|      | Mod | Class ftVec2D | extends now class ftVec2Dp. 
+|      | Mod | Moved the collision detection methods outside of ftObject into the cftCollisions file and made functions out of them. |
+|      | Mod | Renamed function GetPitchRate:Float(halfStep:Float, base:Float=1.0) | inside the cftMisc.monkey file to ftGetPitchRate.
+|      | Mod | Moved ftEngine._StripDir:String( path:String ) | as a function to the cftMisc.monkey file.
+|      | Mod | ftEngine.GetTouchX:Float(index:Int=0, withCam:Bool = True) | Added withCam parameter
+|      | Mod | ftEngine.GetTouchXY:Float[](index:Int=0, withCam:Bool = True) | Added withCam parameter
+|      | Mod | ftEngine.GetTouchY:Float(index:Int=0, withCam:Bool = True) | Added withCam parameter
+|      | Mod | ftEngine.LoadMusic:ftSound(filename:String, loopFlag:Bool=True) | Changed the default loop frag to true
+|      | Mod | ftEngine.SetMaxSoundChannel:Void(maxChannel:Int = 31) | Changed the channel range to 0-31
+|      | New<br>Example | Sound/Sound.monkey |

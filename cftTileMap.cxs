@@ -1,3 +1,4 @@
+Strict
 '#DOCON#
 #rem
 	Title:        fantomCX
@@ -478,7 +479,7 @@ It returns -1 if there is no tile.
 	End
 	'-----------------------------------------------------------------------------
 'summery:Returns the Y position of a tile with the given index. Index starts with 0. 
-'seeAlso:GetTimePoX
+'seeAlso:GetTilePosX
 	Method GetTilePosY:Float(index:Int)
 		Return obj.yPos + Self.tiles[index].yOff * obj.scaleY
 	End

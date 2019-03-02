@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -305,7 +306,7 @@ This command sets the equation type of a transition. The equation type can be:
 [*]Sine[/list]
 #End
 'seeAlso:SetEase
-    Method SetType(equationType:String="Linear")
+    Method SetType:Void(equationType:String="Linear")
         currentEquation = 0
         For Local i:Int = 0 To equations.Length()
         	If equations[i] = equationType Then 
@@ -325,7 +326,7 @@ This command sets the ease type of a transition. The ease type can be:
 [*]EaseInOut[/list]
 #End
 'seeAlso:SetType
-    Method SetEase(easeType:String="EaseIn")
+    Method SetEase:Void(easeType:String="EaseIn")
         For Local i:Int = 0 To easeTypes.Length()
         	If easeTypes[i] = easeType Then 
         		currentEaseType = i
@@ -338,7 +339,7 @@ This command sets the ease type of a transition. The ease type can be:
 '#DOCOFF#
 
 	'------------------------------------------
-    Method SetEquation1()
+    Method SetEquation1:Void()
         Select equations[currentEquation]
             Case "Linear"
                 tween.SetEquation(Tween.Linear)
@@ -368,7 +369,7 @@ This command sets the ease type of a transition. The ease type can be:
     End
 
 	'------------------------------------------
-    Method SetEquation2(equation:TweenEquation)
+    Method SetEquation2:Void(equation:TweenEquation)
         Select easeTypes[currentEaseType]
             Case "EaseIn"
                 tween.SetEquation(equation.EaseIn)

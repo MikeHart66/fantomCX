@@ -60,7 +60,7 @@ Class cGame Extends App
 		guiMng = fE.CreateGUI()
 		guiMng.font1 = font1
 	
-		guiListview = guiMng.CreateListview(fE.GetCanvasWidth()/2-75,fE.GetCanvasHeight()/2-100,150,200,LoadString("lineContent.txt"))
+		guiListview = guiMng.CreateListview(fE.GetCanvasWidth()/4,fE.GetCanvasHeight()/2,200,300,LoadString("lineContent.txt"))
 		guiListview.SetColor(0,0,0)
 
 		' Get the default scene of the engine

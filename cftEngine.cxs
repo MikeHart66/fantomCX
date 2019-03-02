@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework For the Cerberus X programming language
@@ -247,7 +248,6 @@ Class ftEngine
 #Rem
 'summery:Clears the current active canvas.
 #End
-'seeAlso:...
 	Method Clear:Void(red:Float, green:Float, blue:Float)
 		Self.currentCanvas.Clear(red/255.0, green/255.0, blue/255.0)
 	End
@@ -447,7 +447,7 @@ This command copies a given object and returns the copy. The new object contains
 The texture will be grabbed from frameStartX/frameStartY with the given frameWidth/frameHeight. The number of frames will be taken from the given frameCount.
 It creates a DEFAULT animation automatically.
 #End
-'seeAlso:CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateAnimImage:ftObject(atl:ftImage, frameStartX:Int, frameStartY:Int, frameWidth:Int, frameHeight:Int, frameCount:Int, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -489,7 +489,7 @@ It creates a DEFAULT animation automatically.
 The texture will be grabbed from frameStartX/frameStartY with the given frameWidth/frameHeight. The number of frames will be taken from the given frameCount.
 It creates a DEFAULT animation automatically.
 #End
-'seeAlso:CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateAnimImage:ftObject(atl:Image, frameStartX:Int, frameStartY:Int, frameWidth:Int, frameHeight:Int, frameCount:Int, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -527,7 +527,7 @@ It creates a DEFAULT animation automatically.
 
 	'------------------------------------------
 'summery:Creates a rectangle with the given width/height and the center at xpos/ypos.
-'seeAlso:CreateAnimImage,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateBox:ftObject(width:Float, height:Float, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -585,7 +585,7 @@ It creates a DEFAULT animation automatically.
 	End
 	'------------------------------------------
 'summery:Creates a circle with the given radius and the center at xpos/ypos. 
-'seeAlso:CreateAnimImage,CreateBox,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateCircle:ftObject(radius:Float, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -615,7 +615,7 @@ It creates a DEFAULT animation automatically.
 
 	'------------------------------------------
 'summery:Creates an custom GUI manager object which you can use to GUI child objects to. 
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateImage
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateImage
 	Method CreateGUI:ftGuiMng(xpos:Float=0.0, ypos:Float=0.0)
 		Local obj:ftGuiMng = New ftGuiMng
 		obj.engine = Self
@@ -641,7 +641,7 @@ It creates a DEFAULT animation automatically.
 'summery:Creates an image object (sprite) from the given filename with a center at xpos/ypos. 
 'To load an animated image object, use CreateAnimImage. 
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateImage:ftObject(filename:String, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -680,7 +680,7 @@ It creates a DEFAULT animation automatically.
 #Rem
 'summery:Creates an empty image object (sprite) with the given size. It can be used as a render target. 
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateImage:ftObject(width:Int, height:Int, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		Local image:Image
@@ -717,7 +717,7 @@ It creates a DEFAULT animation automatically.
 #Rem
 'summery:Creates an image object (sprite) from the given image with a center at xpos/ypos. 
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateImage:ftObject(image:Image, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -752,7 +752,7 @@ It creates a DEFAULT animation automatically.
 #Rem
 'summery:Creates an image object (sprite) from the given ftImage with a center at xpos/ypos. 
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateImage:ftObject(image:ftImage, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -787,7 +787,7 @@ It creates a DEFAULT animation automatically.
 	'-----------------------------------------------------------------------------
 'changes:2.01:Subimages will now be loaded with the Image.Filter flag.
 'summery:Creates an image object (sprite) from the given sprite atlas with a center at xPos/yPos. The texture will be grabbed from x/y with the given width/height.
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateImage:ftObject(atlas:Image, x:Int, y:Int, width:Int, height:Int, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -829,7 +829,7 @@ From version 1.52 on it supports Sparrow compatible files (.xml).
 #End
 	' The next CreateImage version uses image atlas created by the tool TexturePacker, a data file
 	' exported from TexturePacker in LibGDX format and the name of the sub image stored inside the texture atlas
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateImage:ftObject(atlas:Image, dataFileName:String, subImageName:String, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -858,7 +858,7 @@ From version 1.52 on it supports Sparrow compatible files (.xml).
 					'** Get rotation flag
 					strRot = tpAllStrings[count+1]
 					strRot = strRot.Replace("rotate:","").Trim()
-					If strRot.ToLower = "true" Then obj.offAngle = -90
+					If strRot.ToLower() = "true" Then obj.offAngle = -90
 					'** Get X, Y
 					Local strXY:String = tpAllStrings[count+2]
 					strXY = strXY.Replace("xy:","").Trim()
@@ -914,7 +914,7 @@ From version 1.52 on it supports Sparrow compatible files (.xml).
 		If obj.objImg.Length() = 0
 		  obj.objImg = obj.objImg.Resize(1)
 		Endif
-		If strRot.ToLower = "true" Then
+		If strRot.ToLower() = "true" Then
 			obj.objImg[0] = imgMng.GrabImage(atlas, tpXPos,tpYPos,tpHeight,tpWidth,1 )
 		Else
 			obj.objImg[0] = imgMng.GrabImage(atlas, tpXPos,tpYPos,tpWidth,tpHeight,1 )
@@ -960,7 +960,7 @@ From version 1.52 on it supports Sparrow compatible files (.xml).
 The objects handle is in the middle of the line by default and can be changed via a call to ftObject.SetHandle.
 #End
 'Provided by Douglas Williams
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateLine:ftObject(xpos:Float, ypos:Float, x2:Float, y2:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -1002,7 +1002,7 @@ The objects handle is in the middle of the line by default and can be changed vi
 'summery:Creates a new object timer. 
 When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let the timer run forever.
 #End
-'seeAlso:OnObjTimer,CreateTimer
+'seeAlso:OnObjectTimer,CreateTimer
 	Method CreateObjTimer:ftTimer(obj:ftObject, timerID:Int, duration:Int, repeatCount:Int = 0 )
 		Local retTimer:ftTimer
 		retTimer = obj.CreateTimer(timerID, duration, repeatCount)
@@ -1012,7 +1012,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 	'------------------------------------------
 'summery:Creates an oval object with the given width/height and the center at xpos/ypos. 
 'Provided by Douglas Williams
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreateOval:ftObject(width:Float, height:Float, xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -1056,7 +1056,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 #Rem
 'summery:Creates an empty object (pivot) which you can use to attach/parent child objects to. 
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreatePivot:ftObject(xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -1085,7 +1085,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 	'------------------------------------------
 'summery:Creates a point object at the given xpos/ypos.
 'Provided by Douglas Williams
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoly,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoly,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreatePoint:ftObject(xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -1115,7 +1115,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 	'------------------------------------------
 'provided by Douglas Williams
 'summery:Creates a polygon object with supplied vertices pairs (Minimum of 3 pairs required).
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreateStickman,CreateTileMap,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreateStickMan,CreateTileMap,CreateText,CreateGUI
 	Method CreatePoly:ftObject(verts:Float[], xpos:Float, ypos:Float, _ucob:Object=Null)
 		Local minX:Float = 99999,maxX:Float=-99999, minY:Float=99999, maxY:Float=-99999
 		Local vertsLen:Int
@@ -1179,7 +1179,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 'summery:Creates/loads a sprite atlas.
 #End
 'seeAlso:CreateImage,CreateAnimImage
-	Method CreateSpriteAtlas:ftSpriteAtlas(imgfileName:String, dataFileName:string)
+	Method CreateSpriteAtlas:ftSpriteAtlas(imgfileName:String, dataFileName:String)
 		Local newAtlas:ftSpriteAtlas
 		newAtlas = New ftSpriteAtlas
 		newAtlas.Load(imgfileName, dataFileName)
@@ -1223,7 +1223,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 #Rem
 'summery:Creates a new text object. 
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateTileMap
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateTileMap
 	Method CreateText:ftObject(font:ftFont, txt:String, xpos:Float, ypos:Float, textmode:Int=ftEngine.taTopLeft, _ucob:Object=Null)
 		Local obj:ftObject
 		If _ucob = Null Then
@@ -1253,7 +1253,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 #Rem
 'summery:Create a tile map which you can fill yourself.
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateText,CreateGUI
 	Method CreateTileMap:ftObject(atl:ftImage, tileSizeX:Int, tileSizeY:Int, tileCountX:Int, tileCountY:Int, xpos:Float, ypos:Float )
 		Local obj:ftObject = New ftObject
 		Local mapTile:ftMapTile
@@ -1331,7 +1331,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 #Rem
 'summery:Create a tile map which you can fill yourself.
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateText,CreateGUI
 	Method CreateTileMap:ftObject(atl:Image, tileSizeX:Int, tileSizeY:Int, tileCountX:Int, tileCountY:Int, xpos:Float, ypos:Float )
 
 		Local obj:ftObject = New ftObject
@@ -1417,7 +1417,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 'summery:Create a tile map from a JSON file exported by the tool Tiled.
 The layerIndex tells fantomCX to load the tileLayer at that index. Index starts with 1.
 #End
-'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickman,CreateText,CreateGUI
+'seeAlso:CreateAnimImage,CreateBox,CreateCircle,CreateImage,CreateLine,CreateOval,CreatePoint,CreatePoly,CreateStickMan,CreateText,CreateGUI
 	Method CreateTileMap:ftObject(filename:String, xpos:Float, ypos:Float, layerIndex:Int=1 )
 		Local obj:ftObject = New ftObject
 		Local imgH:Int
@@ -1517,11 +1517,11 @@ The layerIndex tells fantomCX to load the tileLayer at that index. Index starts 
 
 			obj.tileMap.tileSets[tileSheetIndex] = newTileSet
 
-        	If Image.Load(dataTileSet.GetItem("image"),0.5,0.5,Image.Filter)<> Null Then
-        		obj.objImg[tileSheetIndex] = imgMng.LoadImage(path + dataTileSet.GetItem("image"), tlW, tlH, (imgH/tlH)*(imgW/tlW), Image.Filter)
-        	Else
+'        	If Image.Load(dataTileSet.GetItem("image"),0.5,0.5,Image.Filter)<> Null Then
+'        		obj.objImg[tileSheetIndex] = imgMng.LoadImage(path + dataTileSet.GetItem("image"), tlW, tlH, (imgH/tlH)*(imgW/tlW), Image.Filter)
+'        	Else
         		obj.objImg[tileSheetIndex] = imgMng.LoadImage(path + ftStripDir(dataTileSet.GetItem("image")), tlW, tlH, (imgH/tlH)*(imgW/tlW), Image.Filter)
-        	Endif
+'        	Endif
 #If CONFIG="debug"
         	If obj.objImg[tileSheetIndex].img[0] = Null Then Error("~n~nError in file fantomCX.cftEngine, Method ftEngine.CreateTileMap:ftObject(filename:String, xpos:Float, ypos:Float, layerIndex:Int=1 )~n~nCan not load tile image: "+dataTileSet.GetItem("image")+" at index " + tileSheetIndex)
 #End
@@ -1769,6 +1769,7 @@ When the timer fires it will call OnTimer. A repeatCount of -1 will let the time
 #End
 	Method ExitApp:Int(retCode:Int=0)
 		mojo2.EndApp()
+		Return retCode
 	End
 
 	'------------------------------------------
@@ -2763,7 +2764,6 @@ Self.currentCanvas.SetScissor( sx, sy ,sw , sh )
 #Rem
 'summery:Sets the color mask of the current canvas. 
 #End
-'seeAlso:...
 	Method SetCanvasColorMask:Void(red:Bool, green:Bool, blue:Bool, alpha:Bool)
 		Self.currentCanvas.SetColorMask(red, green, blue, alpha)
 	End
@@ -2773,7 +2773,7 @@ Self.currentCanvas.SetScissor( sx, sy ,sw , sh )
 'summery:Sets the fog color of the current canvas. The colors range from 0 - 255, the alha value from 0 - 1.0 .
 #End
 'seeAlso:SetCanvasAmbientLight
-	Method SetCanvasFogColor:Void(red:Float, green:Float, blue:Float, alpha:float)
+	Method SetCanvasFogColor:Void(red:Float, green:Float, blue:Float, alpha:Float)
 		Self.currentCanvas.SetFogColor(red/255.0, green/255.0, blue/255.0, alpha)
 	End
 	'------------------------------------------

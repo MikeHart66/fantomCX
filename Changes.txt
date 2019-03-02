@@ -1,3 +1,15 @@
+Version 3.01
+
+*Fixes*
+
+  - Fixed ftImageMng.LoadImage:ftImage(path:String,  frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=Image.Filter) as it discarded the loaded image.
+  - Fixed various data problems regarding the Tiled files.
+
+*Modifikations*
+
+  - Modded the docs to work with the new MakeDocs tool.
+  
+-----------------------------------------------------------------------------
 Version 3.0
 
 *New functionalities*
@@ -7,7 +19,7 @@ Version 3.0
 
 *Fixes*
 
-  - Fixed sample ObjectMovement2.monkey
+  - Fixed sample ObjectMovement2.cxs
     
 *Changes*
 
@@ -28,7 +40,6 @@ Version 2.02
   - Added ftLayer.ActivateTouchEnterExitEvent (onOff:Bool = True) to activate the call of the following events...
   - Added ftEngine.OnObjectTouchEnter (obj:ftObject, touchId:Int)
   - Added ftEngine.OnObjectTouchExit (obj:ftObject, touchId:Int)
-  - Added SKN3's XML very good module
 
 *Fixes*
 

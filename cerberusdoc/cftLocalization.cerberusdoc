@@ -10,21 +10,15 @@ The class *ftLocalization* is an object which helps you supporting multiple lang
 
 # Method Clear:Void()
 
-*Description*
-
 This method clears all the mapping data.
 
 # Method GetDefaultLanguage:String()
-
-*Description*
 
 This method returns the default language.
 
 Links: [[SetDefaultLanguage]]
 
 # Method GetString:String(text:String, langStr:String="")
-
-*Description*
 
 This method returns the translated string.
 
@@ -35,8 +29,6 @@ If no langStr is given, it will use the default language.
 Links: [[LoadFromString]], [[SetDefaultLanguage]]
 
 # Method LoadFromString:Void(locStr:String)
-
-*Description*
 
 This method loads the localization class via a string
 
@@ -55,8 +47,6 @@ MultiLine%;%DE%:%Dieser Text%LF%erscheint in 2 Zeilen
 Links: [[GetString]], [[SetDefaultLanguage]]
 
 # Method SetDefaultLanguage:Void(defLang:String ="EN")
-
-*Description*
 
 This method sets the default language.
 

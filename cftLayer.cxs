@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -346,7 +347,7 @@ Class ftLayer
 'Objects are normally rendered in their order of creation, unless you have sorted the objects of a layer via the ftLayer.SortObjects method. 
 'Child objects are rendered right after their parent.
 #End
-'seeAlso:SetVisible,SetGUI,SetLayerScissor,ftObject.ActiveRenderEvent
+'seeAlso:SetVisible,SetGUI,SetLayerScissor,ftObject.ActivateRenderEvent
 	Method Render:Void()
 		Local sc:Int[4] 
 		Local _scissor:Bool = False

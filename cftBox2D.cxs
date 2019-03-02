@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -10,7 +11,6 @@
 	License:      MIT
 #End
 
-'nav:<blockquote><nav><b>fantomCX documentation</b> | <a href="index.html">Home</a> | <a href="classes.html">Classes</a> | <a href="3rdpartytools.html">3rd party tools</a> | <a href="examples.html">Examples</a> | <a href="changes.html">Changes</a></nav></blockquote>
 #Rem
 'header:The cftBox2D module hosts an optional Box2D integration class. At the moment, not all functionality of Box2D is integrated but you can create objects, joints, do collision detection and even raycasting.
 #End
@@ -27,8 +27,10 @@ Import physics.dynamics.controllers
 Import physics.dynamics.joints
 Import physics.flash.flashtypes
 
+'#DOCOFF# 
+
 Global b2dCanvas:Canvas
-'#DOCOFF#' 
+
 Class ftContactListener  Extends b2ContactListener
     Field b2D:ftBox2D
 	'------------------------------------------
@@ -55,12 +57,13 @@ End
 
 '#DOCON#    
 '***************************************
+
 #Rem
 'summery:The ftBox2D class integrates some functionality of Box2D into your project. With it you can connect ftObjects with Box2D bodies. For feature requests, please contact Michael about what you need.
 #End
 
 Class ftBox2D
-'#DOCOFF#' 
+'#DOCOFF#
 	Field engine:ftEngine
 	
     Const frameRate:Int = 30
@@ -80,9 +83,8 @@ Class ftBox2D
 	Field m_world:b2World
 	'// Sprite to draw in to
     Field m_sprite:FlashSprite
-'#DOCON#    
 
-
+'#DOCON#
 	'------------------------------------------
 'summery:Adds a polygon shape to an existing polygon physics body.
 'The base of this method was provided generously by the Cerberus X user CalebDev 
@@ -93,7 +95,7 @@ Class ftBox2D
 		Local xp:Float
 		Local yp:Float
 		Local vecLen:Float = vec.Length()
-		Local vecLenHalf = vecLen/2
+		Local vecLenHalf:Float = vecLen/2.0
 		Local v:b2Vec2[vecLen/2]
 		For Local vl:Float = 1.0 To vecLenHalf
 			v[vl-1] = New b2Vec2
@@ -153,7 +155,7 @@ Class ftBox2D
 	End
 	'------------------------------------------
 'summery:Create a box shaped B2Body object.
-	Method CreateBox:b2Body(width:Float,height:Float, xpos:Float, ypos:float )
+	Method CreateBox:b2Body(width:Float,height:Float, xpos:Float, ypos:Float )
         Local shape :b2PolygonShape= New b2PolygonShape()
         Local bodyDef :b2BodyDef = New b2BodyDef()
         Local body :b2Body
@@ -296,7 +298,7 @@ Class ftBox2D
         Local bodyDef :b2BodyDef = New b2BodyDef()
         Local body:b2Body
         Local xp:Float
-        Local yp:float
+        Local yp:Float
         bodyDef.type = btype
         Local vecLen:Float = vec.Length()
         Local vecLenHalf:Float = vecLen/2
@@ -677,7 +679,7 @@ Class ftBox2D
 	End
 	'------------------------------------------
 'summery:Returns the linear velocity of a connected body.
-	Method GetLinearVelocity:float[](tmpObj:ftObject)
+	Method GetLinearVelocity:Float[](tmpObj:ftObject)
 		Local body:b2Body = b2Body(tmpObj.box2DBody)
 		Local v:Float[2]
 		If body = Null Then Error("ftBox2D.GetLinearVelocity - body = NULL")
@@ -743,7 +745,7 @@ Class ftBox2D
 	End
 	'------------------------------------------
 'summery:Returns the sensor flag of the fixture with the given index.
-	Method GetSensor:bool(tmpObj:ftObject, fIndex:Int = 1)
+	Method GetSensor:Bool(tmpObj:ftObject, fIndex:Int = 1)
 		Local body:b2Body = b2Body(tmpObj.box2DBody)
 		If body = Null Then Error("ftBox2D.GetSensor - body = NULL")
 		Local cc:Int = Self.GetFixtureCount(tmpObj)
@@ -906,7 +908,7 @@ Class ftBox2D
 	End
 	'------------------------------------------
 'summery:Set the active flag of a connected body.
-	Method SetActive:Void(tmpObj:ftObject, flag:bool )
+	Method SetActive:Void(tmpObj:ftObject, flag:Bool )
 		Local body:b2Body = b2Body(tmpObj.box2DBody)
 		If body = Null Then Error("ftBox2D.SetActive - body = NULL")
 		body.SetActive(flag)
@@ -936,14 +938,14 @@ Class ftBox2D
 	End
 	'------------------------------------------
 'summery:Set the awake flag of a connected body.
-	Method SetAwake:Void(tmpObj:ftObject, flag:bool )
+	Method SetAwake:Void(tmpObj:ftObject, flag:Bool )
 		Local body:b2Body = b2Body(tmpObj.box2DBody)
 		If body = Null Then Error("ftBox2D.SetAwake - body = NULL")
 		body.SetAwake(flag)
 	End
 	'------------------------------------------
 'summery:Sets the bullet flag of a connected body.
-	Method SetBullet:Void(tmpObj:ftObject, flag:bool )
+	Method SetBullet:Void(tmpObj:ftObject, flag:Bool )
 		Local body:b2Body = b2Body(tmpObj.box2DBody)
 		If body = Null Then Error("ftBox2D.SetBullet - body = NULL")
 		body.SetBullet(flag)
@@ -976,7 +978,7 @@ Class ftBox2D
 	End
 	'------------------------------------------
 'summery:This method connects it with the given ftEngine
-	Method SetEngine(eng:ftEngine)
+	Method SetEngine:Void(eng:ftEngine)
 		Self.engine = eng
 	End
 	'------------------------------------------
@@ -1068,7 +1070,7 @@ Class ftBox2D
 	End
 	'------------------------------------------
 'summery:Sets the fixed rotation flag of a connected body.
-	Method SetFixedRotation:Void(tmpObj:ftObject, flag:bool )
+	Method SetFixedRotation:Void(tmpObj:ftObject, flag:Bool )
 		Local body:b2Body = b2Body(tmpObj.box2DBody)
 		If body = Null Then Error("ftBox2D.SetFixedRotation - body = NULL")
 		body.SetFixedRotation(flag)

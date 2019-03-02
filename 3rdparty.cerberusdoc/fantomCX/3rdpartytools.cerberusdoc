@@ -1,0 +1,40 @@
+> 3rd party tools
+*fantomCX* supports file formats of various 3rd party tools wich can create [[#physicshapes|physic shapes]], [[#bitmapfonts|bitmap fonts]], [[#spritesheets|sprite sheets]] and [[#tilemaps|tile maps]].
+
+---
+<a name='bitmapfonts'></a>
+>> Bitmap fonts
+To create bitmap fonts for *fantomCX* you can use these tools:
+
+| Name | Description | Link | Hints
+| Hiero | freeware, Java web app | [[https://github.com/libgdx/libgdx/wiki/Hiero|Hiero at GitHub]] | Rename the .fnt file to .txt and flip the bitmap file vertically as it is exported from *Hiero* upside down.
+| Glyph Designer | commercial, OSX and Windows | [[https://www.71squared.com/en/glyphdesigner|www.71squared.com/en/glyphdesigner]]<br>[[https://71squared.com/gdx"|www.71squared.com/gdx]] | Save the font as a EZGUI (.txt) file.
+| TWL font editor | Users have reported, that the font editor from TWL can be used too. | [[http://twl.l33tlabs.org/|twl.l33tlabs.org]] | 
+| FontMachine | JungleIDE users can create bitmap fonts via FontMachine and use these in fantomCX. | [[https://www.jungleide.com/?page_id=5179|www.jungleide.com/?page_id=5179]] | It has to be a packed font
+
+---
+<a name='tilemaps'></a>
+>> Tile maps
+If you need to create tile maps, these tools help you out:
+
+| Name | Description | Link | Hints
+| Tiled | freeware, OSX and Windows | [[https://www.mapeditor.org|www.mapeditor.org]] | Export the map as a JSON (.json) file.
+
+---
+<a name='spritesheets'></a>
+>> Sprite sheets / Texture atlas
+
+To create a sprite sheet, that *fantomCX* can use automatically, use one of these tools
+
+| Name | Description | Link | Hints
+| TexturePacker | commercial, OSX and Windows, Ubuntu | [[https://www.codeandweb.com/texturepacker|www.codeandweb.com/texturepacker]] |
+| MakeAtlas | freeware, Windows | [[http://www.mojolabs.nz/posts.php?topic=205088|www.mojolabs.nz/posts.php?topic=205088]] | Export the sprite sheet in the LibGDX or Sparrow file format.
+
+---
+<a name='physicshapes'></a>
+>> Box2D physic shapes
+
+To create physic shapes, that *fantomCX* can use automatically, use these tools:
+
+| Name | Description | Link | Hints
+| PhysicsEditor | commercial, OSX and Windows | [[https://www.codeandweb.com/physicseditor|www.codeandweb.com/physicseditor]] | Export the shapes with the custom fantomCX export plugin (JSON format) that ships with fantomCX.

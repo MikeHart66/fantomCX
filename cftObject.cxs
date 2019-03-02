@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -285,7 +286,7 @@ Class ftObject
 	End
 	'-----------------------------------------------------------------------------
 'summery:Add a rotation transition to an existing transition.
-'seeAlso:CreateTransot
+'seeAlso:CreateTransRot
 	Method AddTransRot:Void(trans:ftTrans, rot:Float, relative:Int)
 		trans.AddRot(rot, Self, trans.duration, relative)
 	End
@@ -507,7 +508,7 @@ ftEngine.tmBox   (Value = 3)[/list]
 'summery:Create a timer for this object. 
 'A repeatCount of -1 will let the timer run forever. The duration is the time in milliseconds, after which the [b]ftEngine.OnObjectTimer[/b] method is called.
 #End
-'seeAlso:
+'seeAlso:OnObjectTimer
 	Method CreateTimer:ftTimer(timerID:Int, duration:Int, repeatCount:Int = 0 )
 		Local timer:ftTimer = New ftTimer
 		timer.engine = Self.engine
@@ -819,7 +820,7 @@ ftEngine.tmBox   (Value = 3)[/list]
 'summery:Get the height of an object.
 The returned value is the stored height multiplied by the Y scale factor.
 #End
-'seeAlso:,SetHeight,GetWidth
+'seeAlso:SetHeight,GetWidth
 	Method GetHeight:Float()
 		Return Self.h * Self.scaleY
 	End 
@@ -988,7 +989,7 @@ The returned value is the stored height multiplied by the Y scale factor.
 	End 
 	'-----------------------------------------------------------------------------
 'summery:Get the current speed angle.
-'seeAlso:SetSpeedangle,GetSpeed
+'seeAlso:SetSpeedAngle,GetSpeed
 	Method GetSpeedAngle:Float()
 		Return Self.speedAngle
 	End 
@@ -1021,7 +1022,7 @@ The returned value is the stored height multiplied by the Y scale factor.
 	End
 	'-----------------------------------------------------------------------------
 'summery:Get the current Y speed.
-'seeAlso:SetSpeedY,GetSpeed,GetSpeedXX
+'seeAlso:SetSpeedY,GetSpeed,GetSpeedXY
 	Method GetSpeedY:Float()
 		Return Self.speedY
 	End 
@@ -1163,7 +1164,7 @@ It returns -1 if there is no tile.
 	End
 	'-----------------------------------------------------------------------------
 'summery:Returns the Y position of a tile with the given index. Index starts with 0. 
-'seeAlso:GetTimePoX
+'seeAlso:GetTilePosX
 	Method GetTilePosY:Float(index:Int)
 		Return Self.tileMap.GetTilePosY(index)
 	End

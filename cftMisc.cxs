@@ -1,3 +1,4 @@
+Strict
 '#DOCON#
 #rem
 	Title:        fantomCX
@@ -50,28 +51,14 @@ End
 'changes:2.0:New command
 'summery:This function returns a path without the last backslash or slash.
 Function ftStripDir:String( path:String )
-	Local i=path.FindLast( "/" )
+	Local i:Int=path.FindLast( "/" )
 	If i=-1 i=path.FindLast( "\" )
 	If i<>-1 Then Return path[i+1..]
 	Return path
 End
 
 
-'#DOCOFF#	
 
-'***************************************
-Class tLine2D
-	  Field p1:ftVec2Dp
-	  Field p2:ftVec2Dp
-	'------------------------------------------
-	  Method New()
-		p1 = New ftVec2Dp
-		p2 = New ftVec2Dp
-	  End
-End
-
-
-'#DOCON#
 
 
 

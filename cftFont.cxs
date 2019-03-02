@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -120,7 +121,7 @@ Class ftFont
 	End
 '#DOCOFF#
 	'------------------------------------------
-	Method LoadFMPacked(info:String, url:String)
+	Method LoadFMPacked:Void(info:String, url:String)
 		Local pageNum:Int = 0
 		'Local info:String = app.LoadString(url)
 	

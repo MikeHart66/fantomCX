@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -478,7 +479,7 @@ Function ftColl_Line2Circle:Bool(x1:Float, y1:Float, x2:Float, y2:Float, px:Floa
 End
 
 '-----------------------------------------------------------------------------
-Function ftColl_Line2Line( x0:Float, y0:Float , x1:Float, y1:Float,x2:Float ,y2:Float, x3:Float, y3:Float )
+Function ftColl_Line2Line:Bool( x0:Float, y0:Float , x1:Float, y1:Float,x2:Float ,y2:Float, x3:Float, y3:Float )
 	Local n:Float=(y0-y2)*(x3-x2)-(x0-x2)*(y3-y2)
 	Local d:Float=(x1-x0)*(y3-y2)-(y1-y0)*(x3-x2)
 		
@@ -493,8 +494,8 @@ Function ftColl_Line2Line( x0:Float, y0:Float , x1:Float, y1:Float,x2:Float ,y2:
 			Local CD:Float=Sn/d
 			If CD>0.0 And CD<1.0
 				' Intersection Point
-				Local X=x0+AB*(x1-x0)
-		       	Local Y=y0+AB*(y1-y0)
+				Local X:Float=x0+AB*(x1-x0)
+		       	Local Y:Float=y0+AB*(y1-y0)
 				Return True
 			End If
 		End If
@@ -591,6 +592,20 @@ End
 Function ftColl_Vec2DotProduct:Float(v1:ftVec2Dp, v2:ftVec2Dp)
 	Return (v1.x*v2.x + v1.y*v2.y)
 End
+
+
+
+'***************************************
+Class tLine2D
+	  Field p1:ftVec2Dp
+	  Field p2:ftVec2Dp
+	'------------------------------------------
+	  Method New()
+		p1 = New ftVec2Dp
+		p2 = New ftVec2Dp
+	  End
+End
+
 
 
 

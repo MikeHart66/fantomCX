@@ -112,7 +112,7 @@ Class cGame Extends App
 			fE.SetAlpha(1.0)
 			fE.GetCanvas().DrawText( "FPS= "+fE.GetFPS(),fE.GetLocalX(10), fE.GetLocalY(10))
 
-			fE.GetCanvas().DrawText(listContent,Int(fE.GetLocalX(guiListview.GetPosX())+guiListview.GetWidth()/2.0+10),Int(fE.GetLocalY(guiListview.GetPosY())))
+			fE.GetCanvas().DrawText(listContent,Int(fE.GetLocalX(guiListview.GetPosX())-guiListview.GetWidth()/2.0+10),Int(fE.GetLocalY(guiListview.GetPosY())+guiListview.GetHeight()/2.0+20))
 			fE.RestoreColor()			
 			fE.RestoreAlpha()
 			' Last, flip the previously drawn content to the screen, make it visible

@@ -12,15 +12,11 @@ The class *ftTrans* controls the way an object or layer does a transition. Start
 
 # Method GetPaused:Bool()
 
-*Description*
-
 Returns TRUE if a transition is paused.
 
 Links: [[SetPaused]]
 
-# Method SetEase:none(easeType:String="EaseIn")
-
-*Description*
+# Method SetEase:Void(easeType:String="EaseIn")
 
 Sets the ease type of a transition.
 
@@ -38,15 +34,11 @@ Links: [[SetType]]
 
 # Method SetPaused:Void(pauseFlag:Bool = True)
 
-*Description*
-
 With this method you can pause and resume the transition.
 
 Links: [[GetPaused]]
 
-# Method SetType:none(equationType:String="Linear")
-
-*Description*
+# Method SetType:Void(equationType:String="Linear")
 
 Sets the equation type of a transition.
 

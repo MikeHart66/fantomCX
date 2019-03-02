@@ -1,29 +1,29 @@
 
-var fantomx = new Object();
+var fantomCX = new Object();
 
-fantomx.DeviceName=function(){
+fantomCX.DeviceName=function(){
 	return "";
 };
 
-fantomx.Hardware=function(){
+fantomCX.Hardware=function(){
 	return "";
 };
 
-fantomx.Product=function(){
+fantomCX.Product=function(){
 	return "";
 };
 
-fantomx.Serial=function(){
+fantomCX.Serial=function(){
 	return "";
 };
 
-fantomx.User=function(){
+fantomCX.User=function(){
 	return "";
 };
 
 
 
-fantomx.GetBrowserName=function(){
+fantomCX.GetBrowserName=function(){
 //Based on code from here: h t t p://stackoverflow.com/questions/2400935/browser-detection-in-javascript
 	var ret = "";
 	if (navigator.userAgent.search("MSIE") >= 0){
@@ -49,7 +49,7 @@ fantomx.GetBrowserName=function(){
 	return ret;
 };
 
-fantomx.GetBrowserVersion=function(){
+fantomCX.GetBrowserVersion=function(){
 	var ret = "";
 	if (navigator.userAgent.search("MSIE") >= 0){
 	    var position = navigator.userAgent.search("MSIE") + 5;
@@ -85,11 +85,11 @@ fantomx.GetBrowserVersion=function(){
 	return ret;
 };
 
-fantomx.GetBrowserPlatform=function(){
+fantomCX.GetBrowserPlatform=function(){
 	return navigator.platform;
 };
 
-fantomx.MaximizeCanvas=function(){
+fantomCX.MaximizeCanvas=function(){
 	if (CANVAS_RESIZE_MODE)
 	{
 		CANVAS_RESIZE_MODE=0;
@@ -125,7 +125,7 @@ fantomx.MaximizeCanvas=function(){
 	}
 };
 
-fantomx.HideConsole=function(){
+fantomCX.HideConsole=function(){
 	if (CANVAS_RESIZE_MODE)
 	{
 		CANVAS_RESIZE_MODE=0;
@@ -138,7 +138,7 @@ fantomx.HideConsole=function(){
 	}
 };
 
-fantomx.ResizeCanvas=function(x, y){
+fantomCX.ResizeCanvas=function(x, y){
 	if (CANVAS_RESIZE_MODE)
 	{
 		CANVAS_RESIZE_MODE=0;
@@ -167,7 +167,7 @@ fantomx.ResizeCanvas=function(x, y){
 	}
 };
 
-fantomx.ResizeConsole=function(x, y){
+fantomCX.ResizeConsole=function(x, y){
 	var console = document.getElementById("GameConsole");
 	if (console)
 	{
@@ -176,7 +176,7 @@ fantomx.ResizeConsole=function(x, y){
 	}
 };
 
-fantomx.IsMobileBrowser=function(){
+fantomCX.IsMobileBrowser=function(){
 		var index = navigator.appVersion.indexOf("Mobile");
 		var index2 = navigator.appVersion.indexOf("Silk");
 		if (index2 > index )
@@ -186,11 +186,11 @@ fantomx.IsMobileBrowser=function(){
 		return (index > -1);
 };
 
-fantomx.GetLanguage=function(){
+fantomCX.GetLanguage=function(){
 		var userLang = navigator.language || navigator.userLanguage;
 		return userLang;
 };
 
-fantomx.GetDomain=function(){
+fantomCX.GetDomain=function(){
 		return window.location.href;
 };

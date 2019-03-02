@@ -1,3 +1,4 @@
+Strict
 #rem
 	Title:        fantomCX
 	Description:  A 2D game framework for the Cerberus X programming language
@@ -454,7 +455,7 @@ Class ftAStar
 	End
 	'------------------------------------------
 'summery:Returns the block flag of a grid node.
-	Method GetBlock:bool(index:Int)
+	Method GetBlock:Bool(index:Int)
 		Local ci:Int = 0
 		Local cc:Int = Self.nodeList.Count()
 #If CONFIG="debug"

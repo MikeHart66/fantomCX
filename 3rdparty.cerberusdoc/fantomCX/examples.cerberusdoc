@@ -1,0 +1,231 @@
+> Example scripts
+
+The *fantomCX* module ships with some example scripts that show you the usage of a certain feature.
+They are located inside the %examples% folder located in your *fantomCX* module installation.
+
+The following topics can help you create your app with fantomCX
+
+* <a href="#hBasics">Basic script</a>
+* <a href="#hInput">Input handling</a>
+* <a href="#hLayer">Layer management</a>
+* <a href="#hLocalization">App localization</a>
+* <a href="#hMisc">Anything else</a>
+* <a href="#hObjects">Object handling</a>
+* <a href="#hPathfinding">A* pathfinding</a>
+* <a href="#hPhysics">Box2D physics</a>
+* <a href="#hScenes">Scene management</a>
+* <a href="#hSounds">Sounds and music</a>
+* <a href="#hSpriteSheets">Sprite sheets / Texture atlas</a>
+* <a href="#hText">Text output</a>
+* <a href="#hTileMaps">Tilemaps</a>
+* <a href="#hTimer">Timer handling</a>
+* <a href="#hTransitions">Transitions / Tweeing</a>
+* <a href="#hWaypoints">Waypoint / Paths</a>
+* <a href="#hGUI">GUI</a>
+
+---
+<a name='hBasics'></a> 
+>> Basics
+*Base script*
+To see a skeleton script for the fantomCX, have a look at the [[./data/fantomCX/examples/BaseScript/BaseScript.cxs|BaseScript.cxs]] script. 
+
+---
+<a name='hInput'></a>
+>> Input
+*Keymapping*
+Sometimes you need to support different input schemes for your games. The [[./data/fantomCX/examples/Input/KeyMapping/KeyMapping.cxs|KeyMapping.cxs]] shows you how you can handle this. 
+
+*Swipe/Gesture detection*
+To find out how to use the swipe gesture detection, check out the [[./data/fantomCX/examples/Input/SwipeDetection/SwipeDetection.cxs|SwipeDetection.cxs]] script.
+
+*Touch Input*
+To check for touch input and maybe drag and drop an object, try this example [[./data/fantomCX/examples/Input/TouchInput/DragNDrop/DragNDrop.cxs|DragNDrop.cxs]].
+
+*Extended touch Input*
+If you need to check if a touch enters or exits an object, try this example [[./data/fantomCX/examples/Input/TouchInputEX/TouchInputEX.cxs|TouchInputEX.cxs]].
+
+---
+<a name='hLayer'></a>
+>> Layer managment
+*Scrolling layers*
+If scrolling layers is still a black book for you, then maybe this script from fellow fantomCX user Douglas Williams will help you... [[./data/fantomCX/examples/Layer/ScrollingLayers/ScrollingLayers.cxs|ScrollingLayers.cxs]]
+
+*Scaling layers*
+When you need to scale a layer and set its scissor, look at this example: [[./data/fantomCX/examples/Layer/ScalingLayers/ScalingLayers.cxs|ScalingLayers.cxs]]
+
+---
+<a name='hLocalization'></a>
+>> Localization
+*Multiple languages*
+If you need a simple way to display text in different languages then have a look at this script: [[./data/fantomCX/examples/Localization/Localization.cxs|Localization.cxs]]. 
+
+---
+<a name='hMisc'></a>
+>> Misc
+*Jump 'n' example*
+There are several ways to create a jump 'n' run game in fantomCX. This script by Douglas Williams shows you one way: [[./data/fantomCX/examples/Misc/RunJump/RunJump.cxs|RunJump.cxs]]. 
+
+*Multi class projects*
+If you wonder how to split your project into several classes, have a look here: [[./data/fantomCX/examples/Misc/MultiClass/MultiClass.cxs|MultiClass.cxs]]. 
+
+*Update objects*
+To see how you can update your objects, have a look here: [[./data/fantomCX/examples/Misc/UpdateObjects/UpdateObjects.cxs|UpdateObjects.cxs]]. 
+
+---
+<a name='hObjects'></a>
+>> Objects
+
+>>> Appearence
+*Set the blend mode*
+Sometimes you need to see the blendmode of an object. For this you can study the [[./data/fantomCX/examples/Objects/Appearance/BlendMode/BlendMode.cxs|BlendMode.cxs]] script.
+
+*Let an object flash*
+If you need to draw attention to an object, let it flash like in this script (extended by Douglas Williams)... [[./data/fantomCX/examples/Objects/Appearance/FlashObject/FlashObject2.cxs|FlashObject2.cxs]] 
+
+*9-Slice scaling*
+Espercially for GUI elements which need nice scaliong without stretching to much 9-Slice (aka 9-Patch) scaling is the way to go. So look at this example: [[./data/fantomCX/examples/Objects/Appearance/9SliceScaling/9SliceScaling.cxs|9SliceScaling.cxs]] 
+
+>>> Behaviour
+*Object movement*
+If you want to find out how to move objects and handle them in the OnObjectUpdate event, have a look at the [[./data/fantomCX/examples/Objects/Behaviour/ObjectMovement/ObjectMovement.cxs|ObjectMovement.cxs]] script. 
+
+>>> Collision detection
+*Collision checks between objects*
+If you need to check for collisions between your objects, look at this example: [[./data/fantomCX/examples/Objects/Collision/Collision.cxs|Collision.cxs]]. 
+
+>>> Object creation
+*Animate an object*
+Besides using an image strip like you do in Mojo, you can build animations in fantomCX by adding several images to an object. Have a look at this example: [[./data/fantomCX/examples/Objects/Creation/AnimObject/AnimObject.cxs|AnimObject.cxs]]. 
+
+*Copy an object*
+When you need to copy an object, have a look at the [[./data/fantomCX/examples/Objects/Creation/CopyObject/CopyObject.cxs|CopyObject.cxs]] script. 
+
+*Drawing Primitives*
+fantomCX supports different drawing primitves and the [[./data/fantomCX//examples/Objects/Creation/CreatePrimitives/CreatePrimitives.cxs|CreatePrimitives.cxs]] script by Douglas Williams tell you how. 
+
+*Extend an object*
+When you need to extend an object, have a look at the [[./data/fantomCX/examples/Objects/Creation/CustomObject/CustomObject.cxs|CustomObject.cxs]] script. 
+
+*Load images*
+When you need to load images, it is good to have a look at this example: [[./data/fantomCX/examples/Objects/Creation/LoadImage/LoadImage.cxs|LoadImage.cxs]]. 
+
+*Object pooling*
+If you need object pooling, look here: [[./data/fantomCX/examples/Objects/Creation/PoolingObjects/PoolingObjects.cxs|PoolingObjects.cxs]]. 
+
+*Remove Objects*
+If you need to remove objects, have a look at the [[./data/fantomCX/examples/Objects/Creation/RemoveObject/RemoveObject.cxs|RemoveObject.cxs]] script. 
+
+>>> Data Storage
+*Storing user defined data*
+Sometime you need to store extra information inside an ftObject. For this, have a look at the [[./data/fantomCX/examples/Objects/DataStorage/DataStorage.cxs|DataStorage.cxs]] script. 
+
+>>> Object hierachy
+*Parent and childs*
+If you need a parent child relationship of your objects, have a look at the [[./data/fantomCX/examples/Objects/Hierachy/ParentChild/ParentChild.cxs|ParentChild.cxs]] script. 
+
+*Sort Objects*
+If you need to sort objects in layers, have a look at the [[./data/fantomCX/examples/Objects/Hierachy/SortObjects/SortObjects.cxs|SortObjects.cxs]] script. 
+
+---
+<a name='hPathfinding'></a>
+>> Pathfinding
+*A* path finding*
+If you need to utilize A* path finding in your game, then the [[./data/fantomCX/examples/Pathfinding/Pathfinding.cxs|Pathfinding.cxs]] script is the place to look at.
+
+---
+<a name='hPhysics'></a>
+>> Physics
+*Box2D physics*
+There are several examples on how to integrate Box2D physics with fantomCX. Here is a short list...
+* [[./data/fantomCX/examples/Physics/Box2DIntegration/Box2DIntegration.cxs|Box2DIntegration.cxs]]
+* [[./data/fantomCX/examples/Physics/Canon/Canon.cxs|Canon.cxs]]
+* [[./data/fantomCX/examples/Physics/JuggleSoccerBall/JuggleSoccerBall.cxs|JuggleSoccerBall.cxs]]
+* [[./data/fantomCX/examples/Physics/MouseJoint/MouseJoint.cxs|MouseJoint.cxs]]
+* [[./data/fantomCX/examples/Physics/Raycasting/Raycasting.cxs|Raycasting.cxs]]
+* [[./data/fantomCX/examples/Physics/RevoluteJoint/RevoluteJoint.cxs|RevoluteJoint.cxs]]
+
+---
+<a name='hScenes'></a>
+>> Scenes
+*Scene management*
+Sometimes a game is divided into scenes/rooms. To have a go at this feature, look at this example: [[./data/fantomCX/examples/Scenes/SceneCreation/SceneCreation.cxs|SceneCreation.cxs]]. 
+
+---
+<a name='hSounds'></a>
+>> Sounds and music
+*Playing sound/music files*
+A game without a sound is not a game. Look here: [[./data/fantomCX/examples/Sound/Sound.cxs|Sound.cxs]]. 
+
+---
+<a name='hSpriteSheets'></a>
+>> Spritesheets
+*Using Spritesheets for animated objects*
+If your animated sprites are bundled inside sprite sheets, please look at the [[./data/fantomCX/examples/SpriteSheets/SheetAnim/SheetAnim.cxs|SheetAnim.cxs]] script.
+
+*Texture atlas / Sprite sheets*
+Sprite sheets are a great way to preserve video memory and also speed up the render process. To use texture atlas created by the tool [a http://www.codeandweb.com/texturepacker]TexturePacker[/a], check out the [[./data/fantomCX/examples/SpriteSheets/TexturePacker/TexturePacker.cxs|TexturePacker.cxs]] script.
+
+---
+<a name='hText'></a>
+>> Text
+*FontMachine*
+If you want to use FontMachine fonts, you don't need to do anything special: [[./data/fantomCX/examples/Text/FontMachine/FontMachine.cxs|FontMachine.cxs]].
+
+*Multiline text*
+To display multiline text, have a look at the [[./data/fantomCX/examples/Text/MultilineText/MultilineText.cxs|MultilineText.cxs]] script.
+
+---
+<a name='hTileMaps'></a>
+>> Tilemaps
+>>> Endless maps
+For something like an endless runner game, have a look at this script to see how you can approach this: [[./data/fantomCX/examples/TileMaps/EndlessMap/EndlessMap.cxs|EndlessMap.cxs]].
+
+>>> Dynamic created maps
+If you need to build a map dynamically, have a look at this script: [[./data/fantomCX/examples/TileMaps/DynamicMap/DynamicMap.cxs|DynamicMap.cxs]].
+
+>>> Platformer game
+To see how you could do collision checks against a Tiled platformer level, have a look at this script: [[./data/fantomCX/examples/TileMaps/Platformer/Platformer.cxs|Platformer.cxs]].
+
+>>> Maps created by Tiled
+*Orthographic maps*
+For big tile maps, created by the tool Tiled, have a look at the [[./data/fantomCX/examples/TileMaps/Tiled/Tiled.cxs|Tiled.cxs]] script. It even handles map objects now.
+
+*Displaying isometric TILED maps*
+To display and use an isometric map which was build in Tiled, study this example script: [[./data/fantomCX/examples/TileMaps/Tiled/TiledIsometric.cxs|TiledIsometric.cxs]].
+
+*Using multiple tile sheets in on map*
+If your map uses multiple tile sheets, look at this example: [[./data/fantomCX/examples/TileMaps/Tiled/MultiTileSets.cxs|MultiTileSets.cxs]].
+
+*Using physics within a platformer game*
+Sometimes you want to use physics in a platformer game. Study this example: [[./data/fantomCX/examples/TileMaps/Platformer_Physics/Platformer_Physics.cxs|Platformer_Physics.cxs]].
+
+---
+<a name='hTimer'></a>
+>> Timer
+*Using Timer*
+Timer make your game tick. Look at this script: [[./data/fantomCX/examples/Timers/Timers.cxs|Timers.cxs]]. 
+
+---
+<a name='hTransitions'></a>
+>> Transitions
+*Transitions*
+If you want to use transitions with tweeing, then have a look at the [[./data/fantomCX/examples/Transitions/ObjectTransition/ObjectTransition.cxs|ObjectTransition.cxs]] script. 
+
+---
+<a name='hWaypoints'></a>
+>> Waypoints
+*Paths and waypoints*
+To use paths/waypoints and how to move an object along a path, have a look at the [[./data/fantomCX/examples/Waypoints/Waypoints.cxs|Waypoints.cxs]] script.
+
+---
+<a name='hGUI'></a>
+>> GUI
+To use the new gui elements which are based on custom objects, the following examples will get you running:
+* [[./data/fantomCX/examples/Gui/Joysticks/Joysticks.cxs|Joysticks.cxs]]
+* [[./data/fantomCX/examples/Gui/Buttons/Buttons.cxs|Buttons.cxs]]
+* [[./data/fantomCX/examples/Gui/Checkbox/Checkbox.cxs|Checkbox.cxs]]
+* [[./data/fantomCX/examples/Gui/Label/Label.cxs|Label.cxs]]
+* [[./data/fantomCX/examples/Gui/Listview/Listview.cxs|Listview.cxs]]
+* [[./data/fantomCX/examples/Gui/Slider/Slider.cxs|Slider.cxs]]
+* [[./data/fantomCX/examples/Gui/Switch/Switch.cxs|Switch.cxs]]
+* [[./data/fantomCX/examples/Gui/Textfield/Textfield.cxs|Textfield.cxs]].

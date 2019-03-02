@@ -1,0 +1,35 @@
+> Features of fantomCX
+*fantomCX* currently supports the following features: 
+
+* Various objects like images, tile maps, graphic primitives, sounds, collision zones, scenes and layers.
+* Automatic processes to create, update and render objects.
+* Callback methods which are called during the handling of an object, layer, timer and transitions.
+* Layer transitions with callback methods.
+* Extensive handling methods for the engine's objects.
+* Object transitions for position, rotation, scaling and alpha values with callback methods.
+* Several equation and ease types for object and layer transitions.
+* Object timers with callback methods.
+* Different collision methods for objects with callback methods.
+* Touch input handling with callback methods.
+* Organize your objects in layers.
+* Automatic content scaling via providing a virtual canvas setup.
+* Simple high-score list loading, saving and updating.
+* Simple sound loading which handles the proper file extension depending on the chosen platform. 
+* Support for bitmap font text objects which load *EzGUI* font descriptions.
+* Build-in frames per second calculator.
+* Simple camera/view support which you can move around to render parts of your scenery.
+* Support for texture maps (atlas) created by the tool *TexturePacker*.
+* Support for tile maps created by the tool *Tiled*.
+* Embedded object informations inside a Tiled map will be imported and are accessable.
+* Engine time scaling supporting object updates, timers and transitions.
+* Automatic swipe gesture detection with event method.
+* Path/Waypoint handling. Let your objects follow them.
+* A* pathfinding und user definable grids of nodes. It doesn't have to be a grid of squares!
+* Integration of Box2D powered physics including ray casting. Physics definition created by the tool *PhysicsEditor* are supported too.
+* Localize your game easily with easy support of multiple languages.
+* Support different key maps for different controllers or user definitions.
+* Easy scene/room management.
+* Objects can be composed of several single images.
+* Automatic object pooling.
+* Custom GUI elements.
+* Support for 9-slice image scaling.

@@ -1,4 +1,4 @@
-class fantomx
+class fantomCX
 {
 	public:
 

@@ -1,16 +1,21 @@
 # Module cftMisc
 
+Some helper functions you might find usefull.
+
 # Import fantomCX
 
 # Function ftGetPitchRate:Float(halfStep:Float, base:Float=1.0)
 
-*Description*
+Calculates the pitchrate for the amount of given halfsteps.
 
-Calculates the pitchrate for the amount of given halfsteps. The default base note is 'A4'
+Parameters: @halfStep - The halfstep of a key
+Parameters: @base - The default base note of 1.0 is 'A4'
+
+Returns: The pitchrate to play a sound at a certain key.
 
 # Function ftStripDir:String(path:String)
 
-*Description*
-
 This function returns a path without the last backslash or slash.
+
+Returns: A path without the last backslash or slash.
 
