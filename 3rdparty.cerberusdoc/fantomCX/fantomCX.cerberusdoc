@@ -1,4 +1,4 @@
-> The fantomCX programm guide
+> The fantomCX Programming Guide
 *fantomCX* is a 2D game framework (module) for [[https://www.cerberus-x.com|Cerberus X]] that was created to give game developers more time to work on the actual game play than on setting up render routines, update process chains and stuff like that. It uses [[mojo2]] to render its content. With *fantomCX* you will write only fractions of the code you did before. For detailed information about its modules, click [[.fantomCX|here]]!
 
 >> Introduction

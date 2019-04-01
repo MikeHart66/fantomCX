@@ -2,7 +2,9 @@
 
 The module *fantomCX* is a 2D game framework which supplies you with huge set of game object related functionalities.
 
-* You can get more information about *fantomCX* by clicking here: [[/fantomCX|fantomCX Programming Guide]]
+It has been released under the terms of the [**MIT license**](https://en.wikipedia.org/wiki/MIT_License), which allows its use within both open and closed source software. This license allows to use the library in commercial applications.
+
+You can get more information about *fantomCX* by clicking here: [[/fantomCX/fantomCX|fantomCX Programming Guide]]
 
 # Import brl.pool
 
