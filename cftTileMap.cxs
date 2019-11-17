@@ -230,8 +230,8 @@ Class ftTileMap
 		Local _cw:Float = obj.engine.GetCanvasWidth()
 		Local _ch:Float = obj.engine.GetCanvasHeight()
 		
-		Local xoff:Float = obj.layer.xPos-obj.engine.camX
-		Local yoff:Float = obj.layer.yPos-obj.engine.camY
+		Local xoff:Float = obj.layer.xPos-obj.engine.camX - obj.engine.camOffX
+		Local yoff:Float = obj.layer.yPos-obj.engine.camY - obj.engine.camOffY
 		
 		tlW = Self.tileSizeX * obj.scaleX
 		tlH = Self.tileSizeY * obj.scaleY
@@ -381,8 +381,8 @@ It returns -1 if there is no tile.
 		Local _cw:Float = obj.engine.GetCanvasWidth()
 		Local _ch:Float = obj.engine.GetCanvasHeight()
 		
-		Local xoff:Float = obj.layer.xPos-obj.engine.camX
-		Local yoff:Float = obj.layer.yPos-obj.engine.camY
+		Local xoff:Float = obj.layer.xPos-obj.engine.camX - obj.engine.camOffX
+		Local yoff:Float = obj.layer.yPos-obj.engine.camY - obj.engine.camOffY
 
 		tlW = Self.tileSizeX * obj.scaleX
 		tlH = Self.tileSizeY * obj.scaleY

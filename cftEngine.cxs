@@ -60,6 +60,10 @@ Class ftEngine
 	
 	Field camX:Float = 0.0
 	Field camY:Float = 0.0
+	Field camOffX:Float = 0.0
+	Field camOffY:Float = 0.0
+	Field camShakeF:Float = 0.0
+	Field camShakeD:Float = 0.0
 	
 	Field scaleX:Float = 1.0
 	Field scaleY:Float = 1.0
@@ -1850,21 +1854,21 @@ When the timer fires it will call OnTimer. A repeatCount of -1 will let the time
 'seeAlso:GetCamX,GetCamY,SetCam,SetCamX,SetCamY
 	Method GetCam:Float[] ()
 		Local retX:Float, retY:Float
-		retX = Self.camX
-		retY = Self.camY
+		retX = Self.camX + Self.camOffX
+		retY = Self.camY + Self.camOffY
 		Return [retX, retY]
 	End
 	'-----------------------------------------------------------------------------
 'summery:Returns the cameras X coordinate.
 'seeAlso:GetCam,GetCamY,SetCam,SetCamX,SetCamY
 	Method GetCamX:Float ()
-		Return Self.camX
+		Return Self.camX + Self.camOffX
 	End
 	'-----------------------------------------------------------------------------
 'summery:Returns the cameras Y coordinate.
 'seeAlso:GetCam,GetCamX,SetCam,SetCamX,SetCamY
 	Method GetCamY:Float ()
-		Return Self.camY
+		Return Self.camY + Self.camOffY
 	End
 	'------------------------------------------
 'changes:2.0:New command
@@ -1947,7 +1951,7 @@ When the timer fires it will call OnTimer. A repeatCount of -1 will let the time
 	Method GetLocalX:Float(wordXPos:Float, withCam:Bool = True)
 		Local ret:Float
 		If withCam = True Then
-			ret = Self.autofitX + (wordXPos - Self.camX) * Self.scaleX
+			ret = Self.autofitX + (wordXPos - Self.camX - Self.camOffX) * Self.scaleX
 		Else
 			ret = Self.autofitX + (wordXPos) * Self.scaleX
 		Endif
@@ -1961,8 +1965,8 @@ When the timer fires it will call OnTimer. A repeatCount of -1 will let the time
 		Local retX:Float
 		Local retY:Float
 		If withCam = True Then
-			retX = Self.autofitX + (wordXPos - Self.camX) * Self.scaleX
-			retY = Self.autofitY + (wordYPos - Self.camY) * Self.scaleY
+			retX = Self.autofitX + (wordXPos - Self.camX - Self.camOffX) * Self.scaleX
+			retY = Self.autofitY + (wordYPos - Self.camY - Self.camOffY) * Self.scaleY
 		Else
 			retX = Self.autofitX + (wordXPos) * Self.scaleX
 			retY = Self.autofitY + (wordYPos) * Self.scaleY
@@ -1976,7 +1980,7 @@ When the timer fires it will call OnTimer. A repeatCount of -1 will let the time
 	Method GetLocalY:Float(wordYPos:Float, withCam:Bool = True)
 		Local ret:Float
 		If withCam = True Then
-			ret = Self.autofitY + (wordYPos - Self.camY) * Self.scaleY
+			ret = Self.autofitY + (wordYPos - Self.camY - Self.camOffY) * Self.scaleY
 		Else
 			ret = Self.autofitY + (wordYPos) * Self.scaleY
 		Endif
@@ -2122,7 +2126,7 @@ When the timer fires it will call OnTimer. A repeatCount of -1 will let the time
 	Method GetWorldX:Float(localXPos:Float, withCam:Bool = True)
 		Local ret:Float
 		If withCam = True
-			ret = (localXPos  - Self.autofitX) / Self.scaleX + Self.camX 
+			ret = (localXPos  - Self.autofitX) / Self.scaleX + Self.camX + Self.camOffX
 		Else
 			ret = (localXPos  - Self.autofitX) / Self.scaleX
 		Endif
@@ -2151,7 +2155,7 @@ When the timer fires it will call OnTimer. A repeatCount of -1 will let the time
 	Method GetWorldY:Float(localYPos:Float, withCam:Bool = True)
 		Local ret:Float
 		If withCam = True
-			ret = (localYPos  - Self.autofitY) / Self.scaleY + Self.camY
+			ret = (localYPos  - Self.autofitY) / Self.scaleY + Self.camY + Self.camOffY
 		Else
 			ret = (localYPos  - Self.autofitY) / Self.scaleY
 		Endif
@@ -2699,11 +2703,11 @@ Self.currentCanvas.SetScissor( sx, sy ,sw , sh )
 'seeAlso:SetCamX,SetCamY,GetCam,GetCamX,GetCamY
 	Method SetCam:Void (x:Float, y:Float, relative:Int = False )
 		If relative = True
-			camX = camX + x
-			camY = camY + y
+			camX = camX + x - Self.camOffX
+			camY = camY + y - Self.camOffY
 		Else
-			camX = x
-			camY = y
+			camX = x - Self.camOffX
+			camY = y - Self.camOffY
 		Endif
 		'Self.currCamera.SetPos(Self.camX, Self.camY)
 	End
@@ -2718,9 +2722,9 @@ Self.currentCanvas.SetScissor( sx, sy ,sw , sh )
 'seeAlso:SetCam,SetCamY,GetCam,GetCamX,GetCamY
 	Method SetCamX:Void (x:Float, relative:Int = False )
 		If relative = True
-			camX = camX + x
+			camX = camX + x - Self.camOffX
 		Else
-			camX = x
+			camX = x - Self.camOffX
 		Endif
 		'Self.currCamera.SetPosX(Self.camX)
 	End
@@ -2735,9 +2739,9 @@ Self.currentCanvas.SetScissor( sx, sy ,sw , sh )
 'seeAlso:SetCam,SetCamX,GetCam,GetCamX,GetCamY
 	Method SetCamY:Void (y:Float, relative:Int = False )
 		If relative = True
-			camY = camY + y
+			camY = camY + y - Self.camOffY
 		Else
-			camY = y
+			camY = y - Self.camOffY
 		Endif
 		'Self.currCamera.SetPosY(Self.camY)
 	End
@@ -2980,6 +2984,15 @@ Lower values than 1.0 slow down the engine, bigger values speed it up.
 	End
 	'------------------------------------------
 #Rem
+'summery:Shakes the Camera with an random value based on the give _factor and _durance.
+#End
+'seeAlso:...
+	Method ShakeCamera:Void(_factor:Float, _durance:Float)
+		Self.camShakeF = _factor
+		Self.camShakeD = _durance / 60.0
+	End
+	'------------------------------------------
+#Rem
 'summery:Sort the objects of all layer.
 'Internally it will call the [b]ftEngine.OnObjectSort[/b] method. Override this method with your on comparison algorythm. 
 #End
@@ -3024,7 +3037,7 @@ Lower values than 1.0 slow down the engine, bigger values speed it up.
 		'For Local layer := Eachin layerList 
 		For Local layer := Eachin layerList.Backwards()
 			If layer.isGUI = True Then
-				If layer.isActive Then layer.TouchCheck(px-Self.camX, py-Self.camY, touchID)
+				If layer.isActive Then layer.TouchCheck(px-Self.camX - Self.camOffX, py-Self.camY - Self.camOffY, touchID)
 			Else
 				If layer.isActive Then layer.TouchCheck(px, py, touchID)
 			Endif
@@ -3056,6 +3069,14 @@ Lower values than 1.0 slow down the engine, bigger values speed it up.
 		For Local timer:ftTimer = Eachin timerList.Backwards()
 			timer.Update()
 		Next
+		If Self.camShakeD > 0.0
+			Self.camOffX = Rnd(-Self.camShakeF, Self.camShakeF)
+			Self.camOffY = Rnd(-Self.camShakeF, Self.camShakeF)
+			Self.camShakeD -= speed	
+		Else
+			Self.camOffX = 0.0
+			Self.camOffY = 0.0
+		End
 
 		For Local layer := Eachin layerList
 			If layer.isActive Then layer.Update(speed)

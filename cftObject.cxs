@@ -2448,8 +2448,8 @@ A value of 0 will disable the collision, a value between 1 and 32 will set the c
 		Local _cw:Float = engine.GetCanvasWidth()
 		Local _ch:Float = engine.GetCanvasHeight()
 		
-		Local xoff:Float = Self.layer.xPos-Self.engine.camX
-		Local yoff:Float = Self.layer.yPos-Self.engine.camY
+		Local xoff:Float = Self.layer.xPos-Self.engine.camX - Self.engine.camOffX
+		Local yoff:Float = Self.layer.yPos-Self.engine.camY - Self.engine.camOffY
 		
 		tlW = Self.tileMap.tileSizeX * Self.scaleX
 		tlH = Self.tileMap.tileSizeY * Self.scaleY

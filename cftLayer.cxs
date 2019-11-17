@@ -194,7 +194,7 @@ Class ftLayer
 		For Local obj := Eachin objList.Backwards()
 			If obj.GetActive()=True Then 
 				If Self.isGUI=True Then
-					If obj._IsObjAt(x-Self.engine.camX,y-Self.engine.camY) Then
+					If obj._IsObjAt(x-Self.engine.camX - Self.engine.camOffX,y-Self.engine.camY - Self.engine.camOffY) Then
 						Return obj
 					Endif
 				Else
@@ -389,9 +389,9 @@ Class ftLayer
 				Else
 					If obj.isVisible And obj.isActive And obj.parentObj = Null
 						If obj.type = ftEngine.otGUI
-							ftGuiMng(obj).Render(Self.xPos-engine.camX, Self.yPos-engine.camY)
+							ftGuiMng(obj).Render(Self.xPos-engine.camX - engine.camOffX, Self.yPos-engine.camY - engine.camOffY)
 						Else
-							obj.Render(Self.xPos-engine.camX, Self.yPos-engine.camY)
+							obj.Render(Self.xPos-engine.camX - engine.camOffX, Self.yPos-engine.camY - engine.camOffY)
 						Endif
 					Endif
 				Endif

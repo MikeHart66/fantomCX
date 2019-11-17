@@ -1502,7 +1502,7 @@ Method OnUpdate:Int()
 End
 
 </pre>
-Links: [[SetCamX]], [[SetCamY]], [[GetCam]], [[GetCamX]], [[GetCamY]]
+Links: [[SetCamX]], [[SetCamY]], [[GetCam]], [[GetCamX]], [[GetCamY]], [[ShakeCamera]]
 
 # Method SetCamX:Void(x:Float, relative:Int = False)
 
@@ -1538,7 +1538,7 @@ Method OnUpdate:Int()
 End
 
 </pre>
-Links: [[SetCam]], [[SetCamY]], [[GetCam]], [[GetCamX]], [[GetCamY]]
+Links: [[SetCam]], [[SetCamY]], [[GetCam]], [[GetCamX]], [[GetCamY]], [[ShakeCamera]]
 
 # Method SetCamY:Void(y:Float, relative:Int = False)
 
@@ -1574,7 +1574,7 @@ Method OnUpdate:Int()
 End
 
 </pre>
-Links: [[SetCam]], [[SetCamX]], [[GetCam]], [[GetCamX]], [[GetCamY]]
+Links: [[SetCam]], [[SetCamX]], [[GetCam]], [[GetCamX]], [[GetCamY]], [[ShakeCamera]]
 
 # Method SetCanvas:Void(canvas:Canvas)
 
@@ -1782,6 +1782,16 @@ Sort the objects of all layer.
 Internally it will call the <b>ftEngine.OnObjectSort</b> method. Override this method with your on comparison algorythm. 
 
 Links: [[OnObjectSort]]
+
+# Method ShakeCamera:Void(_factor:Float, _durance:Float)
+
+Shakes the camera.
+
+*Details*
+
+The camera is shaked with an random value based on the given @_factor and for the @durance set in milliseconds. 
+
+Links: [[SetCam]], [[SetCamX]], [[SetCamY]]
 
 # Method SortObjects:Void(layer:ftLayer)
 

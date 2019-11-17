@@ -1,5 +1,6 @@
 > Changes in fantomCX
-* [[#v300|Version 3.01]]
+* [[#v302|Version 3.02]]
+* [[#v301|Version 3.01]]
 * [[#v300|Version 3.00]]
 * [[#v202|Version 2.02]]
 * [[#v201|Version 2.01]]
@@ -7,8 +8,10 @@
 
 ---
 
-| Version<a name='v301'></a> | Kind | Description | Hint
-| 3.01 | Fix | ftImageMng.LoadImage:ftImage(path:String,  frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=Image.Filter). | As it discarded the loaded image.
+| Version<a name='v302'></a> | Kind | Description | Hint
+| 3.02 | New | [[ftEngine.ShakeCamera]]:Void(_factor:Float) | Shakes the camera with an random value.
+| -<a name='v301'></a> | - | - | -
+| 3.01 | Fix | ftImageMng.LoadImage:ftImage(path:String,  frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=Image.Filter) | As it discarded the loaded image.
 |      | Fix | Tiled Maps | Fixed various data problems regarding the Tiled files.
 |      | Mod | Documentation | Modded the docs to work with the new MakeDocs tool.
 | -<a name='v300'></a> | - | - | -
@@ -19,7 +22,7 @@
 |      | Mod | ftGuiListview.Render  | To render assigned item images.
 |      | Mod | Cleaned up and changed code base. |
 | -<a name='v202'></a> | - | - | -
-| 2.02 | New | ftObject.SetImageScale9:Void (top:Float, bottom:Float, left:Float, bottom:Float) | to support 9-slice image scaling.
+| 2.02 | New | ftObject.SetImageScale9]]:Void (top:Float, bottom:Float, left:Float, bottom:Float) | to support 9-slice image scaling.
 |      | New | ftLayer.ActivateTouchEnterExitEvent (onOff:Bool = True) | to activate the call of the following events.
 |      | New | ftEngine.OnObjectTouchEnter (obj:ftObject, touchId:Int) |
 |      | New | ftEngine.OnObjectTouchExit (obj:ftObject, touchId:Int) |
