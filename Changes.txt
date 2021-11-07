@@ -1,8 +1,26 @@
+Version 3.03
+
+*New functionalities*
+
+  - tba
+  
+*Fixes*
+
+  - tba
+
+*Modifikations*
+
+  - Added the new OnSwipe methods to the BaseScript example and the docs.
+  
+-----------------------------------------------------------------------------
 Version 3.02
 
 *New functionalities*
 
   - Added ftEngine.ShakeCamera:Void(_factor:Float)
+  - Added ftEngine.OnSwipeStart:Int(touchIndex:Int, sXPos:Float, sYPos:Float)
+  - Added ftEngine.OnSwipeMove:Int(touchIndex:Int, sXPos:Float, sYPos:Float)
+  - Added ftEngine.SwipeCancel:Void(index:Int = 0)
 
 *Fixes*
 
@@ -10,7 +28,7 @@ Version 3.02
 
 *Modifikations*
 
-  - tba
+  - Swipe.Update will check if the last touch position is the same and so restarts the swipe process.
   
 -----------------------------------------------------------------------------
 Version 3.01

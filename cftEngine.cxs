@@ -2463,6 +2463,14 @@ The current default file formats are:
 	Method OnSwipeDone:Int(touchIndex:Int, sAngle:Float, sDist:Float, sSpeed:Float)
 		Return 0
 	End	
+	'------------------------------------------
+	Method OnSwipeStart:Int(touchIndex:Int, sXPos:Float, sYPos:Float)
+		Return 0
+	End
+	'------------------------------------------
+	Method OnSwipeMove:Int(touchIndex:Int, sXPos:Float, sYPos:Float)
+		Return 0
+	End
     '------------------------------------------
 #Rem
 'summery:This method is called when an engine timer was being fired.
@@ -3010,6 +3018,10 @@ Lower values than 1.0 slow down the engine, bigger values speed it up.
 'seeAlso:OnObjectSort
 	Method SortObjects:Void(layer:ftLayer)
 		If layer.isActive Then layer.SortObjects()
+	End
+	'------------------------------------------
+	Method SwipeCancel:Void(index:Int = 0)
+		swiper.touchActive[index] = False
 	End
 	'------------------------------------------
 #Rem

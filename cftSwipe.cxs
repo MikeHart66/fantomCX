@@ -41,6 +41,7 @@ Class ftSwipe
 	Field deadDist:Float = 20.0
 	Field engine:ftEngine
 	Field swipeActive:Bool = False
+	Field touchMoved:Bool = False
 	'------------------------------------------
 	Method New()
 		For Local i:Int = 0 To Self._maxTouchIndex-1
@@ -100,6 +101,7 @@ Class ftSwipe
 				Self.speed[index] = Self.dist[index] / Self.diffTime[index]
 
 				'Call the event handler
+				engine.OnSwipeMove(index, Self.endX[index], Self.endY[index])
 				If Self.dist[index] > Self.deadDist Then
 					engine.OnSwipeDone(index, Self.angle[index], Self.dist[index], Self.speed[index])
 				Endif
@@ -112,10 +114,20 @@ Class ftSwipe
 				Self.startY[index] = engine.GetTouchY(index)
 				Self.startTime[index] = engine.GetTime()
 				Self.touchActive[index] = True
+				Self.touchMoved = False
+				engine.OnSwipeStart(index, Self.startX[index], Self.startY[index])
 			Else
 				'Current touch
-				Self.endX[index] = engine.GetTouchX(index)
-				Self.endY[index] = engine.GetTouchY(index)
+				If Self.endX[index] = engine.GetTouchX(index) And Self.endY[index] = engine.GetTouchY(index) And Self.touchMoved = True
+					Self.touchActive[index] = False
+				Else
+					If Self.endX[index] <> engine.GetTouchX(index) Or Self.endY[index] <> engine.GetTouchY(index)
+						Self.endX[index] = engine.GetTouchX(index)
+						Self.endY[index] = engine.GetTouchY(index)
+						engine.OnSwipeMove(index, Self.endX[index], Self.endY[index])
+						Self.touchMoved = True
+					endif
+				Endif
 			Endif
 		Endif
 	End

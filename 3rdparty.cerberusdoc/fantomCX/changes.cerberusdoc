@@ -1,4 +1,5 @@
 > Changes in fantomCX
+* [[#v303|Version 3.03]]
 * [[#v302|Version 3.02]]
 * [[#v301|Version 3.01]]
 * [[#v300|Version 3.00]]
@@ -8,8 +9,15 @@
 
 ---
 
-| Version<a name='v302'></a> | Kind | Description | Hint
-| 3.02 | New | [[ftEngine.ShakeCamera]]:Void(_factor:Float) | Shakes the camera with an random value.
+| Version<a name='v303'></a> | Kind | Description | Hint
+| 3.03 | Fix | Documentation for ftEngine.OnSwipeMove and ftEngine.OnSwipeStart | 
+| 3.03 | Mod | Add ftEngine.OnSwipeMove and ftEngine.OnSwipeStart to the BaseScript.cxs example | 
+| Version<a name='v302'></a> | - | - | -
+| 3.02 | New | ftEngine.ShakeCamera:Void(_factor:Float) | Shakes the camera with an random value.
+| 3.02 | New | ftEngine.OnSwipeStart:Int(touchIndex:Int, sXPos:Float, sYPos:Float) | Returns the start position of a swipe.
+| 3.02 | New | ftEngine.OnSwipeMove:Int(touchIndex:Int, sXPos:Float, sYPos:Float) | Returns the current position of a swipe.
+| 3.02 | New | ftEngine.SwipeCancel:Void(index:Int = 0) | Cancels a swipe with the given index.
+| 3.02 | Mod | ftEngine.SwipeUpdate will check if the last touch position is the same and so restarts the swipe process. |
 | -<a name='v301'></a> | - | - | -
 | 3.01 | Fix | ftImageMng.LoadImage:ftImage(path:String,  frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=Image.Filter) | As it discarded the loaded image.
 |      | Fix | Tiled Maps | Fixed various data problems regarding the Tiled files.
@@ -22,7 +30,7 @@
 |      | Mod | ftGuiListview.Render  | To render assigned item images.
 |      | Mod | Cleaned up and changed code base. |
 | -<a name='v202'></a> | - | - | -
-| 2.02 | New | ftObject.SetImageScale9]]:Void (top:Float, bottom:Float, left:Float, bottom:Float) | to support 9-slice image scaling.
+| 2.02 | New | ftObject.SetImageScale9:Void (top:Float, bottom:Float, left:Float, bottom:Float) | to support 9-slice image scaling.
 |      | New | ftLayer.ActivateTouchEnterExitEvent (onOff:Bool = True) | to activate the call of the following events.
 |      | New | ftEngine.OnObjectTouchEnter (obj:ftObject, touchId:Int) |
 |      | New | ftEngine.OnObjectTouchExit (obj:ftObject, touchId:Int) |
@@ -31,8 +39,8 @@
 |      | Mod | ftObject.Render | now supports 9-slice image scaling.
 |      | Mod | ftObject.SetHeight:Void (height:Float, scaleMode:Bool = False) | Added scale mode parameter. If set to true, the scale factor of an object is adjusted too.
 |      | Mod | ftObject.SetWidth:Void (width:Float, scaleMode:Bool = False) | Added scale mode parameter. If set to true, the scale factor of an object is adjusted too.
-|      | New<br>Example | Input/TouchInputEX/TouchInputEX.monkey |
-|      | New<br>Example | Objects/Appearance/9SliceScaling/9SliceScaling.monkey |
+|      | New<br>Example | Input/TouchInputEX/TouchInputEX.cxs |
+|      | New<br>Example | Objects/Appearance/9SliceScaling/9SliceScaling.cxs |
 | -<a name='v201'></a> | - | - | -
 | 2.01 | New | ftEngine.CreateImage:ftObject(image:ftImage, xpos:Float, ypos:Float, _ucob:Object=Null) |
 |      | Fix | ftBox2D.CreateObject | to set the angle with its corresponding ftObject.
@@ -43,10 +51,10 @@
 |      | Mod | Default Image flags when loading content are now set to Image.Filter. |
 |      | Mod | #FantomX_UsePhysics = 1 | A ftObject has a corresponding box2d object field only, when #FantomX_UsePhysics = 1 was added before importing fantomX.
 |      | Mod | ftLayer.SetLayerScissor | now works with virtual values, no offsets anymore
-|      | New<br>Example | Canvas/VirtualResolution/VirtualResolution.monkey |
-|      | New<br>Example | Sound/Sound.monkey |
-|      | New<br>Example | TileMaps/Platformer_Physics/Platformer_Physics.monkey |
-|      | New<br>Example | Layer/LayerScaling/LayerScaling.monkey | 
+|      | New<br>Example | Canvas/VirtualResolution/VirtualResolution.cxs |
+|      | New<br>Example | Sound/Sound.cxs |
+|      | New<br>Example | TileMaps/Platformer_Physics/Platformer_Physics.cxs |
+|      | New<br>Example | Layer/LayerScaling/LayerScaling.cxs | 
 | -<a name='v200'></a> | - | - | -
 | 2.0  | New | This is the first release of fantomX! |
 |      | New | fantomX now uses mojo2. | 
@@ -78,11 +86,11 @@
 |      | Mod | Removed class tPointS and exchanged it with class ftVec2Dp. |
 |      | Mod | Class ftVec2D | extends now class ftVec2Dp. 
 |      | Mod | Moved the collision detection methods outside of ftObject into the cftCollisions file and made functions out of them. |
-|      | Mod | Renamed function GetPitchRate:Float(halfStep:Float, base:Float=1.0) | inside the cftMisc.monkey file to ftGetPitchRate.
-|      | Mod | Moved ftEngine._StripDir:String( path:String ) | as a function to the cftMisc.monkey file.
-|      | Mod | ftEngine.GetTouchX:Float(index:Int=0, withCam:Bool = True) | Added withCam parameter
-|      | Mod | ftEngine.GetTouchXY:Float[](index:Int=0, withCam:Bool = True) | Added withCam parameter
-|      | Mod | ftEngine.GetTouchY:Float(index:Int=0, withCam:Bool = True) | Added withCam parameter
+|      | Mod | Renamed function GetPitchRate:Float(halfStep:Float, base:Float=1.0) | inside the cftMisc.cxs file to ftGetPitchRate.
+|      | Mod | Moved ftEngine._StripDir:String( path:String ) | as a function to the cftMisc.cxs file.
+|      | Mod | ftEngine.GetTouchX:Float(index:Int = 0, withCam:Bool = True) | Added withCam parameter
+|      | Mod | ftEngine.GetTouchXY:Float[] (index:Int = 0, withCam:Bool = True) | Added withCam parameter
+|      | Mod | ftEngine.GetTouchY:Float(index:Int = 0, withCam:Bool = True) | Added withCam parameter
 |      | Mod | ftEngine.LoadMusic:ftSound(filename:String, loopFlag:Bool=True) | Changed the default loop frag to true
 |      | Mod | ftEngine.SetMaxSoundChannel:Void(maxChannel:Int = 31) | Changed the channel range to 0-31
-|      | New<br>Example | Sound/Sound.monkey |
+|      | New<br>Example | Sound/Sound.cxs |

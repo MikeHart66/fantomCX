@@ -48,14 +48,14 @@ Class cGame Extends App
 		' Create an instance of the fantomCX, which was created via the cEngine class
 		fE = New cEngine
 		' Set a virtual canvas size
-		fE.SetCanvasSize(320,240)
+		fE.SetCanvasSize(640,480)
 		
 		' Now create some tiles that wil fill the screen.
 		' also store the X offset regarding the mapPivot object
 		For Local y:= 0 To fE.GetCanvasHeight() Step 64
 			For Local x:= 0 To fE.GetCanvasWidth() Step 64
 				Local tile:=fE.CreateBox(64,64,x,y,New cTile)
-				Local col:= Rnd(100,200)
+				Local col:= Rnd(50,200)
 				tile.SetColor(col,col,col)
 				cTile(tile).xTileOffset = x
 			Next
@@ -72,6 +72,8 @@ Class cGame Extends App
 		Local circle := fE.CreateCircle(20,0,0)
 		circle.SetParent(mapPivot)
 
+		SetUpdateRate(0)
+		SetSwapInterval(0)
 		Return 0
 	End
 	'------------------------------------------
@@ -138,10 +140,11 @@ Class cEngine Extends ftEngine
 		' Check if the mapPivot object left the screen and then wrap it back to the other side.
 		' Please note, that we don't use the buildin WrapScreen methods as we want to let it wrap 
 		' outside the canvas.
+		Local _cw:Float = Self.GetCanvasWidth()
 		If obj = _g.mapPivot
-			If (obj.GetPosX()-32) > Self.GetCanvasWidth()  
-				obj.SetPosX(-Self.GetCanvasWidth() - 64 ,True)
-				Print ("privotWrap")
+			If (obj.GetPosX()-32.0) > _cw  
+				obj.SetPosX((-_cw) - 64.0 ,True)
+				Print ("pivotWrap")
 			Endif
 		Endif
 		Return 0

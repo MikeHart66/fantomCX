@@ -1288,7 +1288,19 @@ Links: [[Update]], [[ftObject.ActivateUpdateEvent]]
 
 This method is called when a swipe gesture was detected.
 
-Links: [[SwipeUpdate]]
+Links: [[SwipeUpdate]], [[OnSwipeMove]], [[OnSwipeStart]], [[SwipeCancel]]
+
+# Method OnSwipeMove:Int(touchIndex:Int, sXPos:Float, sYPos:Float)
+
+This method is called when a swipe gesture is moving
+
+Links: [[SwipeUpdate]], [[OnSwipeDone]], [[OnSwipeStart]], [[SwipeCancel]]
+
+# Method OnSwipeStart:Int(touchIndex:Int, sXPos:Float, sYPos:Float)
+
+This method is called at the start of a swipe
+
+Links: [[SwipeUpdate]], [[OnSwipeMove]], [[OnSwipeDone]], [[SwipeCancel]]
 
 # Method OnTimer:Int(timerId:Int)
 
@@ -1811,7 +1823,13 @@ Call SwipeUpdate in every mojo2.OnUpdate event after the regular ftEngine.Update
 
 If a swipe was detected, it will call the <b>ftEngine.OnSwipeDone</b> method.
 
-Links: [[OnSwipeDone]]
+Links: [[OnSwipeDone]], [[OnSwipeMove]], [[OnSwipeStart]], [[SwipeCancel]]
+
+# Method SwipeCancel:Void(index:Int = 0)
+
+Cancels the swipe with the given index.
+
+Links: [[OnSwipeDone]], [[OnSwipeMove]], [[OnSwipeStart]], [[SwipeUpdate]]
 
 # Method TouchCheck:Void(touchID:Int=0)
 

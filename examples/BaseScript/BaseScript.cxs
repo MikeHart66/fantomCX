@@ -4,7 +4,7 @@ Strict
 	Script:			BaseScript.cxs
 	Description:	Basic fantomCX script
 	Author: 		Michael Hartlef
-	Version:      	3.0
+	Version:      	3.01
 #End
 
 ' Set the AutoSuspend functionality to TRUE so OnResume/OnSuspend are called
@@ -224,6 +224,16 @@ Class cEngine Extends ftEngine
 	'------------------------------------------
 	Method OnSwipeDone:Int(touchIndex:Int, sAngle:Float, sDist:Float, sSpeed:Float)
 		' This method is called when a swipe gesture was detected
+		Return 0
+	End
+	'------------------------------------------
+	Method OnSwipeMove:Int(touchIndex:Int, sXPos:Float, sYPos:Float)
+		' This method is called when a swipe gesture is moving
+		Return 0
+	End
+	'------------------------------------------
+	Method OnSwipeStart:Int(touchIndex:Int, sXPos:Float, sYPos:Float)
+		' This method is called at the start of a swipe
 		Return 0
 	End
     '------------------------------------------

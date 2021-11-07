@@ -2,13 +2,13 @@
 *fantomCX* is a 2D game framework (module) for [[https://www.cerberus-x.com|Cerberus X]] that was created to give game developers more time to work on the actual game play than on setting up render routines, update process chains and stuff like that. It uses [[mojo2]] to render its content. With *fantomCX* you will write only fractions of the code you did before. For detailed information about its modules, click [[.fantomCX|here]]!
 
 >> Introduction
-* [[Tutorials/Getting started]] - If you're new to fantomCX, you should read this first.
+* [[fantomCX/Tutorials/Getting started]] - If you're new to fantomCX, you should read this first.
 
 >> Features
-*fantomCX* boast a huge feature set which you can see listed [[features|here]] .
+*fantomCX* boast a huge feature set which you can see listed [[fantomCX.features|here]] .
 
 >> Examples
-The framework ships with a huge load of examples which you can see [[examples|here]] .
+The framework ships with a huge load of examples which you can see [[fantomCX.examples|here]] .
 
 >> Get support
 * [[https://github.com/MikeHart66/fantomCX/releases|GitHub]] - The most current version of *fantomCX* is hosted at GitHub. You can post issues/bug reports at its  [[https://github.com/MikeHart66/fantomCX/issues|issues section]]. 
@@ -16,8 +16,8 @@ The framework ships with a huge load of examples which you can see [[examples|he
 * [[https://www.cerberus-x.com/community/|CX forum]] - The Cerberus X forum is also a good place to ask your questions about how to use *fantomCX* or make suggestions about needed features.
 
 >> Appendix
-* [[3rdpartytools|3rd Party Tools]] - See which 3rd party tools can help you create content for fantomCX.
+* [[fantomCX.3rdpartytools|3rd Party Tools]] - See which 3rd party tools can help you create content for fantomCX.
 
-* [[changes|Versions]] - The history of fantomCX version changes.
+* [[fantomCX.changes|Versions]] - The history of fantomCX version changes.
 
-* [[license|License]] - Detailed license information about fantomCX.
+* [[fantomCX.license|License]] - Detailed license information about fantomCX.

@@ -7,7 +7,7 @@ Import fantomCX
 
 ---
 >> Examples
-The framework ships with a huge load of examples which you can see [[examples|here]]. It is definitely recommended to run them and study their source code.
+The framework ships with a huge load of examples which you can see [[fantomCX.examples|here]]. It is definitely recommended to run them and study their source code.
 
 ---
 >> A basic fantomCX script
