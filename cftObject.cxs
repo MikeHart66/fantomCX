@@ -209,6 +209,17 @@ Class ftObject
 #end
 		Self.animMng.AddAnim(animName, imgIndex, _frameStart, _frameEnd)
 	End
+	'------------------------------------------
+'summery:Adds a child to a parent object.
+'seeAlso:GetParent, SetParent
+	Method AddChild:Void(child:ftObject)
+		If child.parentObj <> Null Then
+			child.parentNode.Remove()
+			child.parentNode = Null
+		Endif
+		child.parentNode = Self.childObjList.AddLast(child)
+		child.parentObj = Self
+	End
 	'----------------------------------------------------------
 'changes:2.01:New flags parameter
 'summery:Adds a single image (frame) to an object.
@@ -1773,6 +1784,11 @@ The returned value is the stored width multiplied by the X scale factor.
 		If Self.alpha < 0.0 Then Self.alpha = 0.0
 		If Self.alpha > 1.0 Then Self.alpha = 1.0
 	End
+	
+	Method Alpha:ftObject(newAlpha:Float, relative:Int=False)
+		Self.SetAlpha(newAlpha, relative)
+		Return Self
+	End
 	'------------------------------------------
 'summery:Set the objects angle.
 'seeAlso:GetAngle
@@ -1792,6 +1808,11 @@ The returned value is the stored width multiplied by the X scale factor.
 		If Self.angle > 360.0 Self.angle = Self.angle - 360
 		If Self.angle < 0.0 Self.angle = Self.angle + 360.0
 		_RotateSpriteCol()
+	End
+	
+	Method Angle:ftObject (newAngle:Float, relative:Int = False )
+		Self.SetAngle(newAngle, relative)
+		Return Self
 	End
 	'------------------------------------------
 #Rem
@@ -1874,6 +1895,11 @@ A value of 0 will disable the collision, a value between 1 and 32 will set the c
 		Self.red = cRed
 		Self.green = cGreen
 		Self.blue = cBlue
+	End
+	
+	Method Color:ftObject(cRed:Float, cGreen:Float, cBlue:Float)
+		Self.SetColor(cRed, cGreen, cBlue)
+		Return Self
 	End
 	'-----------------------------------------------------------------------------
 #Rem
@@ -2009,14 +2035,20 @@ A value of 0 will disable the collision, a value between 1 and 32 will set the c
 		Self.handleX = hx
 		Self.handleY = hy
 		_RotateSpriteCol()
+	End
+		
+	Method Handle:ftObject (hx:Float, hy:Float )
+		Self.SetHandle(hx, hy)
+		Return Self
 	End	
+	'-----------------------------------------------------------------------------
 'changes:2.02:Added scale mode parameter.
 #Rem
 'summery:Set the height of an object. If scaleMode is set to true, the scalefactor is determined by comparing the height to the current height.
 #End
 'seeAlso:GetHeight,SetWidth
 	Method SetHeight:Void (height:Float, scaleMode:Bool = False)
-		If scaleMode = True then	Self.scaleY = height/Self.h
+		If scaleMode = True Then	Self.scaleY = height/Self.h
 		'Self.w = width/scaleX
 		Self.h = height/scaleY
 		_RotateSpriteCol()
@@ -2112,7 +2144,7 @@ A value of 0 will disable the collision, a value between 1 and 32 will set the c
 	End	
 	'------------------------------------------
 'summery:Set the parent of an object.
-'seeAlso:GetParent
+'seeAlso:GetParent, AddChild
 	Method SetParent:Void(newParent:ftObject)
 		If Self.parentObj <> Null Then
 			Self.parentNode.Remove()
@@ -2122,6 +2154,11 @@ A value of 0 will disable the collision, a value between 1 and 32 will set the c
 			Self.parentNode = newParent.childObjList.AddLast(Self)
 		Endif
 		Self.parentObj = newParent
+	End
+	
+	Method Parent:ftObject(newParent:ftObject)
+		Self.SetParent(newParent)
+		Return Self
 	End
 	'-----------------------------------------------------------------------------
 'summery:Set the objects X/Y position.
@@ -2172,22 +2209,22 @@ A value of 0 will disable the collision, a value between 1 and 32 will set the c
 	'-----------------------------------------------------------------------------
 'summery:Set the Y-position of an object.
 'seeAlso:GetPosY
-	Method SetPosY:Void (y:Float, relative:Int = False )
+	Method SetPosY:Void (_y:Float, relative:Int = False )
 		Local yd:Float
 		If relative = True Then
 			For Local child := Eachin Self.childObjList
-				child.SetPosY(y, relative)
+				child.SetPosY(_y, relative)
 			Next
 		Else
 			For Local child := Eachin Self.childObjList
 				yd = Self.yPos - child.yPos
-				child.SetPosY(y-yd, relative)
+				child.SetPosY(_y-yd, relative)
 			Next
 		Endif
 		If relative = True
-			Self.yPos = Self.yPos + y
+			Self.yPos = Self.yPos + _y
 		Else
-			Self.yPos = y
+			Self.yPos = _y
 		Endif
 	End
 	'-----------------------------------------------------------------------------
