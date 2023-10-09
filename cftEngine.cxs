@@ -1441,6 +1441,7 @@ The layerIndex tells fantomCX to load the tileLayer at that index. Index starts 
 		
 		Local ytX:Int = 0
 		Local ytY:Int = 0
+		Local hexsidelength:Int = 6
 		
 		Local tileSheetIndex:Int = 0
 
@@ -1468,8 +1469,13 @@ The layerIndex tells fantomCX to load the tileLayer at that index. Index starts 
 	   	Local jsonData:JSONDataItem = JSONData.ReadJSON(fileData)
     	Local jsonObject:JSONObject = JSONObject(jsonData)
     	
-		If 	jsonObject.GetItem("orientation") = "isometric" Then orient = 1
-
+		Select 	jsonObject.GetItem("orientation") 
+          Case "isometric"
+          	orient = 1
+          Case "hexagonal"
+          	orient = 2
+		End
+		
 		obj.tileMap.tileCountX = JSONInteger(jsonObject.GetItem("width"))
 		obj.tileMap.tileCountY = JSONInteger(jsonObject.GetItem("height"))
 		obj.tileMap.tileSizeX = JSONInteger(jsonObject.GetItem("tilewidth"))
@@ -1642,10 +1648,19 @@ The layerIndex tells fantomCX to load the tileLayer at that index. Index starts 
 		        Endif
     		Endif
 		Next
-
+		Local isEven:Int = 0
 		For Local ytY:Int = 1 To obj.tileMap.tileCountY
-			tmpPosX = -((ytY-1)*obj.tileMap.tileSizeX/2.0)
-			tmpPosY = +((ytY-1)*obj.tileMap.tileSizeY/2.0)
+			If orient = 2   'Hexagonal
+				tmpPosX = -((ytY-1)*obj.tileMap.tileSizeX/2.0)
+				tmpPosY = +((ytY-1)*obj.tileMap.tileSizeY/2.0)
+				If isEven = 1
+					tmpPosX += obj.tileMap.tileSizeX/2.0
+				Endif
+			Else
+				tmpPosX = -((ytY-1)*obj.tileMap.tileSizeX/2.0)
+				tmpPosY = +((ytY-1)*obj.tileMap.tileSizeY/2.0)
+			Endif
+			
 			For ytX = 1 To obj.tileMap.tileCountX
 				
 				Local tilePos:Int = (ytX-1)+(ytY-1)*obj.tileMap.tileCountX
@@ -1655,22 +1670,26 @@ The layerIndex tells fantomCX to load the tileLayer at that index. Index starts 
 				
 				obj.tileMap.tiles[tilePos].srcX = 0
 				obj.tileMap.tiles[tilePos].srcY = 0
-				If tileIDx <> - 1 Then
+				If tileIDx <> - 1
 					obj.tileMap.tiles[tilePos].sizeX = obj.tileMap.tileSets[obj.tileMap.tiles[tilePos].tileSetIndex].tilewidth
 					obj.tileMap.tiles[tilePos].sizeY = obj.tileMap.tileSets[obj.tileMap.tiles[tilePos].tileSetIndex].tileheight
 				Endif	
 					
-				If orient = 1 Then
+				If orient = 1   'Isometric
 					obj.tileMap.tiles[tilePos].xOff = tmpPosX
 					obj.tileMap.tiles[tilePos].yOff = tmpPosY
 					tmpPosX += obj.tileMap.tileSizeX/2.0
 					tmpPosY += obj.tileMap.tileSizeY/2.0
 					obj.tileMap.tiles[tilePos].tileType = orient
+				ElseIf orient = 2    'Hexagonal
+					obj.tileMap.tiles[tilePos].xOff = obj.tileMap.tileSizeX * (ytX-1)+ ((obj.tileMap.tileSizeX/2)*isEven)
+					obj.tileMap.tiles[tilePos].yOff = (obj.tileMap.tileSizeY - hexsidelength/2 ) * (ytY-1) 
 				Else
 					obj.tileMap.tiles[tilePos].xOff = obj.tileMap.tileSizeX * (ytX-1)
 					obj.tileMap.tiles[tilePos].yOff = obj.tileMap.tileSizeY * (ytY-1)
 				Endif
 			Next
+			isEven = 1 - isEven
 		Next	
 
 		obj.frameCount = obj.objImg[0].img.Length()
