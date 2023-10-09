@@ -1,4 +1,5 @@
 > Changes in fantomCX
+* [[#v304|Version 3.04]]
 * [[#v303|Version 3.03]]
 * [[#v302|Version 3.02]]
 * [[#v301|Version 3.01]]
@@ -9,8 +10,19 @@
 
 ---
 
-| Version<a name='v303'></a> | Kind | Description | Hint
-| 3.03 | Fix | Documentation for ftEngine.OnSwipeMove and ftEngine.OnSwipeStart | 
+| Version<a name='v304'></a> | Kind | Description | Hint
+| 3.04 | Fix | Examples | Fixed examples/TileMaps/Tiled/Tiled.cxs by displaying FPS wrong.
+|      | Fix | Documentation | Fix for ftEngine.OnSwipeMove and ftEngine.OnSwipeStart.
+|      | New | ftObject.Alpha:ftObject(newAlpha:Float, relative:Int=False) |
+|      | New | ftObject.Angle:ftObject(newAngle:Float, relative:Int=False ) |
+|      | New | ftObject.AddChild:Void(child:ftObject) |
+|      | New | ftObject.Color:ftObject(cRed:Float, cGreen:Float, cBlue:Float) |
+|      | New | ftObject.Handle:ftObject(hx:Float, hy:Float ) |
+|      | New | ftObject.Parent:ftObject(newParent:ftObject) |
+|      | Mod | ftEngine.CreateTileMap:ftObject(filename:String, xpos:Float, ypos:Float, layerIndex:Int=1 ) | It now can load and display Tiled
+Hexgon maps
+|      | New | Examples | Added new example for hexagon tile maps at examples/TileMaps/Tiled/TiledHexagon.cxs
+| Version<a name='v303'></a> | - | - | -
 | 3.03 | Mod | Add ftEngine.OnSwipeMove and ftEngine.OnSwipeStart to the BaseScript.cxs example | 
 | Version<a name='v302'></a> | - | - | -
 | 3.02 | New | ftEngine.ShakeCamera:Void(_factor:Float) | Shakes the camera with an random value.

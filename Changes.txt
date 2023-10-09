@@ -1,3 +1,25 @@
+Version 3.04
+
+*New functionalities*
+
+  - Added ftObject.Alpha:ftObject(newAlpha:Float, relative:Int=False)
+  - Added ftObject.Angle:ftObject(newAngle:Float, relative:Int=False )
+  - Added ftObject.AddChild:Void(child:ftObject)
+  - Added ftObject.Color:ftObject(cRed:Float, cGreen:Float, cBlue:Float)
+  - Added ftObject.Handle:ftObject(hx:Float, hy:Float )
+  - Added ftObject.Parent:ftObject(newParent:ftObject)
+  - Added new example TileMaps/Tiled/TiledHexagon.cxs
+  
+*Fixes*
+
+  - Fixed example TileMaps/Tiled/Tiled.cxs by displaying FPS wrong.
+  - Fix documentation for ftEngine.OnSwipeMove and ftEngine.OnSwipeStart.
+
+*Modifications*
+
+  - ftEngine.CreateTileMap now can load and display Tiled Hexagon maps.
+  
+-----------------------------------------------------------------------------
 Version 3.03
 
 *New functionalities*
@@ -8,7 +30,7 @@ Version 3.03
 
   - tba
 
-*Modifikations*
+*Modifications*
 
   - Added the new OnSwipe methods to the BaseScript example and the docs.
   
@@ -26,7 +48,7 @@ Version 3.02
 
   - tba
 
-*Modifikations*
+*Modifications*
 
   - Swipe.Update will check if the last touch position is the same and so restarts the swipe process.
   
@@ -38,7 +60,7 @@ Version 3.01
   - Fixed ftImageMng.LoadImage:ftImage(path:String,  frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=Image.Filter) as it discarded the loaded image.
   - Fixed various data problems regarding the Tiled files.
 
-*Modifikations*
+*Modifications*
 
   - Modded the docs to work with the new MakeDocs tool.
   
