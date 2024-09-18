@@ -1475,7 +1475,7 @@ The layerIndex tells fantomCX to load the tileLayer at that index. Index starts 
           Case "hexagonal"
           	orient = 2
 		End
-		
+		obj.tileMap.orientation = orient
 		obj.tileMap.tileCountX = JSONInteger(jsonObject.GetItem("width"))
 		obj.tileMap.tileCountY = JSONInteger(jsonObject.GetItem("height"))
 		obj.tileMap.tileSizeX = JSONInteger(jsonObject.GetItem("tilewidth"))
@@ -2288,7 +2288,6 @@ The current default file formats are:
 		
 		'Self.camMng = New ftCameraMng
 		'Self.camMng.engine = Self
-		
 		'Self.currCamera = Self.camMng.CreateCamera()
 		'Self.currCamera.SetDimensions(0,0,DeviceWidth(),DeviceHeight())
 

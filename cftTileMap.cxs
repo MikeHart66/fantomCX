@@ -216,6 +216,7 @@ Class ftTileMap
 	Field tileSpacing:Int = 0
 	Field mapObjList := New List<ftMapObj>
 	Field obj:ftObject = Null
+	Field orientation:Int = 0    '1=isometric, 2=hexagonal
 	'-----------------------------------------------------------------------------
 '#DOCON#
 #Rem
@@ -481,6 +482,9 @@ It returns -1 if there is no tile.
 'summery:Returns the Y position of a tile with the given index. Index starts with 0. 
 'seeAlso:GetTilePosX
 	Method GetTilePosY:Float(index:Int)
+		If Self.orientation = 1    'isometric
+			Return obj.yPos + (Self.tiles[index].yOff-Self.tiles[index].sizeY/8) * obj.scaleY
+		Endif
 		Return obj.yPos + Self.tiles[index].yOff * obj.scaleY
 	End
 	'-----------------------------------------------------------------------------
