@@ -534,6 +534,23 @@ ftEngine.tmBox   (Value = 3)[/list]
 		Return timer
 	End
 	'-----------------------------------------------------------------------------
+	Method CreateTrans:ftTrans(xt:Float, yt:Float, transRotation:Float, transScale:Float, transAlpha:Float, duration:Float, relative:Int, transId:Int=0 )
+		Local trans:ftTrans = New ftTrans
+		trans.engine = Self.engine
+		trans.obj = Self
+		trans.layer = Null
+		trans.currTime = Self.engine.time
+		trans.finishID = transId
+		trans.duration = duration
+		trans.s_duration = duration
+		trans.AddAlpha(transAlpha,Self,duration, relative)
+		trans.AddPos(xt, yt, Self, duration, relative)
+		trans.AddRot(transRotation, Self, duration, relative )
+		trans.AddScale(transScale, Self, duration, relative )
+		trans.transNode = Self.transitionList.AddLast(trans)
+		Return trans
+	End
+	'-----------------------------------------------------------------------------
 #Rem
 'summery:Create an alpha transition.
 'The duration is the time in milliseconds, the transition takes to complete. Only a transID > 0 will fire the [b]ftEngine.OnObjectTrans[/b] method.
@@ -547,8 +564,8 @@ ftEngine.tmBox   (Value = 3)[/list]
 		trans.currTime = Self.engine.time
 		trans.finishID = transId
 		trans.duration = duration
+		trans.s_duration = duration
 		trans.AddAlpha(transAlpha,Self,duration, relative)
-		
 		trans.transNode = Self.transitionList.AddLast(trans)
 		Return trans
 	End
@@ -566,6 +583,7 @@ ftEngine.tmBox   (Value = 3)[/list]
 		trans.currTime = Self.engine.time
 		trans.finishID = transId
 		trans.duration = duration
+		trans.s_duration = duration
 		trans.AddPos(xt, yt, Self, duration, relative)
 		trans.transNode = Self.transitionList.AddLast(trans)
 		Return trans
@@ -584,6 +602,7 @@ ftEngine.tmBox   (Value = 3)[/list]
 		trans.currTime = Self.engine.time
 		trans.finishID = transId
 		trans.duration = duration
+		trans.s_duration = duration
 		trans.AddRot(transRotation, Self, duration, relative )
 		trans.transNode = Self.transitionList.AddLast(trans)
 		Return trans
@@ -602,6 +621,7 @@ ftEngine.tmBox   (Value = 3)[/list]
 		trans.currTime = Self.engine.time
 		trans.finishID = transId
 		trans.duration = duration
+		trans.s_duration = duration
 		trans.AddScale(transScale, Self, duration, relative )
 		trans.transNode = Self.transitionList.AddLast(trans)
 		Return trans

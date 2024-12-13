@@ -1,4 +1,5 @@
 > Changes in fantomCX
+* [[#v305|Version 3.05]]
 * [[#v304|Version 3.04]]
 * [[#v303|Version 3.03]]
 * [[#v302|Version 3.02]]
@@ -10,7 +11,13 @@
 
 ---
 
-| Version<a name='v304'></a> | Kind | Description | Hint
+| Version<a name='v305'></a> | Kind | Description | Hint
+| 3.05 | New | ftTrans.SetLoop:Void(loopFlag:Bool = True, ltype:Int = ftEngine.tltRepeat, rcount:Int = -1) |
+|      | New | ftTrans.SetLoopType:Void(loopTyp:Int = ftEngine.tltRepeat) |
+|      | New | ftTrans.SetLoopRepeat:Void(rcount:Int = -1) |
+|      | New | ftObjecht.CreateTrans:ftTrans(xt:Float, yt:Float, transRotation:Float, transScale:Float, transAlpha:Float, duration:Float, relative:Int, transId:Int=0) |
+|      | Mod | ftTrans.Update:Void() | In ftTrans.Update, the equation will now also work with scale, rotation and alpha
+| Version<a name='v304'></a> | - | - | -
 | 3.04 | Fix | Examples | Fixed examples/TileMaps/Tiled/Tiled.cxs by displaying FPS wrong.
 |      | Fix | Documentation | Fix for ftEngine.OnSwipeMove and ftEngine.OnSwipeStart.
 |      | New | ftObject.Alpha:ftObject(newAlpha:Float, relative:Int=False) |
@@ -19,8 +26,7 @@
 |      | New | ftObject.Color:ftObject(cRed:Float, cGreen:Float, cBlue:Float) |
 |      | New | ftObject.Handle:ftObject(hx:Float, hy:Float ) |
 |      | New | ftObject.Parent:ftObject(newParent:ftObject) |
-|      | Mod | ftEngine.CreateTileMap:ftObject(filename:String, xpos:Float, ypos:Float, layerIndex:Int=1 ) | It now can load and display Tiled
-Hexgon maps
+|      | Mod | ftEngine.CreateTileMap:ftObject(filename:String, xpos:Float, ypos:Float, layerIndex:Int=1 ) | It now can load and display Tiled Hexgon maps
 |      | New | Examples | Added new example for hexagon tile maps at examples/TileMaps/Tiled/TiledHexagon.cxs
 | Version<a name='v303'></a> | - | - | -
 | 3.03 | Mod | Add ftEngine.OnSwipeMove and ftEngine.OnSwipeStart to the BaseScript.cxs example | 

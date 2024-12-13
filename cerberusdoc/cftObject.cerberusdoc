@@ -154,6 +154,14 @@ A repeatCount of -1 will let the timer run forever. The duration is the time in 
 
 Links: [[OnObjectTimer]]
 
+# Method CreateTrans:ftTrans(xt:Float, yt:Float, transRotation:Float, transScale:Float, transAlpha:Float, duration:Float, relative:Int, transId:Int=0)
+
+Create a transition.
+
+*Details*
+
+The duration is the time in milliseconds, the transition takes to complete. Only a transID > 0 will fire the <b>ftEngine.OnObjectTrans</b> method.
+
 # Method CreateTransAlpha:ftTrans(transAlpha:Float, duration:Float, relative:Int, transId:Int=0)
 
 Create an alpha transition.

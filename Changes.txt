@@ -1,3 +1,20 @@
+Version 3.05
+
+*New functionalities*
+
+  - Added ftTrans.SetLoop:Void(loopFlag:Bool = True, ltype:Int = ftEngine.tltRepeat, rcount:Int = -1)
+  - Added ftTrans.SetLoopType:Void(loopTyp:Int = ftEngine.tltRepeat)
+  - Added ftTrans.SetLoopRepeat:Void(rcount:Int = -1)
+  
+*Fixes*
+
+  - tba
+
+*Modifications*
+
+  - In ftTrans.Update, the equation will now also work with scale, rotation and alpha.
+  
+-----------------------------------------------------------------------------
 Version 3.04
 
 *New functionalities*

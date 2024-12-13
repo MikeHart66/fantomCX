@@ -31,6 +31,7 @@ Class ftTransEntry
 	Field alpha:Float
 	Field scale:Float
 	Field duration:Float
+	Field s_duration:Float
 	Field timeLapsed:Float = 0.0
 	Field s_x:Float
 	Field s_y:Float
@@ -44,6 +45,65 @@ Class ftTransEntry
 	Field e_scale:Float
 	Field obj:ftObject = Null
 	Field layer:ftLayer = Null
+	
+	'------------------------------------------
+	Method Reset:Void(loopTyp:int)
+		timeLapsed = 0.0
+		duration = s_duration
+		If obj <> Null Then
+			If loopTyp = ftEngine.tltRepeat
+				Select typ
+					Case 1
+						obj.SetPos(s_x, s_y, False)
+						x = (e_x - s_x) / duration
+						y = (e_y - s_y) / duration
+					Case 2
+						obj.SetAngle(s_rot, False)
+						rot = (e_rot - s_rot) / duration
+					Case 3
+						obj.SetScale(s_scale, False)
+						scale = (e_scale - s_scale) / duration
+					Case 4
+						obj.SetAlpha(s_alpha, False)
+						alpha = (e_alpha - s_alpha) / duration
+				End
+			Elseif loopTyp = ftEngine.tltBounce
+				Select typ
+					Case 1
+						Local tx:= Self.s_x
+						Local ty:= Self.s_y
+						s_x = e_x
+						s_y = e_y
+						e_x = tx
+						e_y = ty
+						obj.SetPos(s_x, s_y, False)
+						x = (e_x - s_x) / duration
+						y = (e_y - s_y) / duration
+					Case 2
+						Local tr:= Self.s_rot
+						s_rot = e_rot
+						e_rot = tr
+						obj.SetAngle(s_rot, False)
+						rot = (e_rot - s_rot) / duration
+					Case 3
+						Local ts:= Self.s_scale
+						s_scale = e_scale
+						e_scale = ts
+						obj.SetScale(s_scale, False)
+						scale = (e_scale - s_scale) / duration
+					Case 4
+						Local ta:= Self.s_alpha
+						s_alpha = e_alpha
+						e_alpha = ta
+						obj.SetAlpha(s_alpha, False)
+						alpha = (e_alpha - s_alpha) / duration
+				End
+			Endif
+		Endif
+	End
+
+
+
 	'------------------------------------------
 	Method Update:Void(delta:Int, tween:Tween)
 		timeLapsed += delta
@@ -66,11 +126,14 @@ Class ftTransEntry
 						obj.SetPosX(tween.equation.Call(timeLapsed, s_x, e_x - s_x, duration))
 						obj.SetPosY(tween.equation.Call(timeLapsed, s_y, e_y - s_y, duration))
 					Case 2
-						obj.SetAngle(rot * delta, True)
+						'obj.SetAngle(rot * delta, True)
+						obj.SetAngle(tween.equation.Call(timeLapsed, s_rot, e_rot - s_rot, duration))
 					Case 3
-						obj.SetScale(scale * delta, True)
+						'obj.SetScale(scale * delta, True)
+						obj.SetScale(tween.equation.Call(timeLapsed, s_scale, e_scale - s_scale, duration))
 					Case 4
 						obj.SetAlpha(alpha * delta, True)
+						obj.SetAlpha(tween.equation.Call(timeLapsed, s_alpha, e_alpha - s_alpha, duration))
 				End
 			Endif
 		Else
@@ -102,6 +165,8 @@ Class ftTransEntry
 
 End
 
+
+
 '#DOCON#
 '***************************************
 Class ftTrans
@@ -109,6 +174,7 @@ Class ftTrans
 	Field entryList := New List<ftTransEntry>
 	Field currTime:Int=0
 	Field duration:Int
+	Field s_duration:Int
 	Field finishID:Int
 	Field obj:ftObject=Null
 	Field layer:ftLayer=Null
@@ -116,6 +182,9 @@ Class ftTrans
 	Field transNode:list.Node<ftTrans> = Null
 	Field deleted:Bool = False
 	Field isPaused:Bool = False
+	Field loop:Bool = False
+	Field loopType:Int = 0
+	Field loopCount:Int = -1
 
 	Field tween:Tween
     Field equations:String[] = ["Linear","Back","Bounce","Circ","Cubic","Elastic","Expo","Quad","Quart","Quint","Sine"]
@@ -123,7 +192,7 @@ Class ftTrans
 
     Field currentEquation:Int
     Field currentEaseType:Int
-
+    
 	'-----------------------------------------------------------------------------
 	Method AddAlpha:Void(alpha:Float, obj:ftObject, duration:Float, relative:Int )
 		Local transEntry:ftTransEntry = New ftTransEntry
@@ -136,6 +205,7 @@ Class ftTrans
 		Endif
 		transEntry.alpha = (transEntry.e_alpha - obj.alpha) / duration
 		transEntry.duration = duration
+		transEntry.s_duration = duration
 		transEntry.timeLapsed = 0.0
 		transEntry.obj = obj
 		transEntry.layer = Null
@@ -153,6 +223,7 @@ Class ftTrans
 		Endif
 		transEntry.alpha = (transEntry.e_alpha - layer.alpha) / duration
 		transEntry.duration = duration
+		transEntry.s_duration = duration
 		transEntry.timeLapsed = 0.0
 		transEntry.obj = Null
 		transEntry.layer = layer
@@ -174,6 +245,7 @@ Class ftTrans
 		transEntry.x = (transEntry.e_x - obj.xPos) / duration
 		transEntry.y = (transEntry.e_y - obj.yPos) / duration
 		transEntry.duration = duration
+		transEntry.s_duration = duration
 		transEntry.timeLapsed = 0.0
 		transEntry.obj = obj
 		transEntry.layer = Null
@@ -195,6 +267,7 @@ Class ftTrans
 		transEntry.x = (transEntry.e_x - layer.xPos) / duration
 		transEntry.y = (transEntry.e_y - layer.yPos) / duration
 		transEntry.duration = duration
+		transEntry.s_duration = duration
 		transEntry.timeLapsed = 0.0
 		transEntry.obj = Null
 		transEntry.layer = layer
@@ -212,6 +285,7 @@ Class ftTrans
 		Endif
 		transEntry.rot = (transEntry.e_rot - obj.angle) / duration
 		transEntry.duration = duration
+		transEntry.s_duration = duration
 		transEntry.timeLapsed = 0.0
 		transEntry.obj = obj
 		transEntry.layer = Null
@@ -229,6 +303,7 @@ Class ftTrans
 		Endif
 		transEntry.scale = (transEntry.e_scale - obj.scaleX) / duration
 		transEntry.duration = duration
+		transEntry.s_duration = duration
 		transEntry.timeLapsed = 0.0
 		transEntry.obj = obj
 		transEntry.layer = Null
@@ -246,6 +321,7 @@ Class ftTrans
 		Endif
 		transEntry.scale = (transEntry.e_scale - layer.scale) / duration
 		transEntry.duration = duration
+		transEntry.s_duration = duration
 		transEntry.timeLapsed = 0.0
 		transEntry.obj = Null
 		transEntry.layer = layer
@@ -283,6 +359,20 @@ Class ftTrans
         tween.Start()
 	End
 '#DOCON#
+	'------------------------------------------
+	Method SetLoop:Void(loopFlag:Bool = True, ltype:Int = ftEngine.tltRepeat, rcount:Int = -1)
+		Self.loop = loopFlag
+		Self.loopType = ltype
+		Self.loopCount = rcount
+	End
+	'------------------------------------------
+	Method SetLoopType:Void(loopTyp:Int = ftEngine.tltRepeat)
+		Self.loopType = loopTyp
+	End
+	'------------------------------------------
+	Method SetLoopRepeat:Void(rcount:Int = -1)
+		Self.loopCount = rcount
+	End
 	'------------------------------------------
 'summery:With this method you can pause and resume the transition. 
 'seeAlso:GetPaused
@@ -412,7 +502,15 @@ This command sets the ease type of a transition. The ease type can be:
 							engine.OnLayerTransition(finishID, layer)
 						Endif
 					Endif
-					Self.deleted = True
+					If Self.loop = False Or Self.loopCount = 0
+						Self.deleted = True
+					Else
+						duration = s_duration
+						For Local entry := Eachin entryList
+							entry.Reset(Self.loopType)
+						Next
+						If Self.loopCount > 0 Then Self.loopCount -= 1 
+					Endif
 				Else
 					For Local entry := Eachin entryList
 						entry.Update(deltaTime, Self.tween)
@@ -427,7 +525,7 @@ End
 
 #rem
 footer:This fantomCX framework is released under the MIT license:
-[quote]Copyright (c) 2011-2018 Michael Hartlef
+[quote]Copyright (c) 2011-2025 Michael Hartlef
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions:
 

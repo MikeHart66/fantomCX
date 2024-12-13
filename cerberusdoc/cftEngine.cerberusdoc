@@ -2087,3 +2087,6 @@ Links: [[SetDefaultActive]], [[SetTimeScale]], [[OnLayerUpdate]], [[OnObjectUpda
 
 # Const twmSineEaseOut% = 21:none
 
+# Const tltRepeat% = 1:none
+
+# Const tltBounce% = 2:none

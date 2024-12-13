@@ -211,6 +211,10 @@ Class ftEngine
 	Const oedTop% = 2
 	Const oedLeft% = 3
 	Const oedRight% = 4
+	
+	' Transition loop types
+	Const tltRepeat% = 1
+	Const tltBounce% = 2
 
 	'------------------------------------------
 'summery:De-/activates the music playback for the engine.

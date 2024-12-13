@@ -70,3 +70,17 @@ This command sets the equation type of a transition. The equation type can be:
 
 Links: [[SetEase]]
 
+# Method SetLoop:Void(loopFlag:Bool = True, ltype:Int = ftEngine.tltRepeat, rcount:Int = -1)
+
+Use SetLoop to repeat the transition when it is done. The loop type can be either *ftTrans.ltRepeat* or *ftTrans.ltBounce*. *rcount* will set how many times the transistion will be repeated. A value of -1 will let it loop indefinitely.
+
+# Method SetLoopType:Void(loopTyp:Int = ftEngine.tltRepeat)
+
+The loop type can be either *ftEngine.tltRepeat* or *ftEngine.tltBounce*. 
+
+# Method SetLoopRepeat:Void(rcount:Int = -1)
+
+Set how many times the transistion will be repeated. A value of -1 will let it loop indefinitely.
+
+
+
