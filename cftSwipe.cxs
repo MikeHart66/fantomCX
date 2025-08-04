@@ -126,7 +126,7 @@ Class ftSwipe
 						Self.endY[index] = engine.GetTouchY(index)
 						engine.OnSwipeMove(index, Self.endX[index], Self.endY[index])
 						Self.touchMoved = True
-					endif
+					Endif
 				Endif
 			Endif
 		Endif

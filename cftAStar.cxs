@@ -94,7 +94,7 @@ Class ftGridNode
 		Local ci:Int = 0
  		For Local node := Eachin grid.nodeList
  			ci = ci + 1
- 			If node = self Then
+ 			If node = Self Then
 				Return ci
 			Endif
 		Next
@@ -146,13 +146,13 @@ Class ftGridNode
 'summery:Sets the position of a node inside a grid.
 	Method SetPos:Void(xpos:Float, ypos:Float, relative:Bool = False)
 		If relative = True Then
-			self.xDist = xpos
-			self.yDist = ypos
+			Self.xDist = xpos
+			Self.yDist = ypos
 			Self.x = Self.xDist + Self.grid.xPos
 			Self.y = Self.yDist + Self.grid.yPos
 		Else
 			Self.xDist = x - Self.grid.xPos
-			self.yDist = y - Self.grid.yPos
+			Self.yDist = y - Self.grid.yPos
 		Endif
 		'Scale and rotate all waypoints of the path
 		If Self.grid.GetScaleX() <> 1.0 Or Self.grid.GetScaleY() <> 1.0 then

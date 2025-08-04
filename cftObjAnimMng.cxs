@@ -71,7 +71,7 @@ Class ftObjAnimMng
 	Method CreateAnim:Void (animName:String, imgIndex:Int, _frameStart:Int = 1, _frameEnd:Int = 1)
 		Local anim:ftAnim = New ftAnim
 		anim.name = animName
-		anim.animMng = self
+		anim.animMng = Self
 		For Local i:Int = _frameStart To _frameEnd
 			anim.AddFrame(imgIndex-1, i)
 		Next
@@ -162,7 +162,7 @@ Class ftAnim
 	Field currFrame:Int = 0
 	Field frameCount:Int = 0
 	Field loop:Int = -1
-	Field animMng:ftObjAnimMng = null
+	Field animMng:ftObjAnimMng = Null
 '#DOCON#'	
 	'-----------------------------------------------------------------------------
 'summery:Adds a frame to an animated object.

@@ -830,7 +830,7 @@ Class ftGuiTextfield Extends ftGuiGadget
 		Super.Update(delta)
 		If Self.GetFocus()= False Then Return
 		Local char:Int
-		Local s:string
+		Local s:String
 		Repeat
 			char=GetChar()
 			If Not char Exit

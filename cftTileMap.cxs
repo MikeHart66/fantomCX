@@ -431,7 +431,7 @@ It returns -1 if there is no tile.
 					Exit
 				Endif
 			Next
-		endif
+		Endif
 		For ytY = yFirst To yLast
 			For ytX = xFirst To xLast							
 				tilePos = (ytX-1)+(ytY-1)*Self.tileCountX
@@ -498,7 +498,7 @@ It returns -1 if there is no tile.
 'summery:Returns the tileSet of a given index
 'seeAlso:GetTileSetCount,GetTileSetIndex
 	Method GetTileSet:ftTileSet(index:Int)
-		Local retVal:ftTileSet = null
+		Local retVal:ftTileSet = Null
 		For Local index:Int = 1 To Self.tileSets.Length()
 			retVal = Self.tileSets[index-1]
 		Next

@@ -600,7 +600,7 @@ It creates a DEFAULT animation automatically.
 			obj = Self.objectPool.Allocate()._Init()
 		Else
 			obj = ftObject(_ucob)
-		endif
+		Endif
 		obj.engine = Self
 		obj.xPos = xpos
 		obj.yPos = ypos
@@ -696,7 +696,7 @@ It creates a DEFAULT animation automatically.
 			obj = Self.objectPool.Allocate()._Init()
 		Else
 			obj = ftObject(_ucob)
-		endif
+		Endif
 		obj.engine = Self
 		obj.xPos = xpos
 		obj.yPos = ypos
@@ -732,7 +732,7 @@ It creates a DEFAULT animation automatically.
 			obj = Self.objectPool.Allocate()._Init()
 		Else
 			obj = ftObject(_ucob)
-		endif
+		Endif
 		obj.engine = Self
 		obj.xPos = xpos
 		obj.yPos = ypos
@@ -767,7 +767,7 @@ It creates a DEFAULT animation automatically.
 			obj = Self.objectPool.Allocate()._Init()
 		Else
 			obj = ftObject(_ucob)
-		endif
+		Endif
 		obj.engine = Self
 		obj.xPos = xpos
 		obj.yPos = ypos
@@ -803,7 +803,7 @@ It creates a DEFAULT animation automatically.
 			obj = Self.objectPool.Allocate()._Init()
 		Else
 			obj = ftObject(_ucob)
-		endif
+		Endif
 		obj.engine = Self
 		obj.xPos = xpos
 		obj.yPos = ypos
@@ -976,7 +976,7 @@ The objects handle is in the middle of the line by default and can be changed vi
 			obj = Self.objectPool.Allocate()._Init()
 		Else
 			obj = ftObject(_ucob)
-		endif
+		Endif
 		obj.engine = Self
 		obj.xPos = xpos		
 		obj.yPos = ypos
@@ -1100,7 +1100,7 @@ When the timer fires it will call OnObjectTimer. A repeatCount of -1 will let th
 			obj = Self.objectPool.Allocate()._Init()
 		Else
 			obj = ftObject(_ucob)
-		endif
+		Endif
 		obj.engine = Self
 		obj.xPos = xpos
 		obj.yPos = ypos
@@ -1429,7 +1429,7 @@ The layerIndex tells fantomCX to load the tileLayer at that index. Index starts 
 	Method CreateTileMap:ftObject(filename:String, xpos:Float, ypos:Float, layerIndex:Int=1 )
 		Local obj:ftObject = New ftObject
 		Local imgH:Int
-		Local imgW:int
+		Local imgW:Int
 		Local tlH:Int
 		Local tlW:Int
 		Local path:String =""

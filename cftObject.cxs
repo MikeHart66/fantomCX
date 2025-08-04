@@ -1237,7 +1237,7 @@ The value of the type of an object can be one of the following ones:
 [*]ftEngine.otPivot   (Value = 13)[/list]
 #End
 	Method GetType:Int ()
-		Return self.type
+		Return Self.type
 	End
 	'-----------------------------------------------------------------------------
 'summery:Determines a 2D vector from the objects center calculated by the given distance and angle.

@@ -354,7 +354,7 @@ Class ftLayer
 		Local sx :Int
 		Local sy :Int
 		Local sw :Int
-		local sh :Int
+		Local sh :Int
 
 		Self.engine.currentCanvas.PushMatrix
 		If Self.angle <> 0

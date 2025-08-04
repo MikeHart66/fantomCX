@@ -224,7 +224,7 @@ Class ftBox2D
 		If degree = True Then 
 			lA = lA * 0.0174533
 			uA = uA * 0.0174533
-		endif
+		Endif
 		rd.enableLimit = True
 		rd.lowerAngle = lA
 		rd.upperAngle = uA
@@ -323,7 +323,7 @@ Class ftBox2D
 'summery:Create a polygon shaped B2Body object from a PhysicsEditor compatible json file.
 	Method CreatePolygon:b2Body(filename:String, subBodyName:String, xpos:Float, ypos:Float)
 		Local bodyDef :b2BodyDef = New b2BodyDef()
-		Local body:b2Body = null
+		Local body:b2Body = Null
 		Local xp:Float
 		Local yp:Float
 		

@@ -73,13 +73,13 @@ Class ftWaypoint
 'summery:Sets the position of a waypoint inside a path.
 	Method SetPos:Void(xpos:Float, ypos:Float, relative:Bool = False)
 		If relative = True Then
-			self.xDist = xpos
-			self.yDist = ypos
-			self.xPos = self.xDist + Self.path.xPos
-			self.yPos = self.yDist + Self.path.yPos
+			Self.xDist = xpos
+			Self.yDist = ypos
+			Self.xPos = Self.xDist + Self.path.xPos
+			Self.yPos = Self.yDist + Self.path.yPos
 		Else
-			self.xDist = xpos - Self.path.xPos
-			self.yDist = ypos - Self.path.yPos
+			Self.xDist = xpos - Self.path.xPos
+			Self.yDist = ypos - Self.path.yPos
 		Endif
 		'Scale and rotate all waypoints of the path
 		Self.path.SetScale(0.0, 0.0, True)
@@ -311,7 +311,7 @@ Class ftPath
 'summery:Removes all markers of the path.
 	Method RemoveAllMarkers:Void()
  		For Local marker := Eachin Self.markerList.Backwards()
-			If marker.isDeleted = false Then marker.Remove()
+			If marker.isDeleted = False Then marker.Remove()
 		Next
   	End
 
@@ -499,7 +499,7 @@ A type value of 0 renders a square, any other value renders a circle.
 	Method UpdateAllMarker:Void(speedFactor:Float = 1.0)
 		Self.inUpdate = True
 		For Local marker := Eachin Self.markerList
-			If marker.isDeleted = false Then marker.Update(speedFactor)
+			If marker.isDeleted = False Then marker.Update(speedFactor)
 		Next
 		CleanupLists()
 		Self.inUpdate = False

@@ -47,7 +47,7 @@ Class ftTransEntry
 	Field layer:ftLayer = Null
 	
 	'------------------------------------------
-	Method Reset:Void(loopTyp:int)
+	Method Reset:Void(loopTyp:Int)
 		timeLapsed = 0.0
 		duration = s_duration
 		If obj <> Null Then
