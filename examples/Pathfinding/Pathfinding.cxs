@@ -30,7 +30,7 @@ Class cGame Extends App
 	Field grid:ftAStar = Null
 	
 	' Create 3 fields for the start, end and closest node
-	Field closeNode:ftGridNode = Null
+	Field closestNode:ftGridNode = Null
 	Field startNode:ftGridNode = Null
 	Field endNode:ftGridNode = Null
 	
@@ -92,6 +92,9 @@ Class cGame Extends App
 		Print ("")
 		Print ("Press -S- to save a grid to the local storage...")
 		Print ("... and -L- to load it back from the local storage.")
+		Print ("")
+		Print ("Press -C- to recalculate a new.")
+		Print ("")
 		Return 0
 	End
 	'------------------------------------------
@@ -107,11 +110,11 @@ Class cGame Extends App
 			fE.Update(timeDelta)
 			
 			' Determine the closest node to the mouse coordinates
-			closeNode = grid.FindClosestNode(fE.GetTouchX(), fE.GetTouchY())
+			closestNode = grid.FindClosestNode(fE.GetTouchX(), fE.GetTouchY())
 			
 			' Define the start node and calculate a new path
-			If MouseHit( MOUSE_LEFT ) And closeNode <> Null Then
-				startNode = closeNode
+			If MouseHit( MOUSE_LEFT ) And closestNode <> Null Then
+				startNode = closestNode
 				If endNode <> Null Then
 					dist = grid.FindPath(startNode.GetIndex(), endNode.GetIndex())
 					Print("Pathtime = " + grid.pathTime+ " milliseconds")
@@ -119,14 +122,24 @@ Class cGame Extends App
 			Endif
 	
 			' Define the end node and calculate a new path
-			If MouseHit( MOUSE_RIGHT ) And closeNode <> Null Then
-				endNode = closeNode
+			If MouseHit( MOUSE_RIGHT ) And closestNode <> Null Then
+				endNode = closestNode
 				If startNode <> Null Then
 					dist = grid.FindPath(startNode.GetIndex(), endNode.GetIndex())
 					Print("Pathtime = " + grid.pathTime + " milliseconds")
 				Endif
 			Endif
 			
+			' Calculate a new grid when the C key was pressed
+			If KeyHit(KEY_C) Then
+				closestNode = Null
+				startNode = Null
+				endNode = Null
+				grid.Remove()
+				SetupGrid()
+				Print "Grid was newly calculated"
+			Endif
+
 			' Store the current grid when the S key was pressed
 			If KeyHit(KEY_S) Then
 				Local gss:= grid.SaveToString()
@@ -138,6 +151,9 @@ Class cGame Extends App
 			' Load a saved grid when the L key was pressed
 			If KeyHit(KEY_L) Then 
 				Local gls:= LoadState()
+				closestNode = Null
+				startNode = Null
+				endNode = Null
 				grid.LoadFromString(gls)
 				Print "Finish loading."
 			Endif
@@ -160,7 +176,7 @@ Class cGame Extends App
 			
 			' Now render the closest, start and end nodes
 			fE.SetColor(255,0,255)
-			If closeNode <> Null Then fE.GetCanvas().DrawCircle(closeNode.GetPosX(),closeNode.GetPosY(),5)
+			If closestNode <> Null Then fE.GetCanvas().DrawCircle(closestNode.GetPosX(),closestNode.GetPosY(),5)
 			fE.SetColor(0,255,0)
 			If startNode <> Null Then fE.GetCanvas().DrawCircle(startNode.GetPosX(),startNode.GetPosY(),5)
 			fE.SetColor(255,0,0)
@@ -168,10 +184,10 @@ Class cGame Extends App
 			
 			' Display the distance of the last path found
 			fE.SetColor(255,255,0)
-			fE.GetCanvas().DrawText("Dist = "+dist,20,20)
 			
 			' If a path was found, display its route
 			If grid.GetPathNodeCount()> 0 Then
+			    fE.GetCanvas().DrawText("Dist = "+dist,20,20)
 				fE.GetCanvas().DrawText("Path node nodecount = "+grid.GetPathNodeCount(),20,40)
 				fE.SetColor(80,80,255)
 				For Local pi:= 1 To grid.GetPathNodeCount()-1

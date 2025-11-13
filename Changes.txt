@@ -1,3 +1,20 @@
+Version 3.06
+
+*New functionalities*
+
+  - tba
+  
+*Fixes*
+
+  - ftEngine.SetCanvasSize not recognizing mode ftEngine.cmPerfect.
+  - ftAStar.LoadfromString was not correctly removing nodes
+  - Example Pathfinding/Pathfinding.cxs
+
+*Modifications*
+
+  - tba
+  
+-----------------------------------------------------------------------------
 Version 3.05
 
 *New functionalities*

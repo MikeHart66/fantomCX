@@ -1,4 +1,5 @@
 > Changes in fantomCX
+* [[#v306|Version 3.06]]
 * [[#v305|Version 3.05]]
 * [[#v304|Version 3.04]]
 * [[#v303|Version 3.03]]
@@ -11,7 +12,11 @@
 
 ---
 
-| Version<a name='v305'></a> | Kind | Description | Hint
+| Version<a name='v306'></a> | Kind | Description | Hint
+| 3.06 | Fix | ftAStar.LoadfromString was not correctly removing nodes | ftAStar.LoadfromString was not correctly removing nodes.
+|      | Fix | ftEngine.SetCanvasSize | not recognizing mode ftEngine.cmPerfect.
+|      | Fix | Examples | Pathfinding/Pathfinding.cxs
+| Version<a name='v305'></a> | - | - | -
 | 3.05 | New | ftTrans.SetLoop:Void(loopFlag:Bool = True, ltype:Int = ftEngine.tltRepeat, rcount:Int = -1) |
 |      | New | ftTrans.SetLoopType:Void(loopTyp:Int = ftEngine.tltRepeat) |
 |      | New | ftTrans.SetLoopRepeat:Void(rcount:Int = -1) |

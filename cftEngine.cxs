@@ -2837,13 +2837,14 @@ The canvas scale modes are implemented as constants. Next you see which exist an
 #End
 		canvasWidth = width
 		canvasHeight = height
-		If canvasmode = 0 Then
+		
+		If canvasmode = ftEngine.cmZoom Then
 			scaleX = screenWidth / canvasWidth
 			scaleY = screenHeight / canvasHeight
-		Elseif canvasmode = 1 Then
+		Elseif canvasmode = ftEngine.cmCentered Then
 			autofitX = (screenWidth - canvasWidth)/2
 			autofitY = (screenHeight - canvasHeight)/2
-		Elseif canvasmode = 2 Then
+		Elseif canvasmode = ftEngine.cmLetterbox Then
 			scaleX = screenWidth / canvasWidth
 			scaleY = screenHeight / canvasHeight
 			If scaleX > scaleY Then 
@@ -2853,6 +2854,11 @@ The canvas scale modes are implemented as constants. Next you see which exist an
 			Endif
 			autofitX = ((screenWidth - (canvasWidth*scaleX))/2) 
 			autofitY = ((screenHeight - (canvasHeight*scaleY))/2)
+		Elseif canvasmode = ftEngine.cmPerfect Then
+			scaleX = 1.0
+			scaleY = 1.0
+			autofitX = 0.0
+			autofitY = 0.0
 		Endif
 	End
 	'-----------------------------------------------------------------------------
@@ -3151,7 +3157,7 @@ End
 
 #Rem
 footer:This fantomCX framework is released under the MIT license:
-[quote]Copyright (c) 2011-2018 Michael Hartlef
+[quote]Copyright (c) 2011-2025 Michael Hartlef
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions:
 

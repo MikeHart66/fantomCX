@@ -125,10 +125,10 @@ Class ftGridNode
 		Self.gridNode.Remove()
 		Self.gridNode = Null
 		Self.grid = Null
-		If openNode <> Null Then
-			Self.openNode.Remove()
-			Self.openNode = Null
-		Endif
+'		If openNode <> Null Then
+'			Self.openNode.Remove()
+'			Self.openNode = Null
+'		Endif
 	End
 	'------------------------------------------
 'summery:Remove all connected children of a node.	
@@ -503,6 +503,11 @@ Class ftAStar
 		Return 0	
 	End
 	
+	'------------------------------------------
+' Get the list of nodes.
+	Method GetNodeList:List<ASGridNode>()
+		Return Self.nodeList
+  	End
 	
 	'------------------------------------------
 'summery:Get the node ID with the given index. Index starts with 1.
@@ -667,7 +672,7 @@ Class ftAStar
 		Local cw:Float=0
 		Local ch:Float=0
 		
-		Self.RemoveAllNodes()
+		Self.Remove()
 		
 		Local lines := ps.Split(String.FromChar(10))		
 		For Local line:= Eachin lines
@@ -723,6 +728,7 @@ Class ftAStar
 	'------------------------------------------
 'summery:Removes the complete grid.
 	Method Remove:Void()
+		Self.pathList.Clear()
 		Self._ClearOpenList()
 		Self.RemoveAllNodes()
 	End
