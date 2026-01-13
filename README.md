@@ -1,6 +1,9 @@
 # fantomCX
 fantomCX - A 2D game framework for Cerberus X (mojo2)
 
+> [!Warning]
+> This repository was archived. For updates please visit https://codeberg.org/MikeHart66/fantomCX .
+
 It has been released under the terms of the [**MIT license**](https://en.wikipedia.org/wiki/MIT_License), which allows its use within both open and closed source software. This license allows to use the library in commercial applications.
 
 ## Description
